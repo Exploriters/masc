@@ -1,0 +1,46 @@
+
+weapon_component_template = {
+	key = "STRIKE_CRAFT_WEAPON_3"
+	size = small
+	type = point_defence
+	
+	icon = "GFX_ship_part_space_cloud_weapon_1"
+	icon_frame = 1
+	
+	firing_arc = 35.0
+	min_range = 10.0
+	use_ship_kill_target = no
+	
+	power = 0
+	hull_damage = 1.0
+	shield_damage = 1.0
+	shield_penetration = 0.0
+	armor_damage = 1.0
+	armor_penetration = 0.0
+	
+	damage = { min = 6 max = 17 }
+	windup = { min = 2.3 max = 2.3 }
+	range = 150.00
+	accuracy = 1.00
+	tracking = 1.00
+	range = 10
+	
+	component_set = "STRIKE_CRAFT_WEAPON_3"
+	projectile_gfx = "strike_craft_laser_3"
+	tags = { weapon_type_explosive }
+	ai_tags = { weapon_role_point_defense }
+	ai_tag_weight = 0
+	size_restriction = { constructor_masc_drone }
+	#upgrades_to = ""
+	resources = {
+		category = ship_components
+		cost = {
+		}		
+		upkeep = {
+		}
+	}
+
+	ai_weight = {
+		weight = 3
+	}
+}

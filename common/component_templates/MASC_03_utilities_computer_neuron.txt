@@ -1,0 +1,247 @@
+@cost0 = 0
+@cost1 = 5
+@cost2 = 10
+@cost3 = 20
+
+@power0 = -5
+@power1 = -10
+@power2 = -15
+@power3 = -25
+
+@neuron_init_exp = 500
+@neuron_exp_mult = 19.0
+
+utility_component_template = {
+	key = "COMBAT_COMPUTER_SWARM_NEURON"
+	size = small
+	icon = "GFX_ship_part_computer_swarm_neuron"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { } #shipclass_military 
+	size_restriction = { corvette magnus__advanced_strategic_cruiser_combat }
+	component_set = "combat_computers"
+	ship_behavior = "swarm"
+	prerequisites = { "tech_combat_computers_neuron" }
+
+	modifier = {
+		ship_evasion_mult = 0.15
+		ship_speed_mult = 0.15
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+		
+		ship_experience_gain_mult = @neuron_exp_mult
+		ship_starting_experience_add = @neuron_init_exp
+	}
+
+	ai_weight = {
+		weight = 6
+	}
+}
+
+utility_component_template = {
+	key = "COMBAT_COMPUTER_PICKET_NEURON"
+	size = small
+	icon = "GFX_ship_part_computer_picket_neuron"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { } #shipclass_military 
+	size_restriction = { corvette destroyer cruiser magnus__advanced_strategic_cruiser_combat }
+	component_set = "combat_computers"
+	ship_behavior = "picket"
+	prerequisites = { "tech_combat_computers_neuron" }
+
+	modifier = {
+	#	ship_evasion_mult = 0.10
+		ship_speed_mult = 0.15
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+		ship_tracking_add = 30
+		
+		ship_experience_gain_mult = @neuron_exp_mult
+		ship_starting_experience_add = @neuron_init_exp
+	}
+
+	ai_weight = {
+		weight = 6
+	}
+}
+
+utility_component_template = {
+	key = "COMBAT_COMPUTER_LINE_NEURON"
+	size = small
+	icon = "GFX_ship_part_computer_line_neuron"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { } #shipclass_military 
+	size_restriction = { destroyer cruiser battleship magnus__advanced_strategic_cruiser_combat }
+	component_set = "combat_computers"
+	ship_behavior = "line"
+	prerequisites = { "tech_combat_computers_neuron" }
+	
+	modifier = {
+		ship_speed_mult = 0.15
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+		ship_accuracy_add = 15
+		
+		ship_experience_gain_mult = @neuron_exp_mult
+		ship_starting_experience_add = @neuron_init_exp
+	}
+
+	ai_weight = {
+		weight = 6
+	}
+}
+
+utility_component_template = {
+	key = "COMBAT_COMPUTER_ARTILLERY_NEURON"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_neuron"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { }#shipclass_military shipclass_starbase }
+	size_restriction = { destroyer cruiser battleship titan juggernaut magnus__advanced_strategic_cruiser_combat }
+	component_set = "combat_computers"
+	ship_behavior = "artillery"
+	prerequisites = { "tech_combat_computers_neuron" }
+	
+	modifier = {
+		ship_speed_mult = 0.15
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+		ship_weapon_range_mult = 0.15
+		
+		ship_experience_gain_mult = @neuron_exp_mult
+		ship_starting_experience_add = @neuron_init_exp
+	}
+
+	ai_weight = {
+		weight = 6
+	}
+}
+
+utility_component_template = {
+	key = "COMBAT_COMPUTER_CARRIER_NEURON"
+	size = small
+	icon = "GFX_ship_part_computer_carrier_neuron"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { }#shipclass_military shipclass_starbase }
+	size_restriction = { cruiser battleship juggernaut titan magnus__advanced_strategic_cruiser_combat magnus__galauthority }
+	component_set = "combat_computers"
+	ship_behavior = "carrier"
+	prerequisites = { "tech_combat_computers_neuron" }
+	
+	modifier = {
+		ship_speed_mult = 0.15
+	}
+	ship_modifier = {
+		ship_engagement_range_mult = 0.75
+		
+		ship_experience_gain_mult = @neuron_exp_mult
+		ship_starting_experience_add = @neuron_init_exp
+	}
+
+	ai_weight = {
+		weight = 6
+	}
+}
+
+utility_component_template = {
+	key = "COMBAT_COMPUTER_PLATFORM_NEURON"
+	size = small
+	icon = "GFX_ship_part_computer_platform_neuron"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { }#shipclass_military_station }
+	size_restriction = { military_station_small masc_military_station_large }
+	component_set = "combat_computers"
+	ship_behavior = "platform"
+	prerequisites = { "tech_combat_computers_neuron" }
+	
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+		ship_tracking_add = 15
+		ship_weapon_range_mult = 0.15
+		
+		ship_experience_gain_mult = @neuron_exp_mult
+		ship_starting_experience_add = @neuron_init_exp
+	}
+
+	ai_weight = {
+		weight = 6
+	}
+}
+
+utility_component_template = {
+	key = "COMBAT_COMPUTER_KITE_NEURON"
+	size = small
+	icon = "GFX_ship_part_computer_strategic_sapient"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { } #shipclass_military 
+	size_restriction = { corvette magnus__advanced_strategic_cruiser_combat magnus__advanced_escort_monitor }
+	component_set = "combat_computers"
+	ship_behavior = "masc_kite"
+	prerequisites = { "tech_combat_computers_neuron" }
+
+	modifier = {
+		ship_speed_mult = 0.3
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+		
+		ship_experience_gain_mult = @neuron_exp_mult
+		ship_starting_experience_add = @neuron_init_exp
+	}
+
+	ai_weight = {
+		weight = 6
+	}
+}

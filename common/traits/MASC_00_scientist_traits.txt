@@ -1,0 +1,28 @@
+
+leader_trait_sbc_engineer = {
+	cost = 1
+	initial = yes
+	randomized = yes
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_cruiser_focus.dds"
+	modifier = {
+		ship_hull_regen_add_perc = 1
+		ship_armor_regen_add_perc = 1
+		ship_shield_regen_add_perc = 1
+	}
+	leader_trait = { scientist }
+	leader_class = { scientist }
+	ai_categories = {
+		survey
+	}
+
+	ai_weight = {
+		weight = 200
+	}
+	leader_potential_add = {
+		from = {
+			has_civic = civic_masc_the_masc
+		}
+	}
+	prerequisites = {  }
+}

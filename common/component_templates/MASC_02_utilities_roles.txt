@@ -1,0 +1,986 @@
+
+@cost0 = 0
+@cost1 = 5
+@cost2 = 10
+@cost2_5 = 15
+@cost3 = 20
+
+@power0 = -5
+@power1 = -10
+@power2 = -15
+@power2_5 = -20
+@power3 = -25
+
+#####################
+# 'SWARM' COMPUTERS #
+#####################
+
+utility_component_template = {
+	key = "MASC_COMBAT_COMPUTER_SWARM_ADVANCED"
+	size = small
+	icon = "GFX_ship_part_computer_swarm_advanced"
+	icon_frame = 1
+	power = @power2_5
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost2_5
+		}
+	}
+	class_restriction = { }# } #shipclass_military 
+	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	component_set = "combat_computers"
+	ship_behavior = "swarm"
+	prerequisites = { } #"tech_combat_computers_2"
+	upgrades_to = "MASC_COMBAT_COMPUTER_SWARM_SAPIENT"
+
+	modifier = {
+		ship_evasion_mult = 0.15
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+	}
+
+	ai_weight = {
+		weight = 3
+	}
+}
+
+utility_component_template = {
+	key = "MASC_COMBAT_COMPUTER_SWARM_SAPIENT"
+	size = small
+	icon = "GFX_ship_part_computer_swarm_sapient"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { }# } #shipclass_military 
+	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	component_set = "combat_computers"
+	ship_behavior = "swarm"
+	prerequisites = { "tech_combat_computers_3" }
+
+	modifier = {
+		ship_evasion_mult = 0.25
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+	}
+
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 0
+			OR = {
+				has_global_flag = ghost_signal_5_flag
+				has_global_flag = ghost_signal_4_flag
+				has_global_flag = ghost_signal_3_flag
+				has_global_flag = ghost_signal_2_flag
+				has_global_flag = ghost_signal_1_flag
+			}
+		}
+	}
+}
+
+utility_component_template = {
+	key = "MASC_COMBAT_COMPUTER_SWARM_AUTONOMOUS"
+	size = small
+	icon = "GFX_ship_part_computer_swarm_sapient"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { }# } #shipclass_military 
+	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	component_set = "combat_computers"
+	ship_behavior = "swarm"
+	prerequisites = { "tech_combat_computers_autonomous" }
+
+	modifier = {
+		ship_evasion_mult = 0.25
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+	}
+
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "MASC_COMBAT_COMPUTER_SWARM_PRECOG"
+	size = small
+	icon = "GFX_ship_part_computer_swarm_precog"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { }# } #shipclass_military 
+	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	component_set = "combat_computers"
+	ship_behavior = "swarm"
+	prerequisites = { "tech_precognition_interface" }
+
+	modifier = {
+		ship_evasion_mult = 0.15
+		ship_speed_mult = 0.20
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+	}
+
+	ai_weight = {
+		weight = 4
+	}
+}
+
+######################
+# 'PICKET' COMPUTERS #
+######################
+
+utility_component_template = {
+	key = "MASC_COMBAT_COMPUTER_PICKET_ADVANCED"
+	size = small
+	icon = "GFX_ship_part_computer_picket_advanced"
+	icon_frame = 1
+	power = @power2_5
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost2_5
+		}
+	}
+	class_restriction = { }# } #shipclass_military 
+	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	component_set = "combat_computers"
+	ship_behavior = "picket"
+	prerequisites = { } #"tech_combat_computers_2"
+	upgrades_to = "MASC_COMBAT_COMPUTER_PICKET_SAPIENT"
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+		ship_tracking_add = 30
+	}
+
+	ai_weight = {
+		weight = 3
+	}
+}
+
+utility_component_template = {
+	key = "MASC_COMBAT_COMPUTER_PICKET_SAPIENT"
+	size = small
+	icon = "GFX_ship_part_computer_picket_sapient"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { }# } #shipclass_military 
+	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	component_set = "combat_computers"
+	ship_behavior = "picket"
+	prerequisites = { "tech_combat_computers_3" }
+
+	modifier = {
+		ship_evasion_mult = 0.10
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+		ship_tracking_add = 30
+	}
+
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 0
+			OR = {
+				has_global_flag = ghost_signal_5_flag
+				has_global_flag = ghost_signal_4_flag
+				has_global_flag = ghost_signal_3_flag
+				has_global_flag = ghost_signal_2_flag
+				has_global_flag = ghost_signal_1_flag
+			}
+		}
+	}
+}
+
+utility_component_template = {
+	key = "MASC_COMBAT_COMPUTER_PICKET_AUTONOMOUS"
+	size = small
+	icon = "GFX_ship_part_computer_picket_sapient"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { }# } #shipclass_military 
+	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	component_set = "combat_computers"
+	ship_behavior = "picket"
+	prerequisites = { "tech_combat_computers_autonomous" }
+
+	modifier = {
+		ship_evasion_mult = 0.10
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+		ship_tracking_add = 30
+	}
+
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "MASC_COMBAT_COMPUTER_PICKET_PRECOG"
+	size = small
+	icon = "GFX_ship_part_computer_picket_precog"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { }# } #shipclass_military 
+	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	component_set = "combat_computers"
+	ship_behavior = "picket"
+	prerequisites = { "tech_precognition_interface" }
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.20
+		ship_tracking_add = 40
+	}
+
+	ai_weight = {
+		weight = 4
+	}
+}
+
+####################
+# 'LINE' COMPUTERS #
+####################
+
+utility_component_template = {
+	key = "MASC_COMBAT_COMPUTER_LINE_ADVANCED"
+	size = small
+	icon = "GFX_ship_part_computer_line_advanced"
+	icon_frame = 1
+	power = @power2_5
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost2_5
+		}
+	}
+	class_restriction = { }# } #shipclass_military 
+	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	component_set = "combat_computers"
+	ship_behavior = "line"
+	prerequisites = { } #"tech_combat_computers_2"
+	upgrades_to = "MASC_COMBAT_COMPUTER_LINE_SAPIENT"
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+		ship_accuracy_add = 15
+	}
+
+	ai_weight = {
+		weight = 3
+	}
+}
+
+utility_component_template = {
+	key = "MASC_COMBAT_COMPUTER_LINE_SAPIENT"
+	size = small
+	icon = "GFX_ship_part_computer_line_sapient"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { }# } #shipclass_military 
+	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	component_set = "combat_computers"
+	ship_behavior = "line"
+	prerequisites = { "tech_combat_computers_3" }
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.20
+		ship_accuracy_add = 20
+	}
+
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 0
+			OR = {
+				has_global_flag = ghost_signal_5_flag
+				has_global_flag = ghost_signal_4_flag
+				has_global_flag = ghost_signal_3_flag
+				has_global_flag = ghost_signal_2_flag
+				has_global_flag = ghost_signal_1_flag
+			}
+		}
+	}
+}
+
+utility_component_template = {
+	key = "MASC_COMBAT_COMPUTER_LINE_AUTONOMOUS"
+	size = small
+	icon = "GFX_ship_part_computer_line_sapient"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { }# } #shipclass_military 
+	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	component_set = "combat_computers"
+	ship_behavior = "line"
+	prerequisites = { "tech_combat_computers_autonomous" }
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.20
+		ship_accuracy_add = 20
+	}
+
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "MASC_COMBAT_COMPUTER_LINE_PRECOG"
+	size = small
+	icon = "GFX_ship_part_computer_line_precog"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { }# } #shipclass_military 
+	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	component_set = "combat_computers"
+	ship_behavior = "line"
+	prerequisites = { "tech_precognition_interface" }
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+		ship_accuracy_add = 15
+		ship_tracking_add = 10
+	}
+
+	ai_weight = {
+		weight = 4
+	}
+}
+
+######################
+# 'ARTILLERY' COMPUTERS #
+######################
+
+utility_component_template = {
+	key = "MASC_COMBAT_COMPUTER_ARTILLERY_ADVANCED"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_advanced"
+	icon_frame = 1
+	power = @power2_5
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost2_5
+		}
+	}
+	class_restriction = { }# shipclass_military shipclass_starbase }
+	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	component_set = "combat_computers"
+	ship_behavior = "artillery"
+	prerequisites = { } #"tech_combat_computers_2"
+	upgrades_to = "MASC_COMBAT_COMPUTER_ARTILLERY_SAPIENT"
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+		ship_weapon_range_mult = 0.15
+	}
+
+	ai_weight = {
+		weight = 3
+	}
+}
+
+utility_component_template = {
+	key = "MASC_COMBAT_COMPUTER_ARTILLERY_SAPIENT"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_sapient"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { }# shipclass_military shipclass_starbase }
+	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	component_set = "combat_computers"
+	ship_behavior = "artillery"
+	prerequisites = { "tech_combat_computers_3" }
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.20
+		ship_weapon_range_mult = 0.20
+	}
+
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 0
+			OR = {
+				has_global_flag = ghost_signal_5_flag
+				has_global_flag = ghost_signal_4_flag
+				has_global_flag = ghost_signal_3_flag
+				has_global_flag = ghost_signal_2_flag
+				has_global_flag = ghost_signal_1_flag
+			}
+		}
+	}
+}
+
+
+utility_component_template = {
+	key = "MASC_COMBAT_COMPUTER_ARTILLERY_AUTONOMOUS"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_sapient"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { }# shipclass_military shipclass_starbase }
+	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	component_set = "combat_computers"
+	ship_behavior = "artillery"
+	prerequisites = { "tech_combat_computers_autonomous" }
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.20
+		ship_weapon_range_mult = 0.20
+	}
+
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "MASC_COMBAT_COMPUTER_ARTILLERY_PRECOG"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_precog"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { }# shipclass_military shipclass_starbase }
+	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	component_set = "combat_computers"
+	ship_behavior = "artillery"
+	prerequisites = { "tech_precognition_interface" }
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+		ship_weapon_range_mult = 0.15
+		ship_tracking_add = 10
+	}
+
+	ai_weight = {
+		weight = 4
+	}
+}
+
+######################
+# 'CARRIER' COMPUTERS #
+######################
+
+utility_component_template = {
+	key = "MASC_COMBAT_COMPUTER_CARRIER_ADVANCED"
+	size = small
+	icon = "GFX_ship_part_computer_carrier_advanced"
+	icon_frame = 1
+	power = @power2_5
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost2_5
+		}
+	}
+	class_restriction = { }# shipclass_military shipclass_starbase }
+	size_restriction = { magnus__advanced_strategic_cruiser_combat magnus__galauthority }
+	component_set = "combat_computers"
+	ship_behavior = "carrier"
+	prerequisites = { } #"tech_combat_computers_2"
+	upgrades_to = "MASC_COMBAT_COMPUTER_CARRIER_SAPIENT"
+
+	ship_modifier = {
+		ship_engagement_range_mult = 0.75
+	}
+
+	ai_weight = {
+		weight = 3
+	}
+}
+
+utility_component_template = {
+	key = "MASC_COMBAT_COMPUTER_CARRIER_SAPIENT"
+	size = small
+	icon = "GFX_ship_part_computer_carrier_sapient"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { }# shipclass_military shipclass_starbase }
+	size_restriction = { magnus__advanced_strategic_cruiser_combat magnus__galauthority }
+	component_set = "combat_computers"
+	ship_behavior = "carrier"
+	prerequisites = { "tech_combat_computers_3" }
+
+	ship_modifier = {
+		ship_engagement_range_mult = 1.0
+	}
+
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 0
+			OR = {
+				has_global_flag = ghost_signal_5_flag
+				has_global_flag = ghost_signal_4_flag
+				has_global_flag = ghost_signal_3_flag
+				has_global_flag = ghost_signal_2_flag
+				has_global_flag = ghost_signal_1_flag
+			}
+		}
+	}
+}
+
+
+utility_component_template = {
+	key = "MASC_COMBAT_COMPUTER_CARRIER_AUTONOMOUS"
+	size = small
+	icon = "GFX_ship_part_computer_carrier_sapient"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { }# shipclass_military shipclass_starbase }
+	size_restriction = { magnus__advanced_strategic_cruiser_combat magnus__galauthority }
+	component_set = "combat_computers"
+	ship_behavior = "carrier"
+	prerequisites = { "tech_combat_computers_autonomous" }
+
+	ship_modifier = {
+		ship_engagement_range_mult = 1.0
+	}
+
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "MASC_COMBAT_COMPUTER_CARRIER_PRECOG"
+	size = small
+	icon = "GFX_ship_part_computer_carrier_precog"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { }# shipclass_military shipclass_starbase }
+	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	component_set = "combat_computers"
+	ship_behavior = "carrier"
+	prerequisites = { "tech_precognition_interface" }
+
+	ship_modifier = {
+		ship_engagement_range_mult = 0.75
+		ship_tracking_add = 10
+	}
+
+	ai_weight = {
+		weight = 4
+	}
+}
+
+################
+# Platform
+################
+
+#utility_component_template = {
+#	key = "MASC_COMBAT_COMPUTER_PLATFORM_ADVANCED"
+#	size = small
+#	icon = "GFX_ship_part_computer_platform_advanced"
+#	icon_frame = 1
+#	power = @power2_5
+#	resources = {
+#		category = ship_components
+#		cost = {
+#			alloys = @cost2_5
+#		}
+#	}
+#	#class_restriction = { shipclass_military_station }
+#	size_restriction = { masc_military_station_large }
+#	component_set = "combat_computers"
+#	ship_behavior = "platform"
+#	prerequisites = { }
+#	upgrades_to = "MASC_COMBAT_COMPUTER_PLATFORM_SAPIENT"
+#
+#	ship_modifier = {
+#		ship_fire_rate_mult = 0.15
+#		ship_tracking_add = 15
+#	}
+#
+#	ai_weight = {
+#		weight = 3
+#	}
+#}
+#
+#utility_component_template = {
+#	key = "MASC_COMBAT_COMPUTER_PLATFORM_SAPIENT"
+#	size = small
+#	icon = "GFX_ship_part_computer_platform_sapient"
+#	icon_frame = 1
+#	power = @power3
+#	resources = {
+#		category = ship_components
+#		cost = {
+#			alloys = @cost3
+#		}
+#	}
+#	#class_restriction = { shipclass_military_station }
+#	size_restriction = { masc_military_station_large }
+#	component_set = "combat_computers"
+#	ship_behavior = "platform"
+#	prerequisites = { "tech_combat_computers_3" }
+#
+#	ship_modifier = {
+#		ship_fire_rate_mult = 0.15
+#		ship_tracking_add = 15
+#		ship_accuracy_add = 10
+#	}
+#
+#	ai_weight = {
+#		weight = 5
+#		modifier = {
+#			factor = 0
+#			OR = {
+#				has_global_flag = ghost_signal_5_flag
+#				has_global_flag = ghost_signal_4_flag
+#				has_global_flag = ghost_signal_3_flag
+#				has_global_flag = ghost_signal_2_flag
+#				has_global_flag = ghost_signal_1_flag
+#			}
+#		}
+#	}
+#}
+#
+#utility_component_template = {
+#	key = "MASC_COMBAT_COMPUTER_PLATFORM_AUTONOMOUS"
+#	size = small
+#	icon = "GFX_ship_part_computer_platform_sapient"
+#	icon_frame = 1
+#	power = @power3
+#	resources = {
+#		category = ship_components
+#		cost = {
+#			alloys = @cost3
+#		}
+#	}
+#	#class_restriction = { shipclass_military_station 
+#	size_restriction = { masc_military_station_large }
+#	component_set = "combat_computers"
+#	ship_behavior = "platform"
+#	prerequisites = { "tech_combat_computers_autonomous" }
+#
+#	ship_modifier = {
+#		ship_fire_rate_mult = 0.15
+#		ship_tracking_add = 15
+#		ship_accuracy_add = 10
+#	}
+#
+#	ai_weight = {
+#		weight = 5
+#	}
+#}
+#
+#utility_component_template = {
+#	key = "MASC_COMBAT_COMPUTER_PLATFORM_PRECOG"
+#	size = small
+#	icon = "GFX_ship_part_computer_platform_precog"
+#	icon_frame = 1
+#	power = @power3
+#	resources = {
+#		category = ship_components
+#		cost = {
+#			alloys = @cost3
+#		}
+#	}
+#	#class_restriction = { shipclass_military_station }
+#	size_restriction = { masc_military_station_large }
+#	component_set = "combat_computers"
+#	ship_behavior = "platform"
+#	prerequisites = { "tech_precognition_interface" }
+#
+#	ship_modifier = {
+#		ship_fire_rate_mult = 0.15
+#		ship_tracking_add = 25
+#	}
+#
+#	ai_weight = {
+#		weight = 4
+#	}
+#}
+#
+#
+
+
+#####################
+# 'KITER' COMPUTERS #
+#####################
+
+utility_component_template = {
+	key = "MASC_COMBAT_COMPUTER_KITE_DEFAULT"
+	size = small
+	icon = "GFX_ship_part_computer_default"
+	#icon = "GFX_ship_part_empty_ftl_drive"
+	icon_frame = 1
+	power = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost0
+		}
+	}
+	ship_behavior = "masc_kite"
+	size_restriction = { magnus__advanced_escort_monitor }
+	component_set = "combat_computers"
+	upgrades_to = "MASC_COMBAT_COMPUTER_KITE_BASIC"
+
+	ai_weight = {
+		weight = 1
+	}
+}
+
+utility_component_template = {
+	key = "MASC_COMBAT_COMPUTER_KITE_BASIC"
+	size = small
+	icon = "GFX_ship_part_computer_strategic_basic"
+	icon_frame = 1
+	power = @power1
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost1
+		}
+	}
+	size_restriction = { magnus__advanced_escort_monitor }
+	component_set = "combat_computers"
+	ship_behavior = "masc_kite"
+	prerequisites = { "tech_combat_computers_1" }
+	upgrades_to = "MASC_COMBAT_COMPUTER_KITE_ADVANCED"
+
+	modifier = {
+		ship_speed_mult = 0.05
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 0.05
+	}
+
+	ai_weight = {
+		weight = 2
+	}
+}
+
+utility_component_template = {
+	key = "MASC_COMBAT_COMPUTER_KITE_ADVANCED"
+	size = small
+	icon = "GFX_ship_part_computer_strategic_advanced"
+	icon_frame = 1
+	power = @power2
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost2
+		}
+	}
+	class_restriction = { }# } #shipclass_military 
+	size_restriction = { magnus__advanced_strategic_cruiser_combat magnus__advanced_escort_monitor }
+	component_set = "combat_computers"
+	ship_behavior = "masc_kite"
+	prerequisites = { "tech_combat_computers_2" }
+	upgrades_to = "MASC_COMBAT_COMPUTER_KITE_SAPIENT"
+
+	modifier = {
+		ship_speed_mult = 0.1
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 0.1
+	}
+
+	ai_weight = {
+		weight = 3
+	}
+}
+
+utility_component_template = {
+	key = "MASC_COMBAT_COMPUTER_KITE_SAPIENT"
+	size = small
+	icon = "GFX_ship_part_computer_default_sapient"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { }# } #shipclass_military 
+	size_restriction = { magnus__advanced_strategic_cruiser_combat magnus__advanced_escort_monitor }
+	component_set = "combat_computers"
+	ship_behavior = "masc_kite"
+	prerequisites = { "tech_combat_computers_3" }
+
+	modifier = {
+		ship_evasion_mult = 0.20
+		ship_speed_mult = 0.15
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+	}
+
+	ai_weight = {
+		weight = 5
+		#modifier = {
+		#	factor = 0
+		#	OR = {
+		#		has_global_flag = ghost_signal_5_flag
+		#		has_global_flag = ghost_signal_4_flag
+		#		has_global_flag = ghost_signal_3_flag
+		#		has_global_flag = ghost_signal_2_flag
+		#		has_global_flag = ghost_signal_1_flag
+		#	}
+		#}
+	}
+}
+
+utility_component_template = {
+	key = "MASC_COMBAT_COMPUTER_KITE_AUTONOMOUS"
+	size = small
+	icon = "GFX_ship_part_computer_default_sapient"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { }# } #shipclass_military 
+	size_restriction = { magnus__advanced_strategic_cruiser_combat magnus__advanced_escort_monitor }
+	component_set = "combat_computers"
+	ship_behavior = "masc_kite"
+	prerequisites = { "tech_combat_computers_autonomous" }
+
+	modifier = {
+		ship_evasion_mult = 0.20
+		ship_speed_mult = 0.15
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+	}
+
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "MASC_COMBAT_COMPUTER_KITE_PRECOG"
+	size = small
+	icon = "GFX_ship_part_computer_default_precog"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { }# } #shipclass_military 
+	size_restriction = { magnus__advanced_strategic_cruiser_combat magnus__advanced_escort_monitor }
+	component_set = "combat_computers"
+	ship_behavior = "masc_kite"
+	prerequisites = { "tech_precognition_interface" }
+
+	modifier = {
+		ship_evasion_mult = 0.20
+		ship_speed_mult = 0.15
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+	}
+
+	ai_weight = {
+		weight = 4
+	}
+}

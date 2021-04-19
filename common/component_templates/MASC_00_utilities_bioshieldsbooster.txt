@@ -1,0 +1,132 @@
+## Icons set here are the ones show in the actual slot. The reason is so that we can support different icons for different sizes. 
+#
+#
+#@MASC_bioshield_S7_bi = 240
+#@MASC_bioshield_M7_bi = 600
+#@MASC_bioshield_L7_bi = 1440
+#
+#@MASC_regen_S7_bi = 4.80
+#@MASC_regen_M7_bi = 12.00
+#@MASC_regen_L7_bi = 28.80
+#
+#@MASC_power_S7_bi = -150
+#@MASC_power_M7_bi = -300
+#@MASC_power_L7_bi = -600
+#
+#@MASC_bioshield_s_t7_cost = 21 #27
+#@MASC_bioshield_s_t7_upkeep_energy = 0.21
+#@MASC_bioshield_s_t7_upkeep_alloys = 0.042
+#
+#@MASC_bioshield_m_t7_cost = 38
+#@MASC_bioshield_m_t7_upkeep_energy = 0.38
+#@MASC_bioshield_m_t7_upkeep_alloys = 0.076
+#
+#@MASC_bioshield_l_t7_cost = 74
+#@MASC_bioshield_l_t7_upkeep_energy = 0.74
+#@MASC_bioshield_l_t7_upkeep_alloys = 0.148
+#
+#
+#####################
+## Bio Armors
+#####################
+#
+#utility_component_template = {
+#	key = "SMALL_BIO_CHARGER"
+#	size = small
+#	icon = "GFX_ship_part_auto_repair"
+#	icon_frame = 1
+#	power = @MASC_power_S7_bi
+#	resources = {
+#		category = ship_components
+#		cost = {
+#			alloys = @MASC_bioshield_s_t7_cost
+#			food = 2.22
+#		}
+#		upkeep = {
+#			energy = @MASC_bioshield_s_t7_upkeep_energy
+#			alloys = @MASC_bioshield_s_t7_upkeep_alloys
+#		}
+#	}
+#	modifier = {
+#		ship_armor_regen_add_static = @MASC_regen_S7_bi #Regeneration per day
+#	}
+#	prerequisites = { "tech_ship_biology_structure" }
+#	component_set = "BIO_CHARGER"
+#
+#	ai_weight = {
+#		weight = 1
+#		modifier = {
+#			factor = 0.0
+#			is_country_type = default
+			has_monthly_income = { resource = food value <= 0 }
+#		}
+#	}
+#}
+#
+#utility_component_template = {
+#	key = "MEDIUM_BIO_CHARGER"
+#	size = medium
+#	icon = "GFX_ship_part_auto_repair"
+#	icon_frame = 1
+#	power = @MASC_power_M7_bi
+#	resources = {
+#		category = ship_components
+#		cost = {
+#			alloys = @MASC_bioshield_m_t7_cost
+#			food = 4.44
+#		}
+#		upkeep = {
+#			energy = @MASC_bioshield_m_t7_upkeep_energy
+#			alloys = @MASC_bioshield_m_t7_upkeep_alloys
+#		}
+#	}
+#	modifier = {
+#		ship_armor_regen_add_static = @MASC_regen_M7_bi #Regeneration per day
+#	}
+#	prerequisites = { "tech_ship_biology_structure" }
+#	component_set = "BIO_CHARGER"
+#
+#	ai_weight = {
+#		weight = 1
+#		modifier = {
+#			factor = 0.0
+#			is_country_type = default
+			has_monthly_income = { resource = food value <= 0 }
+#		}
+#	}
+#}
+#
+#utility_component_template = {
+#	key = "LARGE_BIO_CHARGER"
+#	size = large
+#	icon = "GFX_ship_part_auto_repair"
+#	icon_frame = 1
+#	power = @MASC_power_L7_bi
+#	resources = {
+#		category = ship_components
+#		cost = {
+#			alloys = @MASC_bioshield_l_t7_cost
+#			food = 8.88
+#		}
+#		upkeep = {
+#			energy = @MASC_bioshield_l_t7_upkeep_energy
+#			alloys = @MASC_bioshield_l_t7_upkeep_alloys
+#		}
+#	}
+#	modifier = {
+#		ship_armor_regen_add_static = @MASC_regen_L7_bi #Regeneration per day
+#	}
+#	prerequisites = { "tech_ship_biology_structure" }
+#	component_set = "BIO_CHARGER"
+#
+#	ai_weight = {
+#		weight = 1
+#		modifier = {
+#			factor = 0.0
+#			is_country_type = default
+			has_monthly_income = { resource = food value <= 0 }
+#		}
+#	}
+#}
+#
+#

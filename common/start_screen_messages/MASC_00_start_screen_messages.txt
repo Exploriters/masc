@@ -1,0 +1,13 @@
+
+
+### Origins - Placed before the pre-scripted empires as only the first valid one is chosen.
+
+# Shattered Ring Void Dwellers
+part = {
+	location = 0
+	localization = "START_SCREEN_SRVD"
+	
+	trigger = {
+		has_origin = masc_origin_ringworld_void_dwellers
+	}
+}

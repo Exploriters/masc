@@ -1,0 +1,104 @@
+
+namespace = masc
+
+# Ambient object restore
+country_event = {
+	id = masc.3001
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { is_megastructure_type = ring_world_restored }
+		FROMFROM = { 
+			any_system_planet = {
+				has_planet_flag = preventremoval_large_debris_object_target_planet
+			}
+			#NOT = {
+			#	any_system_ambient_object = {
+			#		has_ambient_object_flag = ambient_preventremoval_flag
+			#	}
+			#}
+		}
+	}
+	
+	immediate = {
+		FROMFROM = { 
+			every_system_ambient_object = {
+				limit = { has_ambient_object_flag = ambient_preventremoval_flag }
+				destroy_ambient_object = this
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = preventremoval_large_debris_object_target_planet
+				}
+				create_ambient_object = {
+					type = "large_debris_object"
+					entity_offset_height = -15
+					location = this
+				}
+				last_created_ambient_object = {
+					set_ambient_object_flag = ambient_preventremoval_flag
+					set_location = {
+						target = prev
+						distance = 0
+						angle = 0
+					}
+				}
+			}
+		}
+	}
+}
+
+# Yuht Intro
+ship_event = {
+	id = masc.3002
+	title = "precursor.500.name"
+	desc = "precursor.500.desc"
+	picture = GFX_evt_archaeological_dig
+	location = from
+	
+	is_triggered_only = yes 
+	
+	trigger = {
+		solar_system = { has_star_flag = masc_superlargevoid_systemflag }
+	#	solar_system = { has_star_flag = precursor_2 }
+	#	solar_system = { NOT = { is_same_value = root.owner.capital_scope.solar_system } }
+		owner = { is_ai = no }
+		FROM = { 
+	#		has_anomaly = no 
+	#		is_star = no
+			is_star = yes
+		}
+		owner = { 
+			NOR = { 
+	#			has_country_flag = vultaum_intro
+				has_country_flag = yuht_intro
+	#			has_country_flag = first_league_intro
+	#			has_country_flag = irassian_intro
+	#			has_country_flag = cybrex_intro
+	#			has_country_flag = zroni_intro
+	#			has_country_flag = baol_intro
+			}
+		}
+	}
+	
+	immediate = {
+		owner = { set_country_flag = yuht_intro }
+	}
+	
+	option = {
+		name = INTERESTING
+		hidden_effect = { owner = { country_event = { id = story.5 days = 30 } } }
+		owner = {
+			begin_event_chain = {
+				event_chain = "yuht_chain"
+				target = THIS
+			}
+			if = {
+				limit = { has_ancrel = yes }
+				small_artifact_reward = yes
+			}
+		}
+	}
+}

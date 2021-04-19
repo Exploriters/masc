@@ -1,0 +1,251 @@
+
+building_hab_system_capital_masc_srvd_origin = {
+	base_buildtime = @b3_time
+	capital = yes
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	planetary_ftl_inhibitor = yes
+	add_to_first_building_slot = yes
+	icon = building_system_capital
+
+	category = government
+
+	potential = {
+		has_deposit = d_masc_arcane_core
+		exists = owner
+		owner = {
+			has_origin = masc_origin_ringworld_void_dwellers
+			is_machine_empire = no
+			is_fallen_empire = no
+		#	is_regular_empire = yes
+		}
+	}
+
+	convert_to = {
+		building_hab_major_capital
+		building_hab_fe_capital
+		building_hab_capital
+	}
+
+	allow = {
+	#	num_pops >= 10
+		always = yes
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b3_minerals
+		}
+		upkeep = {
+			energy = @b4_upkeep
+			alloys = 5
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 20
+		planet_amenities_add = 12
+		planet_jobs_ruler_produces_mult = 0
+		#planet_orbital_bombardment_damage = -0.5
+		#building_planetary_shield_generator_max = -1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		job_healthcare_add = 3
+		job_enforcer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		job_synapse_drone_add = 3
+		job_patrol_drone_add = 2
+		job_maintenance_drone_add = 5
+		job_spawning_drone_add = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				NOT = {
+					has_authority = auth_corporate
+				}
+			}
+		}
+		modifier = {
+			job_administrator_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				NOR = {
+					has_authority = auth_corporate
+					has_civic = civic_exalted_priesthood
+					has_civic = civic_aristocratic_elite
+					has_civic = civic_merchant_guilds
+					has_civic = civic_technocracy
+				}
+			}
+		}
+		modifier = {
+			job_administrator_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_authority = auth_corporate }
+		}
+		modifier = {
+			job_executive_add = 3
+		}
+	}
+
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_civic = civic_exalted_priesthood }
+		}
+		modifier = {
+			job_high_priest_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_civic = civic_aristocratic_elite }
+		}
+		modifier = {
+			job_noble_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_civic = civic_technocracy }
+		}
+		modifier = {
+			job_head_researcher_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_civic = civic_merchant_guilds }
+		}
+		modifier = {
+			job_merchant_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_ascension_perk = ap_voidborn }
+		}
+		modifier = {
+			 planet_max_buildings_add = 2
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_civic = civic_exalted_priesthood
+			}
+		}
+		text = job_high_priest_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_civic = civic_aristocratic_elite
+			}
+		}
+		text = job_noble_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_civic = civic_merchant_guilds
+			}
+		}
+		text = job_merchant_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				NOT = { has_authority = auth_corporate }
+				is_regular_empire = yes
+			}
+		}
+		text = job_administrator_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_authority = auth_corporate
+			}
+		}
+		text = job_executive_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		text = job_enforcer_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		text = job_healthcare_effect_desc
+	}
+
+	triggered_desc = { trigger = { exists = owner owner = { is_hive_empire = yes } }
+		text = job_synapse_drone_effect_desc }
+	triggered_desc = { trigger = { exists = owner owner = { is_hive_empire = yes } }
+		text = job_patrol_drone_effect_desc }
+	triggered_desc = { trigger = { exists = owner owner = { is_hive_empire = yes } }
+		text = job_maintenance_drone_effect_desc }
+	triggered_desc = { trigger = { exists = owner owner = { is_hive_empire = yes } }
+		text = job_spawning_drone_effect_desc }
+
+	ai_weight = {
+		weight = 40
+		modifier = {
+			factor = 0.25
+			owner = { has_resource = { type = minerals amount < 500 } }
+		}#This is here to prevent the AI from queuing up to buy this building when it could really do with another mineral district
+	}
+}

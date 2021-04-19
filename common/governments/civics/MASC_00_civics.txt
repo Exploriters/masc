@@ -1,0 +1,99 @@
+
+civic_masc_the_masc_one = {
+	cost = 1
+	icon = "gfx/interface/icons/governments/civics/civic_post_apocalyptic.dds"
+	potential = {
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+		origin = {
+			value = masc_origin_ringworld_void_dwellers
+		}
+		civics = {
+			NOR = {
+				value = civic_masc_the_one
+				value = civic_masc_the_masc
+			}
+		}
+		#NOT = {
+		#	has_global_flag = game_started
+		#}
+	}
+	possible = {
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+		civics = {
+			NOR = {
+				value = civic_masc_the_one
+				value = civic_masc_the_masc
+			}
+		}
+		origin = {
+			value = masc_origin_ringworld_void_dwellers
+		}
+	}
+	modification = no
+	modifier = {
+	}
+	random_weight = {
+		base = 0
+	}
+	description = "civic_tooltip_masc_the_masc_one_effects"
+
+	traits = {
+	}
+}
+
+civic_masc_the_one = {
+	icon = "gfx/interface/icons/governments/civics/civic_syncretic_evolution.dds"
+	potential = {
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+	#	authority = { NOT = { value = auth_corporate } }
+	}
+	possible = {
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+	}
+	modification = no
+	modifier = {
+	}
+	random_weight = {
+		base = 0 # Should be fairly rare
+		modifier = {
+			# civic has no effect after galaxy generation, disable for random generation
+			factor = 0
+			has_global_flag = game_started
+		}
+	}
+	description = "civic_tooltip_masc_the_one_effects"
+
+	#traits = {
+	#	trait = 
+	#}
+}
+
+civic_masc_the_masc = {
+	cost = 1
+	icon = "gfx/interface/icons/governments/civics/civic_corporate_dominion.dds"
+	potential = {
+	}
+	possible = {
+		always = yes
+	}
+	modification = no
+	modifier = {
+		#shipsize_magnus__advanced_strategic_cruiser_build_speed_mult = -1
+		country_command_limit_add = 20
+		shipsize_masc_military_station_large_build_speed_mult = 1.6666666666666666666666666666667
+		shipsize_starbase_outpost_build_speed_mult = 2
+		shipsize_mining_station_build_speed_mult = 2
+		shipsize_research_station_build_speed_mult = 2
+		shipsize_observation_station_build_speed_mult = 2
+		ship_archaeological_site_excavation_speed_mult = 2
+		megastructure_build_speed_mult = 0
+		country_naval_cap_mult = -0.05
+	}
+	random_weight = {
+		base = 0
+	}
+	description = "civic_tooltip_masc_the_masc_effects"
+
+	traits = {
+	}
+}

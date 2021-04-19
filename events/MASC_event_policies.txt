@@ -1,0 +1,169 @@
+
+namespace = masc
+
+country_event = {
+	id = masc.5005
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		last_changed_policy = station_resist_type
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_policy_flag = station_policy_shield
+			}
+			every_owned_ship = {
+				limit = {
+					NOT = {
+						has_modifier = station_shield_replace_armor
+					}
+					OR = {
+						is_ship_size = mining_station
+						is_ship_size = research_station
+						is_ship_size = observation_station
+					}
+					solar_system = {
+						NOR = {
+							is_star_class = sc_pulsar
+							is_star_class = sc_binary_1
+							any_planet = { 
+								is_planet_class = pc_pulsar
+							}
+						}
+					}
+				}
+				add_modifier = { modifier = station_shield_replace_armor }
+				add_modifier = { modifier = "station_armor_replace_shield_decoy_1" days = 1 }
+				add_modifier = { modifier = "station_armor_replace_shield_decoy_2" days = 2 }
+				add_modifier = { modifier = "station_armor_replace_shield_decoy_3" days = 3 }
+				add_modifier = { modifier = "station_armor_replace_shield_decoy_4" days = 4 }
+				add_modifier = { modifier = "station_armor_replace_shield_decoy_5" days = 5 }
+				add_modifier = { modifier = "station_armor_replace_shield_decoy_6" days = 6 }
+				add_modifier = { modifier = "station_armor_replace_shield_decoy_7" days = 7 }
+				add_modifier = { modifier = "station_armor_replace_shield_decoy_8" days = 8 }
+				add_modifier = { modifier = "station_armor_replace_shield_decoy_9" days = 9 }
+				add_modifier = { modifier = "station_armor_replace_shield_decoy_10" days = 10 }
+				add_modifier = { modifier = "station_armor_replace_shield_decoy_11" days = 11 }
+				add_modifier = { modifier = "station_armor_replace_shield_decoy_12" days = 12 }
+				add_modifier = { modifier = "station_armor_replace_shield_decoy_13" days = 13 }
+				add_modifier = { modifier = "station_armor_replace_shield_decoy_14" days = 14 }
+				add_modifier = { modifier = "station_armor_replace_shield_decoy_15" days = 15 }
+				add_modifier = { modifier = "station_armor_replace_shield_decoy_16" days = 16 }
+				add_modifier = { modifier = "station_armor_replace_shield_decoy_17" days = 17 }
+				add_modifier = { modifier = "station_armor_replace_shield_decoy_18" days = 18 }
+				add_modifier = { modifier = "station_armor_replace_shield_decoy_19" days = 19 }
+				add_modifier = { modifier = "station_armor_replace_shield_decoy_20" days = 20 }
+				
+			}
+		}
+		else_if = {
+			limit = {
+				has_policy_flag = station_policy_armor
+				any_owned_ship = {
+					has_modifier = station_shield_replace_armor
+				}
+			}
+			every_owned_ship = {
+				remove_modifier = station_shield_replace_armor
+				remove_modifier = station_armor_replace_shield_decoy_1
+				remove_modifier = station_armor_replace_shield_decoy_2
+				remove_modifier = station_armor_replace_shield_decoy_3
+				remove_modifier = station_armor_replace_shield_decoy_4
+				remove_modifier = station_armor_replace_shield_decoy_5
+				remove_modifier = station_armor_replace_shield_decoy_6
+				remove_modifier = station_armor_replace_shield_decoy_7
+				remove_modifier = station_armor_replace_shield_decoy_8
+				remove_modifier = station_armor_replace_shield_decoy_9
+				remove_modifier = station_armor_replace_shield_decoy_10
+				remove_modifier = station_armor_replace_shield_decoy_11
+				remove_modifier = station_armor_replace_shield_decoy_12
+				remove_modifier = station_armor_replace_shield_decoy_13
+				remove_modifier = station_armor_replace_shield_decoy_14
+				remove_modifier = station_armor_replace_shield_decoy_15
+				remove_modifier = station_armor_replace_shield_decoy_16
+				remove_modifier = station_armor_replace_shield_decoy_17
+				remove_modifier = station_armor_replace_shield_decoy_18
+				remove_modifier = station_armor_replace_shield_decoy_19
+				remove_modifier = station_armor_replace_shield_decoy_20
+			}
+		}
+	}
+}
+
+# New station gets shield modifier
+ship_event = {
+	id = masc.5006
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		owner = {
+			has_policy_flag = station_policy_shield
+		}
+		NOT = {
+			has_modifier = station_shield_replace_armor
+		}
+		OR = {
+			is_ship_size = mining_station
+			is_ship_size = research_station
+			is_ship_size = observation_station
+		}
+		solar_system = {
+			NOR = {
+				is_star_class = sc_pulsar
+				is_star_class = sc_binary_1
+				any_planet = { 
+					is_planet_class = pc_pulsar
+				}
+			}
+		}
+	}
+
+	immediate = {
+		add_modifier = { modifier = station_shield_replace_armor }
+	}
+}
+
+# Upgraded station lose shield modifier
+ship_event = {
+	id = masc.5007
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_modifier = station_shield_replace_armor
+		owner = {
+			has_policy_flag = station_policy_armor
+		}
+	}
+
+	immediate = {
+		remove_modifier = station_shield_replace_armor
+		remove_modifier = station_armor_replace_shield_decoy_1
+		remove_modifier = station_armor_replace_shield_decoy_2
+		remove_modifier = station_armor_replace_shield_decoy_3
+		remove_modifier = station_armor_replace_shield_decoy_4
+		remove_modifier = station_armor_replace_shield_decoy_5
+		remove_modifier = station_armor_replace_shield_decoy_6
+		remove_modifier = station_armor_replace_shield_decoy_7
+		remove_modifier = station_armor_replace_shield_decoy_8
+		remove_modifier = station_armor_replace_shield_decoy_9
+		remove_modifier = station_armor_replace_shield_decoy_10
+		remove_modifier = station_armor_replace_shield_decoy_11
+		remove_modifier = station_armor_replace_shield_decoy_12
+		remove_modifier = station_armor_replace_shield_decoy_13
+		remove_modifier = station_armor_replace_shield_decoy_14
+		remove_modifier = station_armor_replace_shield_decoy_15
+		remove_modifier = station_armor_replace_shield_decoy_16
+		remove_modifier = station_armor_replace_shield_decoy_17
+		remove_modifier = station_armor_replace_shield_decoy_18
+		remove_modifier = station_armor_replace_shield_decoy_19
+		remove_modifier = station_armor_replace_shield_decoy_20
+	}
+}

@@ -1,0 +1,96 @@
+spriteTypes{
+	spriteType = {
+		name = "GFX_event_genetic_modification_testpng"
+		texturefile = "gfx/event_pictures/genetic_modification_testpng.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_masc_bio_armor"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_masc_bio_armor.png"
+	}
+	spriteType = {
+		name = "GFX_ship_part_masc_bio_shield"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_masc_bio_shield.png"
+	}
+	spriteType = {
+		name = "GFX_ship_part_masc_bio_booster"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_masc_bio_booster.png"
+	}
+	
+	spriteType = {
+		name = "GFX_ap_xeno_assimilability"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_xeno_compatibility.dds"
+		alwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_masc_dsb"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_masc_dsb.png"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_computer_strategic_basic"
+		texturefile = "gfx/interface/icons/ship_parts/computers/ship_part_computer_strategic_basic.png"
+	}
+	spriteType = {
+		name = "GFX_ship_part_computer_strategic_advanced"
+		texturefile = "gfx/interface/icons/ship_parts/computers/ship_part_computer_strategic_advanced.png"
+	}
+	spriteType = {
+		name = "GFX_ship_part_computer_strategic_sapient"
+		texturefile = "gfx/interface/icons/ship_parts/computers/ship_part_computer_neuron.png"
+	}
+	spriteType = {
+		name = "GFX_ship_part_computer_default_precog"
+		texturefile = "gfx/interface/icons/ship_parts/computers/ship_part_computer_pregoc.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_computer_default_sapient"
+		texturefile = "gfx/interface/icons/ship_parts/computers/ship_part_computer_sapient.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_aura_targeting_grid"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_aura_targeting_grid.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_aura_targeting_grid_blue"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_aura_targeting_grid_blue.png"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_computer_neuron"
+		texturefile = "gfx/interface/icons/ship_parts/computers/ship_part_computer_neuron.png"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_computer_artillery_neuron"
+		texturefile = "gfx/interface/icons/ship_parts/computers/ship_part_computer_role_artillery_neuron.png"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_computer_carrier_neuron"
+		texturefile = "gfx/interface/icons/ship_parts/computers/ship_part_computer_role_carrier_neuron.png"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_computer_line_neuron"
+		texturefile = "gfx/interface/icons/ship_parts/computers/ship_part_computer_role_line_neuron.png"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_computer_picket_neuron"
+		texturefile = "gfx/interface/icons/ship_parts/computers/ship_part_computer_role_picket_neuron.png"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_computer_platform_neuron"
+		texturefile = "gfx/interface/icons/ship_parts/computers/ship_part_computer_role_platform_neuron.png"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_computer_swarm_neuron"
+		texturefile = "gfx/interface/icons/ship_parts/computers/ship_part_computer_role_swarm_neuron.png"
+	}
+}
+
+

@@ -1,0 +1,89 @@
+
+@escort_monitor_collision_radius = 3
+@escort_monitor_formation_priority = 25
+
+@escort_monitor_hp = 1440
+@escort_monitor_evasion = 20
+@escort_monitor_build_time = 225
+
+@escort_monitor_upkeep_energy = 0.84
+@escort_monitor_upkeep_alloys = 0.28
+
+##################
+# ESCORT
+##################
+
+magnus__advanced_escort_monitor = {
+	#entity = "destroyer_entity"
+	
+	formation_priority = @escort_monitor_formation_priority
+	max_speed = 140
+	acceleration = 0.35
+	rotation_speed = 0.2
+	collision_radius = @escort_monitor_collision_radius
+	max_hitpoints = @escort_monitor_hp
+	modifier = {
+		ship_evasion_add = @escort_monitor_evasion
+		ship_piracy_suppression_add = 40 #8
+	}
+	ship_modifier = {
+	#	ship_ftl_jumpdrive_range_mult = 0.50
+	#	ship_windup_mult = -0.33333333333333333333333333333333
+	#	weapon_type_explosive_weapon_damage_mult = -0.5
+	#	weapon_type_explosive_weapon_fire_rate_mult = 1
+	#	weapon_type_point_defense_weapon_damage_mult = -0.5
+	#	weapon_type_point_defense_weapon_fire_rate_mult = 1
+	#	weapon_damage_mult = -0.5
+	#	weapon_fire_rate_mult = 1
+	}
+	size_multiplier = 4
+	fleet_slot_size = 4
+	#section_slots = { "bow" = { locator = "part1" } "stern" = { locator = "part2" }}
+	section_slots = { "bow" = { locator = "partcore" } }
+	num_target_locators = 4
+	icon_frame = 4
+	is_space_station = no
+	base_buildtime = @escort_monitor_build_time
+	can_have_federation_design = yes
+	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
+
+	default_behavior = masc_kite
+
+	#prerequisites = { "tech_destroyers" }
+
+	combat_disengage_chance = 1.25
+
+	class = shipclass_military
+	construction_type = starbase_shipyard
+	required_component_set = "power_core"
+	#required_component_set = "power_core_alt"
+	required_component_set = "ftl_components"
+	required_component_set = "thruster_components"
+	required_component_set = "sensor_components"
+	required_component_set = "combat_computers"
+
+	resources = {
+		category = ships
+		cost = {
+			trigger = {
+				from = {
+					has_technology = tech_masc_tbm_build_speed
+				}
+			}
+			volatile_motes = -20
+			exotic_gases = -20
+			rare_crystals = -20
+		}
+		upkeep = {
+			energy = @escort_monitor_upkeep_energy
+			alloys = @escort_monitor_upkeep_alloys
+		}
+	}
+	min_upgrade_cost = {
+		alloys = 3
+	}
+
+	potential_country = {
+		has_civic = civic_masc_the_masc
+	}
+}

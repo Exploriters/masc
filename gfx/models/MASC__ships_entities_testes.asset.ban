@@ -1,0 +1,259 @@
+
+entity = {
+	name = "mammalian_01_masc_military_station_large_test_entity"
+	pdxmesh = "mammalian_01_masc_military_station_large_mesh"
+
+	attach = { part1	= "mammalian_01_military_station_section_heavy_entity" }
+	attach = { part2	= "mammalian_01_military_station_section_heavy_entity" }
+	attach = { part3	= "mammalian_01_military_station_section_heavy_entity" }
+	attach = { part4	= "mammalian_01_military_station_section_heavy_entity" }
+	attach = { part5	= "mammalian_01_military_station_section_heavy_entity" }
+	attach = { part6	= "mammalian_01_military_station_section_heavy_entity" }
+	attach = { part7	= "mammalian_01_military_station_section_heavy_entity" }
+	attach = { part8	= "mammalian_01_military_station_section_heavy_entity" }
+
+	cull_radius = 1000
+	scale = 1.2
+}
+
+entity = {
+	name = "mammalian_01_masc_military_station_large_construction_entity"
+	pdxmesh = "mammalian_01_masc_military_station_large_mesh"
+		default_state = "idle"
+		state = { name = "idle" state_time = 5
+			event = { trigger_once = yes sound = { soundeffect = "place_construction" } }
+		}
+
+	attach = { part1	= "mammalian_01_military_station_section_heavy_entity" }
+	attach = { part2	= "mammalian_01_military_station_section_heavy_entity" }
+	attach = { part3	= "mammalian_01_military_station_section_heavy_entity" }
+	attach = { part4	= "mammalian_01_military_station_section_heavy_entity" }
+	attach = { part5	= "mammalian_01_military_station_section_heavy_entity" }
+	attach = { part6	= "mammalian_01_military_station_section_heavy_entity" }
+	attach = { part7	= "mammalian_01_military_station_section_heavy_entity" }
+	attach = { part8	= "mammalian_01_military_station_section_heavy_entity" }
+	scale = 1.2
+	cull_radius = 1000
+}
+
+entity = {
+	name = "humanoid_01_masc_military_station_large_test_entity"
+	pdxmesh = "humanoid_01_masc_military_station_large_mesh"
+
+	attach = { part1	= "humanoid_01_military_station_section_heavy_entity" }
+	attach = { part2	= "humanoid_01_military_station_section_heavy_entity" }
+	attach = { part3	= "humanoid_01_military_station_section_heavy_entity" }
+	attach = { part4	= "humanoid_01_military_station_section_heavy_entity" }
+	attach = { part5	= "humanoid_01_military_station_section_heavy_entity" }
+	attach = { part6	= "humanoid_01_military_station_section_heavy_entity" }
+	attach = { part7	= "humanoid_01_military_station_section_heavy_entity" }
+	attach = { part8	= "humanoid_01_military_station_section_heavy_entity" }
+
+	cull_radius = 1000
+	scale = 1.2
+}
+
+entity = {
+	name = "humanoid_01_masc_military_station_large_construction_entity"
+	pdxmesh = "humanoid_01_masc_military_station_large_mesh"	
+		default_state = "idle"
+		state = { name = "idle" state_time = 5
+			event = { trigger_once = yes sound = { soundeffect = "place_construction" } }
+		}
+	
+	attach = { part1	= "humanoid_01_military_station_section_heavy_entity" }
+	attach = { part2	= "humanoid_01_military_station_section_heavy_entity" }
+	attach = { part3	= "humanoid_01_military_station_section_heavy_entity" }
+	attach = { part4	= "humanoid_01_military_station_section_heavy_entity" }
+	attach = { part5	= "humanoid_01_military_station_section_heavy_entity" }
+	attach = { part6	= "humanoid_01_military_station_section_heavy_entity" }
+	attach = { part7	= "humanoid_01_military_station_section_heavy_entity" }
+	attach = { part8	= "humanoid_01_military_station_section_heavy_entity" }
+	scale = 1.2
+	cull_radius = 1000
+}
+
+entity = {
+	name = "avian_01_masc_military_station_large_test_entity"
+	pdxmesh = "avian_01_masc_military_station_large_mesh"
+
+	attach = { part1	= "avian_01_military_station_section_heavy_entity" }
+	attach = { part2	= "avian_01_military_station_section_heavy_entity" }
+	attach = { part3	= "avian_01_military_station_section_heavy_entity" }
+	attach = { part4	= "avian_01_military_station_section_heavy_entity" }
+	attach = { part5	= "avian_01_military_station_section_heavy_entity" }
+	attach = { part6	= "avian_01_military_station_section_heavy_entity" }
+	attach = { part7	= "avian_01_military_station_section_heavy_entity" }
+	attach = { part8	= "avian_01_military_station_section_heavy_entity" }
+
+	cull_radius = 1000
+	scale = 1.00
+}
+
+entity = {
+	name = "avian_01_masc_military_station_large_construction_entity"
+	pdxmesh = "avian_01_masc_military_station_large_mesh"	
+		default_state = "idle"
+		state = { name = "idle" state_time = 5
+			event = { trigger_once = yes sound = { soundeffect = "place_construction" } }
+		}
+	
+	attach = { part1	= "avian_01_military_station_section_heavy_entity" }
+	attach = { part2	= "avian_01_military_station_section_heavy_entity" }
+	attach = { part3	= "avian_01_military_station_section_heavy_entity" }
+	attach = { part4	= "avian_01_military_station_section_heavy_entity" }
+	attach = { part5	= "avian_01_military_station_section_heavy_entity" }
+	attach = { part6	= "avian_01_military_station_section_heavy_entity" }
+	attach = { part7	= "avian_01_military_station_section_heavy_entity" }
+	attach = { part8	= "avian_01_military_station_section_heavy_entity" }
+	scale = 1.2
+	cull_radius = 1000
+}
+
+entity = {
+	name = "fungoid_01_masc_military_station_large_test_entity"
+	pdxmesh = "fungoid_01_masc_military_station_large_mesh"
+
+	attach = { part1	= "fungoid_01_military_station_section_light_entity" }
+	attach = { part2	= "fungoid_01_military_station_section_heavy_entity" }
+	attach = { part3	= "fungoid_01_military_station_section_heavy_entity" }
+	attach = { part4	= "fungoid_01_military_station_section_medium_entity" }
+	attach = { part5	= "fungoid_01_military_station_section_heavy_entity" }
+	attach = { part6	= "fungoid_01_military_station_section_light_entity" }
+	attach = { part7	= "fungoid_01_military_station_section_heavy_entity" }
+	attach = { part8	= "fungoid_01_military_station_section_heavy_entity" }
+
+	cull_radius = 1000
+	scale = 1.00
+}
+
+entity = {
+	name = "fungoid_01_masc_military_station_large_construction_entity"
+	pdxmesh = "fungoid_01_masc_military_station_large_mesh"	
+		default_state = "idle"
+		state = { name = "idle" state_time = 5
+			event = { trigger_once = yes sound = { soundeffect = "place_construction" } }
+		}
+	
+	attach = { part1	= "fungoid_01_military_station_section_heavy_entity" }
+	attach = { part2	= "fungoid_01_military_station_section_heavy_entity" }
+	attach = { part3	= "fungoid_01_military_station_section_heavy_entity" }
+	attach = { part4	= "fungoid_01_military_station_section_heavy_entity" }
+	attach = { part5	= "fungoid_01_military_station_section_heavy_entity" }
+	attach = { part6	= "fungoid_01_military_station_section_heavy_entity" }
+	attach = { part7	= "fungoid_01_military_station_section_heavy_entity" }
+	attach = { part8	= "fungoid_01_military_station_section_heavy_entity" }
+	scale = 1.2
+}
+
+entity = {
+	name = "molluscoid_01_masc_military_station_large_test_entity"
+	pdxmesh = "molluscoid_01_masc_military_station_large_mesh"
+
+	attach = { part1	= "molluscoid_01_military_station_section_heavy_entity" }
+	attach = { part2	= "molluscoid_01_military_station_section_heavy_entity" }
+	attach = { part3	= "molluscoid_01_military_station_section_heavy_entity" }
+	attach = { part4	= "molluscoid_01_military_station_section_heavy_entity" }
+	attach = { part5	= "molluscoid_01_military_station_section_heavy_entity" }
+	attach = { part6	= "molluscoid_01_military_station_section_heavy_entity" }
+	attach = { part7	= "molluscoid_01_military_station_section_heavy_entity" }
+	attach = { part8	= "molluscoid_01_military_station_section_heavy_entity" }
+
+	cull_radius = 1000
+	scale = 0.9
+}
+
+entity = {
+	name = "molluscoid_01_masc_military_station_large_construction_entity"
+	pdxmesh = "molluscoid_01_masc_military_station_large_mesh"	
+		default_state = "idle"
+		state = { name = "idle" state_time = 5
+			event = { trigger_once = yes sound = { soundeffect = "place_construction" } }
+		}
+	
+	attach = { part1	= "molluscoid_01_military_station_section_heavy_entity" }
+	attach = { part2	= "molluscoid_01_military_station_section_heavy_entity" }
+	attach = { part3	= "molluscoid_01_military_station_section_heavy_entity" }
+	attach = { part4	= "molluscoid_01_military_station_section_heavy_entity" }
+	attach = { part5	= "molluscoid_01_military_station_section_heavy_entity" }
+	attach = { part6	= "molluscoid_01_military_station_section_heavy_entity" }
+	attach = { part7	= "molluscoid_01_military_station_section_heavy_entity" }
+	attach = { part8	= "molluscoid_01_military_station_section_heavy_entity" }
+	
+	scale = 1.0
+	cull_radius = 1000
+}
+
+entity = {
+	name = "arthropoid_01_masc_military_station_large_test_entity"
+	pdxmesh = "arthropoid_01_masc_military_station_large_mesh"
+
+	attach = { part1	= "arthropoid_01_military_station_section_heavy_entity" }
+	attach = { part2	= "arthropoid_01_military_station_section_heavy_entity" }
+	attach = { part3	= "arthropoid_01_military_station_section_heavy_entity" }
+	attach = { part4	= "arthropoid_01_military_station_section_heavy_entity" }
+	attach = { part5	= "arthropoid_01_military_station_section_heavy_entity" }
+	attach = { part6	= "arthropoid_01_military_station_section_heavy_entity" }
+	attach = { part7	= "arthropoid_01_military_station_section_heavy_entity" }
+	attach = { part8	= "arthropoid_01_military_station_section_heavy_entity" }
+
+	cull_radius = 1000
+	scale = 1.25
+}
+
+entity = {
+	name = "arthropoid_01_masc_military_station_large_construction_entity"
+	pdxmesh = "arthropoid_01_masc_military_station_large_mesh"	
+		default_state = "idle"
+		state = { name = "idle" state_time = 5
+			event = { trigger_once = yes sound = { soundeffect = "place_construction" } }
+		}
+	
+	attach = { part1	= "arthropoid_01_military_station_section_heavy_entity" }
+	attach = { part2	= "arthropoid_01_military_station_section_heavy_entity" }
+	attach = { part3	= "arthropoid_01_military_station_section_heavy_entity" }
+	attach = { part4	= "arthropoid_01_military_station_section_heavy_entity" }
+	attach = { part5	= "arthropoid_01_military_station_section_heavy_entity" }
+	attach = { part6	= "arthropoid_01_military_station_section_heavy_entity" }
+	attach = { part7	= "arthropoid_01_military_station_section_heavy_entity" }
+	attach = { part8	= "arthropoid_01_military_station_section_heavy_entity" }
+	scale = 1.25
+	cull_radius = 1000
+}
+
+entity = {
+	name = "plantoid_01_masc_military_station_large_test_entity"
+	pdxmesh = "plantoid_01_masc_military_station_large_mesh"
+
+	attach = { part1	= "plantoid_01_military_station_section_heavy_entity" }
+	attach = { part2	= "plantoid_01_military_station_section_heavy_entity" }
+	attach = { part3	= "plantoid_01_military_station_section_heavy_entity" }
+	attach = { part4	= "plantoid_01_military_station_section_heavy_entity" }
+	attach = { part5	= "plantoid_01_military_station_section_heavy_entity" }
+	attach = { part6	= "plantoid_01_military_station_section_heavy_entity" }
+	attach = { part7	= "plantoid_01_military_station_section_heavy_entity" }
+	attach = { part8	= "plantoid_01_military_station_section_heavy_entity" }
+
+	cull_radius = 1000
+	scale = 1.25
+}
+
+entity = {
+	name = "plantoid_01_masc_military_station_large_construction_entity"
+	pdxmesh = "plantoid_01_masc_military_station_large_mesh"
+		default_state = "idle"
+		state = { name = "idle" state_time = 5
+			event = { trigger_once = yes sound = { soundeffect = "place_construction" } }
+		}
+	
+	attach = { part1	= "plantoid_01_military_station_section_heavy_entity" }
+	attach = { part2	= "plantoid_01_military_station_section_heavy_entity" }
+	attach = { part3	= "plantoid_01_military_station_section_heavy_entity" }
+	attach = { part4	= "plantoid_01_military_station_section_heavy_entity" }
+	attach = { part5	= "plantoid_01_military_station_section_heavy_entity" }
+	attach = { part6	= "plantoid_01_military_station_section_heavy_entity" }
+	attach = { part7	= "plantoid_01_military_station_section_heavy_entity" }
+	attach = { part8	= "plantoid_01_military_station_section_heavy_entity" }
+	scale = 1.25
+	cull_radius = 1000
+}

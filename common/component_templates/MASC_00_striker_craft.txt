@@ -1,0 +1,56 @@
+
+### Strike Craft
+
+strike_craft_component_template = {
+	key = "BIOMIND_STRIKE_CRAFT"
+	size = LARGE
+	entity = "bomber_entity"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 192
+		}
+		upkeep = {
+			energy = 1.92
+			alloys = 0.384
+		}
+	}
+	power = -90
+	hidden = no
+
+	count = 10
+	regeneration_per_day = 1
+	launch_time = 1.5
+
+	damage = { min = 1 max = 20 }
+	cooldown = 2.3
+	range = 20
+	engagement_range = 100
+	accuracy = 1.0
+	tracking = 1.0
+
+	health = 33
+	armor = 33
+	shield = 33
+	evasion = 0.95
+
+	speed = 700
+	rotation_speed = 1.0
+	acceleration = 1.0
+
+	shield_damage = 1.0
+	shield_penetration = 1.0
+	armor_damage = 1.0
+	armor_penetration = 1.0
+
+	ship_behavior = "fighters_behavior"
+
+	weapon_type = point_defence
+	projectile_gfx = "flak_pd_3"
+
+	component_set = "BIOMIND_STRIKE_CRAFT"
+	icon = "GFX_ship_part_strike_craft_fighter_1"
+	icon_frame = 1
+	tags = { weapon_type_strike_craft }
+	prerequisites = { "masc_critters_bioweapon" }
+}

@@ -1,0 +1,64 @@
+﻿l_simp_chinese:
+
+ pc_habitat_mascpreview:0 "$pc_habitat$"
+ pc_habitat_mascpreview_desc:0 "$pc_habitat_desc$"
+ pc_habitat_mascpreview_tile:0 "$pc_habitat_tile$"
+ pc_habitat_mascpreview_tile_desc:0 "$pc_habitat_tile_desc$"
+   
+ d_masc_arcane_core:0 "先驱者居住站核心"
+ d_masc_arcane_core_desc:0 "这个高度自动化的大型轨道居住站是这个文明的先驱者们留下的遗珍，如今已经无人知晓这个复杂系统究竟是如何运作的。"
+
+ ring_world_mascirreparable:0 "大灾变残骸"
+ ring_world_mascirreparable_DESC:0 "一场大到足以撼动整个星系的爆炸发生在此处。无论这上面曾经有过多么辉煌的文化，都已经灰飞烟灭了。"
+ ring_world_mascirreparable_MEGASTRUCTURE_DETAILS:0 "$ring_world_mascirreparable_DESC$"
+ 
+ matter_decompressor_mascirreparable:0 "结冰的物质解压器"
+ matter_decompressor_mascirreparable_DESC:0 "一座破损严重的轨道空间站，曾经从该星系的黑洞中回收物质，但现在已经毁坏到无可救药，里面也被填满了冰晶。"
+ matter_decompressor_mascirreparable_MEGASTRUCTURE_DETAILS:0 "$matter_decompressor_mascirreparable_DESC$"
+ 
+ pc_ringworld_masc_irreparable_damaged:0 "$pc_ringworld_seam$"
+ pc_ringworld_masc_irreparable_damaged_desc:0 "一个绕日公转的巨大的环状人造星体。\n\n$ring_world_mascirreparable_DESC$"
+ 
+ building_hab_system_capital_masc_srvd_origin:0 "破碎之环瞭望站控制中心"
+ building_hab_system_capital_masc_srvd_origin_desc:0 "由先驱者留下的宏伟遗产，一座高效运转的复杂官僚机构。没有人知道在大灾变发生时住在其中的建造者去了哪里，但至少这座居住站对入驻者没有丝毫的反抗——正相反，这个系统的设施易于操作，而且十分耐用。"
+ 
+ decision_fix_srvd_hab_capital:0 "修复破碎之环居住站控制中心"
+ decision_fix_srvd_hab_capital_desc:0 "这座遗珍居住站上的先进居住站已经被摧毁了，但幸运的是我们仍然能将其修复到原来的状态。"
+ decision_fix_srvd_hab_capital_effects_short:0 "修复轨道居住站上被摧毁的§Y$building_hab_system_capital_masc_srvd_origin$§!"
+ 
+ d_masc_decrepit_tunnels_1:0 "£blocker£ 岩土废墟"
+ d_masc_decrepit_tunnels_1_desc:0 "一大片被岩土掩埋了的区域，作为早期的难民殖民据点。大量缺乏整理的杂物阻碍了对整体区块的利用。"
+ d_masc_decrepit_tunnels_2:0 "$d_masc_decrepit_tunnels_1$"
+ d_masc_decrepit_tunnels_2_desc:0 "$d_masc_decrepit_tunnels_1_desc$"
+ d_masc_decrepit_tunnels_3:0 "$d_masc_decrepit_tunnels_1$"
+ d_masc_decrepit_tunnels_3_desc:0 "$d_masc_decrepit_tunnels_1_desc$"
+ 
+ requires_masc_shattered_ring_void_dweller_system:0 "需要殁环余孤母星"
+ sm_black_hole_observatory_masc_sov:0 "黑洞文化瞭望站"
+ sm_black_hole_observatory_masc_sov_desc:0 "通过一个观测黑洞外沿的特化科研设施，我们得以了解帝国在大灾变前的历史及文化，从而启发我们的社会学研究进展。\n"
+ 
+ masc_unity_of_lucky:0 "$masc_unity_of_lucky_name_owner$"
+ masc_unity_of_lucky_name_owner:0 "好运符"
+ masc_unity_of_lucky_tooltip:0 "生产：£unity£20"
+ masc_unity_of_lucky_name_non_owner:0 "冰晶研究设施"
+ masc_unity_of_lucky_desc:0 "$masc_unity_of_lucky_desc_owner$"
+ masc_unity_of_lucky_desc_owner:0 "在大灾变发生前，环世界的原住民还不曾知道外环小行星带的存在。当所有生还者的情绪都从紧张的疏散中缓解下来时，这颗巨大的冰块才逐渐地进入了每个人的认知。\n\n随着时间的流逝，居住站中的人们获得了对这颗小行星的好感，作为填补虚空的一剂慰藉，在漫长的时间内形成了独特的文化。"
+ masc_unity_of_lucky_desc_non_owner:0 "当地的原住民似乎对他们星系中的小行星带有一种我们并不了解的崇拜文化。无论如何，这颗怎么看上去都没有任何异常的大冰块上有许多科研设施。"
+ 
+ trait_masc_ringworld_habitat:0 "殁环余孤"
+ trait_masc_ringworld_habitat_desc:0 "§L一场可怕的灾难在近期毁灭了他们的环世界母星，这些仅存的生还者被迫在虚空中度过了近百年的时光。§!"
+ trait_masc_ringworld_habitat_tooltip:0 "§G§Y$pc_ringworld_habitable$§!和§Y$pc_habitat$§!始终100%宜居§!\n$MOD_ARMY_MORALE$: §G+15%§!\n$MOD_POP_HOUSING_USAGE_MULT$: §R+5%§!"
+ 
+ trait_extremely_nonadaptive:0 "极不适应"
+ trait_extremely_nonadaptive_desc:0 "成功研究£society£ §H$tech_gene_tailoring$§!后该特质可被移除。\n§L由于长期处于人造环境中，这个物种在自然的行星上极为脆弱，几乎难以适应任何陌生的环境。§!"
+ trait_extremely_nonadaptive_tooltip:0 "$MOD_POP_ENVIRONMENT_TOLERANCE$: §R-20%§!\n$MOD_POP_HOUSING_USAGE_MULT$: §R+10%§!\n§R不兼容高级特质§!"
+ 
+ shattered_ring_system_void_dweller_start_NAME:0 "殁环余孤"
+ shattered_ring_system_void_dweller_start_DESC:0 "这将是选择殁环余孤起源时的起始恒星系。"
+ 
+ masc_origin_ringworld_void_dwellers:0 "殁环余孤"
+ masc_origin_ringworld_void_dwellers_desc:0 "这一文明原先生活在先驱们建造的环形世界之中，直到大灾变的发生迫使剩余的生还者们被疏散至轨道居住站上。一经理解及修复完好，他们将获得巨大的力量。"
+ masc_origin_tooltip_ringworld_void_dwellers_effects:0 "-游戏开始时以一个§Y$pc_habitat$§!作为母星，位于一个部分损毁的§Y$pc_ringworld_habitable$§!上，并有建造更多居住站所需的科技\n-母星星系的恒星是一个§Y$pc_black_hole$§!，阻碍舰船的紧急超光速逃离能力\n-你的物种有大幅的宜居性惩罚和住房占用惩罚，且§R不确保宜居星球的生成§!\n-你的物种$ARMIES$士气提升§G15%§!"
+ 
+ START_SCREEN_SRVD:0 "自有历史的数千年以来，[GetSpeciesName]是这片环世界的原住民，繁衍生息千秋万代。然而在数百年前，一场难以置信的巨大灾变摧毁了环世界的大部分，甚至摧毁了我们的恒星，罹难者不计其数。我们作为极少数有幸生还的殁环余孤，从这片废墟当中逃离，建立了位于虚空中的家园——[GetHomeWorldName]。\n\n这场灾难几乎摧毁了我们文明的全部，也使我们遗忘了我们的人民是如何来到这片环型世界的，但在艰苦的磨难中，我们最终站了起来。\n\n我们的文明茁壮成长，如今已准备好探索星海——无论是初次，还是又一次如此。尽管我们已有了长足的进步，然而想要理解并修复我们的家园，仍然还有很长的路要走。"
+ 

@@ -1,0 +1,88 @@
+#########
+## Wet ##
+#########
+
+terraform_link = {
+	from = "pc_ringworld_tech"
+	to = "pc_ringworld_habitable"
+	
+	energy = 40000
+	duration = 3600
+	
+	condition = {
+		always = no
+		has_technology = "tech_terrestrial_sculpting"
+		has_technology = tech_climate_restoration
+		has_origin = masc_origin_ringworld_void_dwellers
+	}
+	
+	potential = {
+		always = no
+		solar_system = {
+			has_star_flag = masc_shattered_ring_void_dweller_system
+		}
+	}
+
+	effect = {
+		#set_country_flag = has_built_or_repaired_megastructure
+		country_event = { id = utopia.2017 }
+		from = {
+		#	reroll_deposits = yes
+		#	clear_blockers = yes
+			set_planet_entity = {
+				entity = "ringworld_habitable_entity"
+				graphical_culture = root
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 1000
+		}
+	}
+}
+
+
+terraform_link = {
+	from = "pc_ringworld_seam"
+	to = "pc_ringworld_habitable"
+	
+	energy = 40000
+	duration = 3600
+	
+	condition = {
+		always = no
+		has_technology = "tech_terrestrial_sculpting"
+		has_technology = tech_climate_restoration
+		has_origin = masc_origin_ringworld_void_dwellers
+	}
+	
+	potential = {
+		always = no
+		solar_system = {
+			has_star_flag = masc_shattered_ring_void_dweller_system
+		}
+	}
+
+	effect = {
+		#set_country_flag = has_built_or_repaired_megastructure
+		country_event = { id = utopia.2017 }
+		from = {
+		#	reroll_deposits = yes
+		#	clear_blockers = yes
+			set_planet_entity = {
+				entity = "ringworld_habitable_entity"
+				graphical_culture = root
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 1000
+		}
+	}
+}

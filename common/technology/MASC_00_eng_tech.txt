@@ -1,0 +1,353 @@
+
+tech_masc_bomber_weapon_1 = {
+	area = society
+	cost = @tier3cost1
+	tier = 2
+	category = { military_theory }
+	ai_update_type = military
+	weight = 0
+	prerequisites = { "tech_flak_batteries_1" "tech_pd_tracking_1" }
+	is_reverse_engineerable = no
+	
+	weight_modifier = {
+	}
+	
+	ai_weight = {
+		factor = 2		#weapons are good
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_military_theory"
+			}
+		}
+	}
+}
+
+tech_masc_bomber_weapon_2 = {
+	area = engineering
+	cost = @tier3cost1
+	tier = 3
+	category = { propulsion }
+	ai_update_type = military	
+	prerequisites = { "tech_masc_bomber_weapon_1" "tech_flak_batteries_2" "tech_pd_tracking_2" }
+	weight = @tier3weight1
+	is_reverse_engineerable = no
+	icon = tech_energy_torpedoes_1
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_propulsion"
+			}
+		}	
+	}
+	
+	ai_weight = {
+		factor = 2		#weapons are good
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_propulsion"
+			}
+		}
+	}
+}
+
+tech_masc_bomber_weapon_3 = {
+	area = engineering
+	cost = @tier4cost2
+	tier = 4
+	category = { propulsion }
+	ai_update_type = military	
+	prerequisites = { "tech_masc_bomber_weapon_2" "tech_flak_batteries_3" "tech_pd_tracking_3" }
+	weight = @tier4weight2
+	is_reverse_engineerable = no
+	icon = tech_energy_torpedoes_2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_propulsion"
+			}
+		}	
+	}
+	
+	ai_weight = {
+		factor = 2		#weapons are good
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_propulsion"
+			}
+		}
+	}
+}
+
+tech_space_defense_station_starfortress = {
+	cost = @tier4cost1
+	area = engineering
+	tier = 4
+	category = { voidcraft }
+	prerequisites = { "tech_cruisers" "tech_space_defense_station_1" }
+	weight = 0
+	#icon = "gfx/interface/icons/technologies/tech_space_defense_station_3"
+	is_reverse_engineerable = no
+
+	gateway = ship
+
+	## unlock starfortress
+	prereqfor_desc = {
+		ship = {
+			title = "TECH_UNLOCK_STARFORTRESS_TITLE"
+			desc = "TECH_UNLOCK_STARFORTRESS_CONSTRUCTION_DESC"
+		}
+	}
+
+	modifier = {
+	}
+
+	weight_modifier = {
+	}
+
+	ai_weight = {
+		factor = 100 #higher factor due to cruiser hull
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+#tech_masc_tbms = {
+#	cost = 0
+#	area = engineering
+#	start_tech = yes
+#	category = { voidcraft }
+#	prerequisites = { }
+#	tier = 0
+#
+#	prereqfor_desc = {
+#		#ship = {
+#		#	title = "TECH_UNLOCK_OUTPOST_CONSTRUCTION_TITLE"
+#		#	desc = "TECH_UNLOCK_OUTPOST_CONSTRUCTION_DESC"
+#		#}
+#	}
+#	
+#	potential = {
+#		always = no
+#		has_civic = civic_masc_the_masc
+#	}
+#}
+
+tech_masc_tbm_build_speed = {
+	cost = @tier3cost2
+	area = engineering
+	tier = 3
+	category = { voidcraft }
+	#prerequisites = { "tech_masc_tbms" }
+	weight = @tier3weight2
+	icon = tech_cruiser_build_speed
+
+	modifier = {
+		shipsize_magnus__advanced_escort_monitor_build_speed_mult = 0.25
+		#shipsize_magnus__advanced_escort_monitor_cost_mult = -0.05
+	}
+
+	prereqfor_desc = {
+		custom = {
+			title = "TECH_ESCORT_MONITOR_NO_RARE_COSTS_TITLE"
+			desc = "TECH_ESCORT_MONITOR_NO_RARE_COSTS_DESC"
+		}
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	potential = {
+		has_civic = civic_masc_the_masc
+	}
+}
+
+tech_masc_tbm_hull_1 = {
+	cost = @tier3cost3
+	area = engineering
+	tier = 3
+	category = { voidcraft }
+	#prerequisites = { "tech_masc_tbms" }
+	weight = @tier3weight3
+	is_rare = no
+	icon = tech_cruiser_hull_1
+
+	modifier = {
+		shipsize_magnus__advanced_escort_monitor_hull_add = 210
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_supremacy_adopt
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = 3 # ship upgrades are supposed to be good!
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	potential = {
+		has_civic = civic_masc_the_masc
+	}
+}
+
+tech_masc_tbm_hull_2 = {
+	cost = @tier4cost1
+	area = engineering
+	tier = 4
+	is_rare = yes
+	category = { voidcraft }
+	prerequisites = { "tech_masc_tbm_hull_1" }
+	weight = @tier4weight1
+	icon = tech_cruiser_hull_2
+
+	modifier = {
+		shipsize_magnus__advanced_escort_monitor_hull_add = 350
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0.25
+			NOR = {
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_curator"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_spark_of_genius"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_expertise_voidcraft"
+				}
+			}
+		}
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = tech_masc_tbm_hull_2 }
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_supremacy_adopt
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = 3 # ship upgrades are supposed to be good!
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	potential = {
+		has_civic = civic_masc_the_masc
+	}
+}

@@ -1,0 +1,229 @@
+
+d_nothingnothingnothing = {
+	resources = {
+	}
+	is_for_colonizeable = no
+	potential = { always = no }
+	drop_weight = { weight = 0 }
+}
+
+d_masc_ringhole = {
+	resources = {
+		category = orbital_mining_deposits
+		produces = {
+			energy = 40
+			minerals = 40
+			alloys = 10
+			consumer_goods = 20
+		}
+		produces = {
+			trigger = {
+				solar_system = {
+					exists = owner
+					owner = {
+						has_origin = masc_origin_ringworld_void_dwellers
+						is_gestalt = yes
+					}
+				}
+			}
+			alloys = 10
+			consumer_goods = -20
+		}
+	}
+	station = shipclass_mining_station
+	drop_weight = { weight = 0 }
+}
+
+d_irreparable_exploited = {
+	resources = {
+		category = orbital_research_deposits
+		produces = {
+			#trigger = {
+			#	any_moon = {
+			#		is_planet_class = pc_habitat
+			#	}
+			#}
+			society_research = 20
+		}
+	}
+	station = shipclass_research_station
+	drop_weight = { weight = 0 }
+}
+
+d_unity_deposit_20_mascsrvd = {
+	resources = {
+		category = orbital_research_deposits
+		produces = {
+			trigger = {
+				solar_system = {
+					exists = owner
+					owner = {
+						has_origin = masc_origin_ringworld_void_dwellers
+					}
+				}
+			}
+			unity = 20
+		}
+	}
+	station = shipclass_research_station
+	drop_weight = { weight = 0 }
+}
+
+d_masc_arcane_core = {
+	is_for_colonizeable = yes
+	icon = "d_station_reactor"
+	category = deposit_cat_rare
+
+	potential = { always = no }
+
+	resources = {
+		category = planet_deposits
+		produces = {
+			trigger = {
+			exists = owner
+				owner = {
+					has_origin = masc_origin_ringworld_void_dwellers
+				}
+			}
+			#energy = 48
+			#minerals = 45
+			#alloys = 15
+			#consumer_goods = 30
+			food = 40
+			#sr_explorite = 2
+		}
+	}
+	
+	#triggered_planet_modifier = { potential = {NOR = { 
+	#		has_deposit = d_masc_decrepit_tunnels_1 
+	#		has_deposit = d_masc_decrepit_tunnels_2 
+	#		has_deposit = d_masc_decrepit_tunnels_3 
+	#	}}
+	#	modifier = { planet_jobs_unity_produces_mult = 0 }}
+
+	triggered_planet_modifier = { potential = {NOT = { has_deposit = d_masc_decrepit_tunnels_1 }}
+		modifier = { planet_max_buildings_add = 1 }}
+	triggered_planet_modifier = { potential = {NOT = { has_deposit = d_masc_decrepit_tunnels_2 }}
+		modifier = { planet_max_buildings_add = 1 }}
+	triggered_planet_modifier = { potential = {NOT = { has_deposit = d_masc_decrepit_tunnels_3 }}
+		modifier = { planet_max_buildings_add = 1 }}
+	
+	planet_modifier = {		
+		planet_max_buildings_add = 0
+		pop_housing_usage_mult = -0.775
+		pop_happiness = 0.15
+		
+	#	planet_amenities_add = 0
+		
+	#	pop_growth_speed = 0.15
+		
+	#	planet_jobs_minerals_produces_mult = 0#1.85
+	#	planet_jobs_worker_produces_mult = 0
+		
+	#	pop_cat_ruler_happiness = 0
+	#	pop_cat_specialist_happiness = 0
+	#	pop_cat_worker_happiness = 0
+	}
+}
+
+
+d_masc_decrepit_tunnels_1 = {
+	is_for_colonizeable = yes
+	icon = "d_mining_tunnels"
+	category = deposit_cat_blockers
+	time = 360
+
+	potential = { always = no }
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_lithoid_empire = no } 
+		}
+		modifier = { job_farmer_add = 0 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_lithoid_empire = yes } 
+		}
+		modifier = { job_miner_add = 0 }
+	}
+
+	resources = { category = deposit_blockers
+		cost = { energy = 5000 }}
+
+	planet_modifier = { 
+		planet_max_buildings_add = 0
+		planet_max_districts_add = -2
+	}
+
+	on_cleared = { owner = { add_resource = {
+				volatile_motes = 250
+	}}}
+	
+	can_be_cleared = {
+		exists = owner
+		owner = {
+			has_technology = tech_habitat_3
+		}
+	}
+
+	prerequisites = { }
+}
+
+d_masc_decrepit_tunnels_2 = {
+	is_for_colonizeable = yes
+	icon = "d_mining_tunnels"
+	category = deposit_cat_blockers
+	time = 360
+
+	potential = { always = no }
+	
+	resources = { category = deposit_blockers
+		cost = { energy = 5000 }}
+
+	planet_modifier = { 
+		planet_max_buildings_add = 0
+		planet_max_districts_add = -2
+	}
+
+	on_cleared = { owner = { add_resource = {
+				exotic_gases = 250
+	}}}
+	
+	can_be_cleared = {
+		exists = owner
+		owner = {
+			has_technology = tech_habitat_3
+		}
+	}
+}
+
+d_masc_decrepit_tunnels_3 = {
+	is_for_colonizeable = yes
+	icon = "d_mining_tunnels"
+	category = deposit_cat_blockers
+	time = 360
+
+	potential = { always = no }
+
+	resources = { category = deposit_blockers
+		cost = { energy = 5000 }}
+
+	planet_modifier = { 
+		planet_max_buildings_add = 0
+		planet_max_districts_add = -2
+	}
+
+	on_cleared = { owner = { add_resource = {
+				rare_crystals = 250
+	}}}
+	
+	can_be_cleared = {
+		exists = owner
+		owner = {
+			has_technology = tech_habitat_3
+		}
+	}
+}

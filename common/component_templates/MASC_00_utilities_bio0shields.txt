@@ -1,0 +1,134 @@
+# Icons set here are the ones show in the actual slot. The reason is so that we can support different icons for different sizes. 
+
+
+@MASC_bioshield_S7 = 240
+@MASC_bioshield_M7 = 600
+@MASC_bioshield_L7 = 1440
+
+@MASC_regen_S7 = 2.40
+@MASC_regen_M7 = 6.00
+@MASC_regen_L7 = 14.40
+
+@MASC_power_S7 = -75
+@MASC_power_M7 = -150
+@MASC_power_L7 = -300
+
+@MASC_bioshield_s_t7_cost = 21 #27
+@MASC_bioshield_s_t7_upkeep_energy = 0.21
+@MASC_bioshield_s_t7_upkeep_alloys = 0.042
+
+@MASC_bioshield_m_t7_cost = 38
+@MASC_bioshield_m_t7_upkeep_energy = 0.38
+@MASC_bioshield_m_t7_upkeep_alloys = 0.076
+
+@MASC_bioshield_l_t7_cost = 74
+@MASC_bioshield_l_t7_upkeep_energy = 0.74
+@MASC_bioshield_l_t7_upkeep_alloys = 0.148
+
+
+####################
+# Bio Shield
+####################
+
+utility_component_template = {
+	key = "SMALL_BIO_SHIELD"
+	size = small
+	icon = "GFX_ship_part_masc_bio_shield"
+	icon_frame = 1
+	power = @MASC_power_S7
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @MASC_bioshield_s_t7_cost
+			food = 2.22
+		}
+		upkeep = {
+			energy = @MASC_bioshield_s_t7_upkeep_energy
+			alloys = @MASC_bioshield_s_t7_upkeep_alloys
+		}
+	}
+	modifier = {
+		ship_armor_add = @MASC_bioshield_S7
+		ship_armor_regen_add_static = @MASC_regen_S7 #Regeneration per day
+	}
+	prerequisites = { "tech_ship_biology_structure" }
+	component_set = "BIO_SHIELD"
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			is_country_type = default
+			has_monthly_income = { resource = food value <= 0 }
+		}
+	}
+}
+
+utility_component_template = {
+	key = "MEDIUM_BIO_SHIELD"
+	size = medium
+	icon = "GFX_ship_part_masc_bio_shield"
+	icon_frame = 1
+	power = @MASC_power_M7
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @MASC_bioshield_m_t7_cost
+			food = 4.44
+		}
+		upkeep = {
+			energy = @MASC_bioshield_m_t7_upkeep_energy
+			alloys = @MASC_bioshield_m_t7_upkeep_alloys
+		}
+	}
+	modifier = {
+		ship_armor_add = @MASC_bioshield_M7
+		ship_armor_regen_add_static = @MASC_regen_M7 #Regeneration per day
+	}
+	prerequisites = { "tech_ship_biology_structure" }
+	component_set = "BIO_SHIELD"
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			is_country_type = default
+			has_monthly_income = { resource = food value <= 0 }
+		}
+	}
+}
+
+utility_component_template = {
+	key = "LARGE_BIO_SHIELD"
+	size = large
+	icon = "GFX_ship_part_masc_bio_shield"
+	icon_frame = 1
+	power = @MASC_power_L7
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @MASC_bioshield_l_t7_cost
+			food = 8.88
+		}
+		upkeep = {
+			energy = @MASC_bioshield_l_t7_upkeep_energy
+			alloys = @MASC_bioshield_l_t7_upkeep_alloys
+		}
+	}
+	modifier = {
+		ship_armor_add = @MASC_bioshield_L7
+		ship_armor_regen_add_static = @MASC_regen_L7 #Regeneration per day
+	}
+	prerequisites = { "tech_ship_biology_structure" }
+	component_set = "BIO_SHIELD"
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			is_country_type = default
+			has_monthly_income = { resource = food value <= 0 }
+		}
+	}
+}
+

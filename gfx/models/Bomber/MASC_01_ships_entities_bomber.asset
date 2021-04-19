@@ -1,0 +1,5 @@
+
+entity = {
+	name = "mammalian_01_magnus__advanced_bomber_frigate_entity"
+	locator = { name = "mid" 	position = { 0	0	0} rotation ={ 0 0 0} }
+}

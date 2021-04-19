@@ -1,0 +1,8 @@
+# Lines starting with ”#” will be treated as comments.;;;;;;;;;;;;;;;;;;;;;;
+# This file can be reloaded with the ”reload stats” console command;;;;;;;;;;;;;;;;;;;;;;
+#;;;;;;;;;;;;;;;;missile weapons only;;;;;;
+#;;;;;;;%of dmg that will;;%of dmg that will;;100;50;;;;minimum speed;;;;;;
+#;;;;;%bonus dmg;%bonus dmg;go through shields;%bonus dmg;go through armor;;;;;;;of missiles;;;;;;
+#key;cost;power;min_damage;max_damage;hull_damage;shield_damage;shield_penetration;armor_damage;armor_penetration;min_windup;max_windup;cooldown;range;accuracy;tracking;missile_speed;missile_evasion;missile_shield;missile_armor;missile_health;missile_retarget_range;end
+# Arc Emitter;;;;;;;;;;;;;;;;;;;;;;
+ARC_EMITTER_ZERO;192.00;-160.00;1.00;1000.00;1.00;1.00;1.00;1.00;1.00;1.00;19.00;71.00;150.00;1.00;0.00;0.00;0.00;0.00;0.00;0.00;0.00;

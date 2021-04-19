@@ -1,0 +1,5 @@
+invisible_extra_large_nonfixed = {
+	size = extra_large
+	component = weapon
+	is_fixed = no
+}

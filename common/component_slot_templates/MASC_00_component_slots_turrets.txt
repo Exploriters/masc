@@ -1,0 +1,36 @@
+
+extra_large_turret_fake = {
+	size = titanic
+	component = weapon
+	entities = {
+		weapon_type_kinetic = "turret_xl_entity"
+		weapon_type_energy = "turret_xl_entity"
+		weapon_type_explosive = "turret_xl_entity"
+	}
+}
+
+large_strike_craft_turret = {
+	size = large
+	component = strike_craft
+	entities = {
+		weapon_type_explosive = "turret_missile_medium_entity"
+		weapon_type_kinetic = "medium_kinetic_gun_entity" # Failsafe for saved "invalid designs"
+		weapon_type_energy =  "medium_laser_gun_entity" # Failsafe for saved "invalid designs"
+	}
+}
+
+
+extra_large_escort_turret = {
+	size = extra_large
+	component = weapon
+	entities = {
+		weapon_type_explosive = "turret_escort_entity"
+		weapon_type_kinetic = "turret_escort_entity"
+		weapon_type_energy =  "turret_escort_entity"
+	}
+}
+
+large_missile_turret_titanic = {
+	size = titanic
+	component = weapon
+}

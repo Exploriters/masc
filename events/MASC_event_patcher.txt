@@ -1,0 +1,59 @@
+
+namespace = crisis
+
+country_event = {
+	id = crisis.2085
+	title = "crisis.2085.name"
+	picture = GFX_evt_robot_assembly_plant
+	show_sound = event_robo
+
+	is_triggered_only = yes
+	
+	desc = {
+		trigger = {
+			NOT = { owner_species = { has_trait = trait_erudite } }
+		}
+		text = crisis.2085.desc
+	}
+	desc = {
+		trigger = {
+			owner_species = { has_trait = trait_erudite }
+		}
+		text = bioaicounter
+	}
+
+	trigger = {
+		any_owned_planet = {
+			exists = controller
+			controller = {
+				is_same_value = root
+			}
+		}
+	}
+
+	immediate = {
+		random_owned_planet = {
+			limit = { controller = { is_same_value = root } }
+			save_event_target_as = infil_planet
+		}
+		if = {
+			limit = {
+				NOT = { owner_species = { has_trait = trait_erudite } }
+			}
+			country_event = { id = crisis.2090 days = 120 }
+		}
+	}
+
+	option = {
+		trigger = {
+			NOT = { owner_species = { has_trait = trait_erudite } }
+		}
+		name = crisis.2085.a
+	}
+	option = {
+		trigger = {
+			owner_species = { has_trait = trait_erudite }
+		}
+		name = crisis.2087.a
+	}
+}

@@ -1,0 +1,34 @@
+﻿l_simp_chinese:
+
+ NAME_Vodex:0 "虚识"
+ NAME_Colox_colonizer:0 "克莱斯"
+ NAME_Explorite:0 "阿克斯博利特"
+ NAME_Vector:0 "向量"
+ NAME_Indrone:0 "工程无人机"
+ NAME_Indrone_starbase:0 "恒星基地工程舰"
+ NAME_Mobile_Depot:0 "机动仓库"
+ 
+ NAME_RogueBioDrones:0 "自由无人机"
+ NAME_RogueBioDronesFleet:0 "巡航舰队"
+ 
+ #哺乳类
+ NAME_MASC_Dreadnought:0 "无畏" 
+ #人型生物
+ NAME_MASC_Ranger:0 "游侠"
+ #植物
+ NAME_MASC_Giga:0 "盖亚"
+ #死灵族
+ NAME_MASC_Crescent:0 "新月"
+ #爬行类
+ NAME_MASC_Lucio:0 "卢西奥"
+ #鸟类
+ NAME_MASC_Osprey:0 "鱼鹰"
+ #真菌类
+ NAME_MASC_Zerus:0 "泽鲁斯"
+ #似石族
+ NAME_MASC_Rheshlaan:0 "拉什兰安"
+ #节肢类
+ NAME_MASC_IraKosh:0 "伊原'科式"
+ #软体类
+ NAME_MASC_Angaridae:0 "棘冠螺"
+ 

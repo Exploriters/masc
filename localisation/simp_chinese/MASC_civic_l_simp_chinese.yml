@@ -1,0 +1,19 @@
+﻿l_simp_chinese:
+
+ civic_masc_the_masc_one:0 "天选巡航者"
+ civic_masc_the_masc_one_desc:0 "这一后启示录文明有一位天选之人领导着整个帝国主宰虚空。"
+ civic_tooltip_masc_the_masc_one_effects:0 "在游戏开始时获得$GOVERNMENT_CIVICS$§Y$civic_masc_the_masc$§!和§Y$civic_masc_the_one$§!"
+
+ civic_masc_the_one:0 "天选之人"
+ civic_masc_the_one_desc:0 "这一文明有一位已经存活了上百年的天选之人。没有人知道这位魅力非凡的领袖究竟获得了何种力量。"
+ civic_tooltip_masc_the_one_effects:0 "游戏开始时以一位§Y$leader_trait_ruler_masc_the_one$§!领袖作为统治者，初始等级为10且§Y永生不朽§!，但没有其他特性\n如果政体为§Y$auth_imperial$§!，该领袖能够复生并继承统治者职位"
+
+ leader_trait_ruler_masc_the_one:0 "天选之人"
+ leader_trait_ruler_masc_the_one_desc:0 "§L一位已经存活了上百年的天选之人。没有人知道这位魅力非凡的领袖究竟获得了何种力量使其永生不朽。§!"
+ 
+ masc_the_one_init_ruler_20level:0 "初始化天选之人"
+ masc.2101.name:0 "失去天选之人"
+ masc.2101.desc:0 "我们的天选之人——§H[Root.GetRulerTitle][From.GetRegnalName]§!已经不再担任我们的统治者职位了。\n\n由于天选之人如今已经不复存在，我们的帝国现在应该重新选择未来的国策了。"
+ 
+ agenda_ruler_train:0 "官员培训"
+ 

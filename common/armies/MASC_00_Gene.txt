@@ -1,0 +1,37 @@
+
+masc_gene_defender_army = {
+	defensive = yes
+	is_pop_spawned = yes
+	health = 3.125
+	damage = 3
+	morale = 3.125
+	morale_damage = 0
+	collateral_damage = 0
+	war_exhaustion = 0
+	icon_frame = 5 #6
+	
+	potential = {
+		planet = { 
+			#has_building = building_clone_vats
+		}
+		from = {
+			NOR = {
+				has_trait = "trait_mechanical"
+				has_trait = "trait_machine_unit"
+				is_sapient = no
+			}
+		}
+		owner = {
+			is_primitive = no
+			has_technology = tech_gene_seed_purification
+			OR = {
+				NOT = { has_authority = auth_machine_intelligence }
+				has_valid_civic = civic_machine_assimilator
+			}
+			OR = {
+				has_ascension_perk = ap_engineered_evolution
+				has_ascension_perk = ap_evolutionary_mastery
+			}
+		}
+	}
+}

@@ -1,0 +1,13 @@
+﻿l_simp_chinese:
+ 
+ masc.3.name:0 "战略巡洋舰职责"
+ masc.3.desc:0 "当前正在设置§Y[This.GetName]§!的舰船职责\n该舰船目前位于§Y[This.solar_system.GetName]§!"
+ masc.3.a:0 "不做出任何改变"
+ masc.3.b:0 "将§Y[This.GetName]§!设置为科研船"
+ masc.3.c:0 "将§Y[This.GetName]§!设置为工程船"
+ masc.3.d:0 "将§Y[This.GetName]§!设置为战列舰"
+ masc.3.e:0 "将§Y[This.solar_system.GetName]§!星系内所有舰船设置为科研船"
+ masc.3.f:0 "将§Y[This.solar_system.GetName]§!星系内所有舰船设置为工程船"
+ masc.3.g:0 "将§Y[This.solar_system.GetName]§!星系内所有舰船设置为战列舰"
+ 
+ 

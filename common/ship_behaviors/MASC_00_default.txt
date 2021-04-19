@@ -1,0 +1,35 @@
+#this file ( and all files in this folder ) is reloadable with console command "reload behavior"
+#filewatcher is enabled for all files in this folder
+
+ship_behavior = {
+	name = "masc_kite"
+	preferred_attack_range = 150
+	formation_distance = 150
+	return_to_formation_distance = 150
+	source_target_anchor_factor = 1.0
+	combat_target_anchor = root
+
+	collision_awareness = 0.75
+	collision_strafe = 1.0
+	collision_radius = 1.0
+	attack_move_pattern = flee
+	passive_move_pattern = orbit
+
+	desc = "MASC_KITE_BEHAVIOR_DESC"
+}
+
+ship_behavior = {
+	name = "masc_sbc"
+	preferred_attack_range = median#max/min/median/12/412..	#this is the distance to target the ship wants to keep when attacking
+	
+	formation_distance = 100			#when orbing/following ship will try to keep this distance to assigned position	
+	return_to_formation_distance = 100	#when attacking the ship will switch to passive mode if distance to assigned position is greater that this
+
+	collision_awareness = 0.75			#how much we try to avoid other ships
+	collision_strafe = 1.0				#collision_strafe allows the ship to move in any direction while colliding with another
+	collision_radius = 1.0				#collision_radius is a multiplier on the radius specified in the ship size
+	attack_move_pattern = flee			#stationary/charge/follow/stationary/none
+	passive_move_pattern = orbit
+	
+	desc = "DEFAULT_BEHAVIOR_DESC"
+}

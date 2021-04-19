@@ -1,0 +1,49 @@
+## Icons set here are the ones show in the actual slot. 
+#
+#### NON-FTL DRIVE
+#utility_component_template = {
+#	key = "EMPTY_DRIVE"
+#	size = small
+#	icon = "GFX_ship_part_empty_ftl_drive"
+#	icon_frame = 1
+#	power = 0
+#	#should_ai_use = no
+#	
+#	class_restriction = { shipclass_military shipclass_constructor shipclass_colonizer shipclass_science_ship shipclass_transport shipclass_military_special shipclass_starbase }
+#	component_set = "ftl_components"
+#
+#	ai_weight = {
+#		weight = 0.1
+#	}
+#	upgrades_to = "HYPER_DRIVE_1"
+#}
+#
+
+### NON-FTL DRIVE
+utility_component_template = {
+	key = "STRATEGIC_BATTLECRUISER_EMPTY_DRIVE"
+	size = small
+	icon = "GFX_ship_part_empty_ftl_drive"
+	icon_frame = 1
+	power = -1015
+	hidden = no
+	
+	size_restriction = { magnus__advanced_strategic_cruiser }
+	component_set = "ftl_components"
+
+	ship_modifier = {
+		ship_shield_reduction = 1
+		ship_armor_reduction = 1
+	}
+	
+	ai_weight = {
+		weight = 0.9
+		modifier = {
+			factor = 10
+			is_ai = no
+			has_civic = civic_masc_the_masc
+			NOT = { has_country_flag = masc_everfirst_sbc_constructed }
+		}
+	}
+	#upgrades_to = "HYPER_DRIVE_1"
+}

@@ -1,0 +1,8 @@
+
+# Large Debris Field
+ambient_object = {
+	name = "preventremoval_large_debris_object"
+	entity = "preventremoval_debris_large_01_entity"
+	selectable = no
+	show_name = no
+}

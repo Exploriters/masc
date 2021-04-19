@@ -1,0 +1,62 @@
+
+sc_black_hole_themascvoid = {
+	class 			= black_hole
+	icon_scale		= 3.0
+	planet			= { key = pc_black_hole }
+	spawn_odds 		= 0
+	num_planets 	= 0
+
+	pc_gas_giant	= { spawn_odds = 0 }
+	pc_desert 		= { spawn_odds = 0 }
+	pc_tropical 	= { spawn_odds = 0 }
+	pc_arid 		= {	spawn_odds = 0 }
+	pc_continental 	= { spawn_odds = 0 }
+	pc_ocean 		= { spawn_odds = 0 }
+	pc_tundra 		= { spawn_odds = 0 }
+	pc_arctic 		= { spawn_odds = 0 }
+	pc_gaia			= { spawn_odds = 0 }
+	pc_alpine		= { spawn_odds = 0 }
+	pc_savannah		= { spawn_odds = 0 }
+
+	is_environmental_hazard = yes
+	modifier = {
+		ship_disengage_chance_reduction = 0.5
+		ship_emergency_ftl_min_days_mult = 0.5
+		
+		shipclass_military_station_hull_mult = 2.0
+		shipclass_starbase_hull_mult = 2.0
+		ship_home_territory_fire_rate_mult = 0.15
+		weapon_type_explosive_weapon_damage_mult = 0
+		ship_evasion_mult = 0.15
+		ship_tracking_mult = -0.15
+		ship_accuracy_mult = -0.15
+		ship_armor_regen_add_perc = -0.15
+		ship_shield_regen_add_perc = -0.15
+	}
+}
+
+sc_black_hole_mascsmall = {
+	class 			= black_hole
+	icon_scale		= 1.0
+	planet			= { key = pc_black_hole }
+	spawn_odds 		= 0
+	num_planets 	= 0
+
+	pc_gas_giant	= { spawn_odds = 0 }
+	pc_desert 		= { spawn_odds = 0 }
+	pc_tropical 	= { spawn_odds = 0 }
+	pc_arid 		= {	spawn_odds = 0 }
+	pc_continental 	= { spawn_odds = 0 }
+	pc_ocean 		= { spawn_odds = 0 }
+	pc_tundra 		= { spawn_odds = 0 }
+	pc_arctic 		= { spawn_odds = 0 }
+	pc_gaia			= { spawn_odds = 0 }
+	pc_alpine		= { spawn_odds = 0 }
+	pc_savannah		= { spawn_odds = 0 }
+
+	is_environmental_hazard = yes
+	modifier = {
+		ship_disengage_chance_reduction = 0.5
+		ship_emergency_ftl_min_days_mult = 0.5
+	}
+}

@@ -1,0 +1,39 @@
+﻿l_simp_chinese:
+
+ CORE_JUGGERNAUT_SECTION_M5:0 "飞弹主宰"
+ 
+ CORVETTE_MID_M1PD1:0 "护卫核心"
+ 
+ DESTROYER_BOW_MS1PD2:0 "飞弹舰艏"
+ DESTROYER_STERN_MS1:0 "飞弹舰艉"
+ 
+ #BATTLESHIP_MID_L2PD4:0 "新星核心"
+ BATTLESHIP_MID_PD4LHB:0 "哨卫核心"
+ BATTLESHIP_STERN_MS2:0 "飞弹舰艉"
+ 
+ masc_military_station_large:0 "恒星堡垒"
+ masc_military_station_large_plural:0 "$masc_military_station_large$"
+ TECH_UNLOCK_STARFORTRESS_TITLE:0 "§H解锁空间站：§!$masc_military_station_large$"
+ TECH_UNLOCK_STARFORTRESS_CONSTRUCTION_DESC:0 "§H$masc_military_station_large$§!\n$tech_space_defense_station_3_desc$"
+ tech_space_defense_station_starfortress:0 "$tech_space_defense_station_3$"
+ tech_space_defense_station_starfortress_desc:0 "$tech_space_defense_station_3_desc$"
+ 
+ mod_ship_masc_military_station_large_cost_mult:0 "$masc_military_station_large$建造花费"
+ mod_shipsize_masc_military_station_large_upkeep_mult:1 "$masc_military_station_large$维护费"
+ mod_shipsize_masc_military_station_large_hull_mult:0 "$masc_military_station_large$船体值"
+ mod_shipsize_masc_military_station_large_build_speed_mult:0 "$masc_military_station_large$建造速度"
+ mod_shipsize_masc_military_station_large_damage_mult:1 "$masc_military_station_large$伤害"
+ mod_shipsize_masc_military_station_large_hull_mult:1 "$masc_military_station_large$船体值"
+ mod_shipsize_masc_military_station_large_build_cost_mult:1 "$masc_military_station_large$建造花费"
+ 
+ MASC_LIGHT_LARGE_MILITARY_STATION_SECTION:0 "点防御区段"
+ MASC_MEDIUM_LARGE_MILITARY_STATION_SECTION:0 "导弹区段"
+ MASC_HEAVY_LARGE_MILITARY_STATION_SECTION:0 "重炮区段"
+ MASC_SPINAL_LARGE_MILITARY_STATION_SECTION:0 "脊峰左区段"
+ MASC_SPINAL_LARGE_MILITARY_STATION_SECTION_2:0 "脊峰右区段"
+ MASC_HANGAR_LARGE_MILITARY_STATION_SECTION:0 "格纳库区段"
+ 
+ TITAN_BOW_MASC_XL:0 "泰坦脊峰舰艏"
+ TITAN_MID_MASC_XL:0 "泰坦脊峰核心"
+ TITAN_STERN_MASC_XL:0 "泰坦脊峰舰艉"
+ 

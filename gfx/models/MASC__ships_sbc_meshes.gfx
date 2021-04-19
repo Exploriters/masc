@@ -1,0 +1,19 @@
+objectTypes = {
+	
+	pdxmesh = {
+		name = "mammalian_01_construction_soundonly_mesh"
+		file = "gfx/models/ships/molluscoid_01/molluscoid_01_corvette_frame.mesh"
+		scale = 1.0
+		
+		animation = { id = "idle"						type = "molluscoid_01_corvette_frame_idle_animation" }
+		animation = { id = "working"					type = "molluscoid_01_corvette_frame_idle_animation" }
+		animation = { id = "working_looping"			type = "molluscoid_01_corvette_frame_idle_animation" }
+		
+		#meshsettings = {
+			#shader = "PdxMeshShip"
+			#Mipmap tweaking
+		#texture_diffuse = "1x512.dds"
+		#}
+	}
+	
+}

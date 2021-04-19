@@ -1,0 +1,211 @@
+# Icons set here are the ones show in the actual slot. The reason is so that we can support different icons for different sizes.
+#############
+#	POWER	#
+#############
+
+@masc_mega_platform_power_1 = 1600
+@masc_mega_platform_power_2 = 2080
+@masc_mega_platform_power_3 = 2720
+@masc_mega_platform_power_4 = 3520
+@masc_mega_platform_power_5 = 4600
+@masc_mega_platform_power_6 = 6000
+
+#############
+#	COST	#
+#############
+
+@masc_mega_platform_cost_1 = 160
+@masc_mega_platform_cost_2 = 208
+@masc_mega_platform_cost_3 = 272
+@masc_mega_platform_cost_4 = 352
+@masc_mega_platform_cost_5 = 460
+@masc_mega_platform_cost_6 = 600
+
+#############
+#  REACTORS #
+#############
+
+utility_component_template = {
+	key = "MASC_LARGE_PLATFORM_FISSION_REACTOR"
+	size = large
+	icon = "GFX_ship_part_reactor_1"
+	icon_frame = 1
+	power = @masc_mega_platform_power_1
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @masc_mega_platform_cost_1
+		}
+		upkeep = {
+			energy = 1.6
+			alloys = 0.16
+		}
+	}
+
+	prerequisites = { "tech_fission_power" }
+	#class_restriction = { shipclass_military_station }
+	size_restriction = {
+		masc_military_station_large
+	}
+	component_set = "power_core"
+	upgrades_to = "PLATFORM_FUSION_REACTOR"
+
+	ai_weight = {
+		weight = 1
+	}
+}
+
+utility_component_template = {
+	key = "MASC_LARGE_PLATFORM_FUSION_REACTOR"
+	size = large
+	icon = "GFX_ship_part_reactor_2"
+	icon_frame = 1
+	power = @masc_mega_platform_power_2
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @masc_mega_platform_cost_2
+		}
+		upkeep = {
+			energy = 2.08
+			alloys = 0.208
+		}
+	}
+
+	prerequisites = { "tech_fusion_power" }
+	#class_restriction = { shipclass_military_station }
+	size_restriction = {
+		masc_military_station_large
+	}
+	component_set = "power_core"
+	upgrades_to = "PLATFORM_COLD_FUSION_REACTOR"
+
+	ai_weight = {
+		weight = 2
+	}
+}
+
+utility_component_template = {
+	key = "MASC_LARGE_PLATFORM_COLD_FUSION_REACTOR"
+	size = large
+	icon = "GFX_ship_part_reactor_3"
+	icon_frame = 1
+	power = @masc_mega_platform_power_3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @masc_mega_platform_cost_3
+		}
+		upkeep = {
+			energy = 2.08
+			alloys = 0.208
+		}
+	}
+
+	prerequisites = { "tech_cold_fusion_power" }
+	component_set = "power_core"
+	#class_restriction = { shipclass_military_station }
+	size_restriction = {
+		masc_military_station_large
+	}
+	upgrades_to = "PLATFORM_ANTIMATTER_REACTOR"
+
+	ai_weight = {
+		weight = 3
+	}
+}
+
+utility_component_template = {
+	key = "MASC_LARGE_PLATFORM_ANTIMATTER_REACTOR"
+	size = large
+	icon = "GFX_ship_part_reactor_4"
+	icon_frame = 1
+	power = @masc_mega_platform_power_4
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @masc_mega_platform_cost_4
+		}
+		upkeep = {
+			energy = 3.52
+			alloys = 0.352
+		}
+	}
+
+	prerequisites = { "tech_antimatter_power" }
+	component_set = "power_core"
+	#class_restriction = { shipclass_military_station }
+	size_restriction = {
+		masc_military_station_large
+	}
+	upgrades_to = "PLATFORM_ZERO_POINT_REACTOR"
+
+	ai_weight = {
+		weight = 4
+	}
+}
+
+utility_component_template = {
+	key = "MASC_LARGE_PLATFORM_ZERO_POINT_REACTOR"
+	size = large
+	icon = "GFX_ship_part_reactor_5"
+	icon_frame = 1
+	power = @masc_mega_platform_power_5
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @masc_mega_platform_cost_5
+		}
+		upkeep = {
+			energy = 4.56
+			alloys = 0.456
+		}
+	}
+
+	prerequisites = { "tech_zero_point_power" }
+	component_set = "power_core"
+	#class_restriction = { shipclass_military_station }
+	size_restriction = {
+		masc_military_station_large
+	}
+	upgrades_to = "PLATFORM_DARK_MATTER_REACTOR"
+
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "MASC_LARGE_PLATFORM_DARK_MATTER_REACTOR"
+	size = large
+	icon = "GFX_ship_part_dark_matter_power_core"
+	icon_frame = 1
+	power = @masc_mega_platform_power_6
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @masc_mega_platform_cost_6
+			sr_dark_matter = 32
+		}
+		upkeep = {
+			energy = 5.92
+			alloys = 0.592
+		}
+	}
+
+	prerequisites = { "tech_dark_matter_power_core" }
+	component_set = "power_core"
+	#class_restriction = { shipclass_military_station }
+	size_restriction = {
+		masc_military_station_large
+	}
+
+	ai_weight = {
+		weight = 6
+		modifier = {
+			factor = 0.0
+			is_country_type = default
+			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+		}
+	}
+}

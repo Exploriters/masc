@@ -1,0 +1,44 @@
+
+entity = {
+	name = "ringworld_destroyed_mascirreparable_entity"
+	cull_radius = 500.0
+
+	locator = { name = "locator1" 	position = { -225 	0 	-60.289 	} rotation ={ -30 0 0} 	}
+	locator = { name = "locator2" 	position = {  0 	0 	0			} rotation ={ 0 0 0}	}
+	locator = { name = "locator3" 	position = {  225 	0 	-60.289		} rotation ={ 30 0 0}	}
+	
+	attach = { locator1 = "ringworld_tech_damaged_entity_01_entity" }
+	attach = { locator2 = "ringworld_seam_damaged_entity_01_entity" }
+	attach = { locator3 = "ringworld_tech_damaged_entity_01_entity" }
+}
+
+entity = {
+	name = "ringworld_destroyed_mascirreparable_entity_01_entity"
+	cull_radius = 500.0
+
+	locator = { name = "locator1" 	position = {  0 	0 	0			} rotation ={ 0 0 0}	}
+	
+	attach = { locator1 = "ringworld_destroyed_mascirreparable_entity" }
+}
+
+entity = {
+	name = "preventremoval_debris_large_01_entity"
+	cull_radius = 500.0
+
+	locator = { name = "debris1"	position = { 0 0 0 }	rotation ={ 0 0 0}	}	
+	
+	attach = { debris1 = "debris_large_01_entity" }
+}
+
+entity = {
+	name = "ringworld_destroyed_2_entity"
+	cull_radius = 500.0
+
+	locator = { name = "locator1" 	position = { -225 	0 	-60.289 	} rotation ={ -30 0 0} 	}
+	locator = { name = "locator2" 	position = {  0 	0 	0			} rotation ={ 0 0 0}	}
+	locator = { name = "locator3" 	position = {  225 	0 	-60.289		} rotation ={ 30 0 0}	}
+	
+	attach = { locator1 = "ringworld_habitable_damaged_entity_01_entity" }
+	attach = { locator2 = "ringworld_seam_damaged_entity_01_entity" }
+	attach = { locator3 = "ringworld_tech_damaged_entity_01_entity" }
+}

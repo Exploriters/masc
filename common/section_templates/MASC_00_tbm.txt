@@ -1,0 +1,38 @@
+
+ship_section_template = {
+	key = "TACTICAL_DESTROYER_CORE"
+	ship_size = magnus__advanced_escort_monitor
+	fits_on_slot = bow
+	should_draw_components = yes
+	#entity = "destroyer_bow_L1_entity"
+	entity = "escort_core_section_entity"
+	icon = "GFX_ship_part_core_bow"
+	
+	component_slot = {
+		name = "EXTRA_LARGE_01"
+		template = "extra_large_escort_turret"
+		locatorname = "large_gun_01"
+	}
+	
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		rotation = 180
+		locatorname = "large_gun_01"
+	}
+	
+	large_utility_slots = 4
+	medium_utility_slots = 0
+	small_utility_slots = 0
+	aux_utility_slots = 2
+	
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 192
+			#volatile_motes = -20
+			#exotic_gases = -20
+			#rare_crystals = -20
+		}
+	}
+}

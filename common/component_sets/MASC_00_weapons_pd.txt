@@ -1,0 +1,29 @@
+# Icons set here are the ones shown in component editor list.
+
+component_set = {
+	key = "PD_MISSILE_BATTERY_1"
+	
+	icon = "GFX_ship_part_strike_craft_fighter_1"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "PD_MISSILE_BATTERY_2"
+	
+	icon = "GFX_ship_part_strike_craft_fighter_2"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "PD_MISSILE_BATTERY_3"
+	
+	icon = "GFX_ship_part_strike_craft_fighter_3"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "MASC_BOMB_LAUNCHER"
+	
+	icon = "GFX_ship_part_strike_craft_scout_1"
+	icon_frame = 1	
+}

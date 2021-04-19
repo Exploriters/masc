@@ -1,0 +1,131 @@
+
+@galauthority_power_1 = 4400
+@galauthority_power_2 = 5700
+@galauthority_power_3 = 7600
+@galauthority_power_4 = 10000
+@galauthority_power_5 = 12800
+@galauthority_power_6 = 16800
+
+utility_component_template = {
+	key = "GALAUTHORITY_FISSION_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_1"
+	icon_frame = 1
+	power = @galauthority_power_1
+	resources = {
+		category = ship_components
+	}
+
+	prerequisites = { "tech_fission_power" }
+	component_set = "power_core"
+	size_restriction = { magnus__galauthority }
+	upgrades_to = "GALAUTHORITY_FUSION_REACTOR"
+
+	ai_weight = {
+		weight = 1
+	}
+}
+
+utility_component_template = {
+	key = "GALAUTHORITY_FUSION_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_2"
+	icon_frame = 1
+	power = @galauthority_power_2
+	resources = {
+		category = ship_components
+	}
+
+	prerequisites = { "tech_fusion_power" }
+	component_set = "power_core"
+	size_restriction = { magnus__galauthority }
+	upgrades_to = "GALAUTHORITY_COLD_FUSION_REACTOR"
+
+	ai_weight = {
+		weight = 2
+	}
+}
+
+utility_component_template = {
+	key = "GALAUTHORITY_COLD_FUSION_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_3"
+	icon_frame = 1
+	power = @galauthority_power_3
+	resources = {
+		category = ship_components
+	}
+
+	prerequisites = { "tech_cold_fusion_power" }
+	component_set = "power_core"
+	size_restriction = { magnus__galauthority }
+	upgrades_to = "GALAUTHORITY_ANTIMATTER_REACTOR"
+
+	ai_weight = {
+		weight = 3
+	}
+}
+
+utility_component_template = {
+	key = "GALAUTHORITY_ANTIMATTER_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_4"
+	icon_frame = 1
+	power = @galauthority_power_4
+	resources = {
+		category = ship_components
+	}
+
+	prerequisites = { "tech_antimatter_power" }
+	component_set = "power_core"
+	size_restriction = { magnus__galauthority }
+	upgrades_to = "GALAUTHORITY_ZERO_POINT_REACTOR"
+
+	ai_weight = {
+		weight = 4
+	}
+}
+
+utility_component_template = {
+	key = "GALAUTHORITY_ZERO_POINT_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_5"
+	icon_frame = 1
+	power = @galauthority_power_5
+	resources = {
+		category = ship_components
+	}
+
+	prerequisites = { "tech_zero_point_power" }
+	component_set = "power_core"
+	size_restriction = { magnus__galauthority }
+	upgrades_to = "GALAUTHORITY_DARK_MATTER_REACTOR"
+
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "GALAUTHORITY_DARK_MATTER_REACTOR"
+	size = small
+	icon = "GFX_ship_part_dark_matter_power_core"
+	icon_frame = 1
+	power = @galauthority_power_6
+	resources = {
+		category = ship_components
+	}
+
+	prerequisites = { "tech_dark_matter_power_core" }
+	component_set = "power_core"
+	size_restriction = { magnus__galauthority }
+
+	ai_weight = {
+		weight = 6
+		#modifier = {
+		#	factor = 0.0
+		#	is_country_type = default
+		#	has_monthly_income = { resource = sr_dark_matter value <= 0 }
+		#}
+	}
+}

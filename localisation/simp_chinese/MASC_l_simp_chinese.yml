@@ -1,0 +1,40 @@
+﻿l_simp_chinese:
+
+ masc_single:0 "单一"
+
+ policy_station_resist_type:0 "空间站抗性政策"
+ policy_station_resist_type_desc:0 "在我们发展的过程中需要部署大量的空间站服务我们，而这些空间站则需要在装甲和护盾中选择一种防护手段。\n当我们的强敌偏好不同作战手段时，这些微小的差异能够或多或少挽回一些损失。"
+ station_policy_armor:0 "装甲防护"
+ station_policy_armor_name:0 "$station_policy_armor$"
+ station_policy_armor_desc:0 "常规的空间站防御措施，通过额外的装甲板来保护自身免受冲击。"
+ station_policy_shield:0 "护盾防护"
+ station_policy_shield_name:0 "$station_policy_shield$"
+ station_policy_shield_desc:0 "使用护盾模块来取代空间站装甲以偏射有害能量，但无法抵御脉冲星的干扰。\n\n任何部署在脉冲星星系的空间站仍会使用装甲进行防护。\n\n"
+ 
+ station_shield_replace_armor:0 "空间站使用护盾以取代装甲"
+ 
+ tech_masc_theory_of_everything:0 "万物至理"
+ tech_masc_theory_of_everything_desc:0 "我们已经能够确定，世界的知识皆已经被掌控在了我们手中。有了这种力量，我们就能完成最后一步——为万物至理完成定论。"
+ 
+ masc_genetech_modifier:0 "$species_trait_points_add$：$POINTS|0=+$\n$MOD_COUNTRY_MODIFY_SPECIES_COST_MULT$：$COST_MULT|%0=-$"
+ 
+ tech_masc_gene_manager:0 "$masc_gene_manager_3$"
+ tech_masc_gene_manager_desc:0 "$masc_gene_manager_0_MEGASTRUCTURE_DETAILS$"
+ allow_masc_gene_manager:0 "§H解锁巨构建筑：§!基因管理库"
+ 
+ masc_gene_manager_0_MEGASTRUCTURE_DETAILS:0 "一个用于管理和改进全国生物的§Y$masc_gene_manager_3$§!，高效地设计我们未来进化的道路。"
+ requires_no_existing_masc_gene_manager:0 "$TRIGGER_FAIL$基因管理库只能建造一个。"
+ masc_gene_manager_0:0 "基因管理库基址"
+ masc_gene_manager_0_DESC:0 "这个初步的基址将会担任起未来基因管理库的建设基础。"
+ masc_gene_manager_1:0 "基因管理库：冷库"
+ masc_gene_manager_1_DESC:0 "一个强大的低温发生器，为基因管理库可观的容量用于存放基因数据。这个设施将作为未来的基因管理库中心"
+ masc_gene_manager_2:0 "基因管理库：外环"
+ masc_gene_manager_2_DESC:0 "一片汇聚了多种先级设备和安保措施的生物实验室可以完成各类测试，并提供强大的基因工程流水线大批量完成基因实验的作业。"
+ masc_gene_manager_3:0 "基因管理库"
+ masc_gene_manager_3_DESC:0 "前所未有般先进的基因管理库已经可以高效地设计我们未来进化的道路。"
+ masc_gene_manager_ruined:0 "废弃的基因管理库"
+ masc_gene_manager_ruined_DESC:0 "一个废弃的基因管理库。尽管其内部的所有基因档案已经因暴露在真空中而损坏，但这个庞然大物的大部分设施都保持完好。运用适当的科技并投入大量资源，我们应该能够让它重新工作。"
+ masc_gene_manager_ruined_MEGASTRUCTURE_DETAILS:0 ""
+ masc_gene_manager_restored:0 "$masc_gene_manager_3$"
+ masc_gene_manager_restored_DESC:0 "$masc_gene_manager_3_DESC$"
+ 

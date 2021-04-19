@@ -1,0 +1,202 @@
+
+#weapon_component_template = {
+#	key = "MASC_BRIGHT_RIFLE"
+#	size = titanic
+#	type = instant
+#	
+#	icon = "GFX_ship_part_torpedo_3"
+#	icon_frame = 1
+#	
+#	firing_arc = 35.0
+#	min_range = 10.0
+#	use_ship_kill_target = no
+#	
+#	power = 0
+#	hull_damage = 1.00
+#	shield_damage = 1.00
+#	shield_penetration = 0.00
+#	armor_damage = 1.00
+#	armor_penetration = 0.00
+#	
+#	damage = { min = 0 max = 0 }
+#	windup = { min = 72 max = 90 }
+#	range = 150.00
+#	accuracy = 1.00
+#	tracking = 0.00
+#	
+#	prerequisites = { somethingprerequisitesthatdoesnotexist}
+#	
+#	class_restriction = { shipclass_military_station }
+#	size_restriction = { masc_military_station_large }
+#	
+#	component_set = "MASC_BRIGHT_RIFLE"
+#	projectile_gfx = "focused_arc_emitter"
+#	ai_tags = { weapon_role_artillery }
+#	ai_tag_weight = 0
+#	resources = {
+#		category = ship_components
+#		cost = {
+#		}		
+#		upkeep = {
+#		}
+#	}
+#
+#	ai_weight = {
+#		weight = 0.1
+#	}
+#}
+#
+
+# ## Arc Emitter 0 for SBCruiser as experimental weapon
+weapon_component_template = {
+	key = "ARC_EMITTER_ZERO"
+	size = extra_large
+	type = instant
+	
+	icon = "GFX_ship_part_space_cloud_weapon_1"
+	icon_frame = 1
+	
+	firing_arc = 35.0
+	min_range = 10.0
+	use_ship_kill_target = no
+	
+	power = -160
+	hull_damage = 1.00
+	shield_damage = 1.00
+	shield_penetration = 1.00
+	armor_damage = 1.00
+	armor_penetration = 1.00
+	
+	damage = { min = 1 max = 1000 }
+	windup = { min = 72 max = 90 }
+	range = 150.00
+	accuracy = 1.00
+	tracking = 0.00
+	
+	prerequisites = { "tech_arc_emitter_zero" }
+	component_set = "ARC_EMITTER_ZERO"
+	projectile_gfx = "arc_emitter"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	#size_restriction = { magnus__advanced_strategic_cruiser magnus__advanced_escort_monitor }
+	upgrades_to = "ARC_EMITTER_1"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 176
+		}		
+		upkeep = {
+			energy = 1.35
+			alloys = 0.27
+		}
+	}
+
+	ai_weight = {
+		weight = 0.75
+	}
+}
+
+# ## Titan Arc Emitter
+weapon_component_template = {
+	key = "ARC_EMITTER_TITAN"
+	size = titanic
+	type = instant # point_defence
+	prio_projectile = yes
+		
+	icon = "GFX_ship_part_space_cloud_weapon_1"
+	icon_frame = 1
+	
+	#firing_arc = 360.0
+	#min_range = 30.0
+	use_ship_kill_target = no
+	
+	power = -650
+	hull_damage = 1.00
+	shield_damage = 1.00
+	shield_penetration = 1.00
+	armor_damage = 1.00
+	armor_penetration = 1.00
+	
+	damage = { min = 1 max = 275 }
+	windup = { min = 1 max = 9 }
+	range = 250.00
+	accuracy = 1.00
+	tracking = 0.00
+	
+	prerequisites = { "tech_arc_emitter_zero" }
+	
+	prerequisites = { "tech_titans" }
+	component_set = "ARC_EMITTER_TITAN"
+	projectile_gfx = "arc_emitter"
+	tags = { weapon_type_energy } # weapon_type_point_defense
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	size_restriction = { titan }
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 771
+			#rare_crystals = 
+		}		
+		upkeep = {
+			energy = 7.71
+			alloys = 1.542
+		}
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+
+weapon_component_template = {
+	key = "MASC_SINGLE_PHASER"
+	size = extra_large
+	type = instant
+	#entity = "turret_xl_entity"
+	
+	icon = "GFX_ship_part_mining_drone_laser_1"
+	icon_frame = 1
+	
+	firing_arc = 35.0
+	min_range = 10.0
+	use_ship_kill_target = no
+	
+	power = -300
+	hull_damage = 1.00
+	shield_damage = 1.00
+	shield_penetration = 0.50
+	armor_damage = 1.00
+	armor_penetration = 0.00
+	
+	damage = { min = 2040 max = 3333 }
+	windup = { min = 72 max = 90 }
+	range = 150.00
+	accuracy = 1.00
+	tracking = 0.15
+	
+	prerequisites = { "masc_critters_bioweapon" }
+	component_set = "MASC_SINGLE_PHASER"
+	projectile_gfx = "ion_cannon"
+	tags = { weapon_type_explosive }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	#size_restriction = { }
+	#upgrades_to = ""
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 387
+		}		
+		upkeep = {
+			energy = 2.98
+			alloys = 0.596
+		}
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}

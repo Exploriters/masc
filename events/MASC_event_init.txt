@@ -1,0 +1,786 @@
+
+namespace = masc
+
+country_event = {
+	id = masc.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_civic = civic_masc_the_masc_one
+	}
+	
+	immediate = {
+		force_remove_civic = civic_masc_the_masc_one
+		force_add_civic = civic_masc_the_masc
+		force_add_civic = civic_masc_the_one
+	}
+}
+	
+# this: capital planet
+# from: founder species
+planet_event = {
+	id = masc.2000
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { has_planet_flag = void_dweller_habitat_4 }
+			shattered_ring_system_void_dweller_home_planet_setup = yes
+		}
+	}
+}
+
+country_event = {
+	id = masc.2001
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = masc_origin_ringworld_void_dwellers
+		NOT = { has_country_flag = masc_ringhole_inited }
+	}
+	
+	immediate = {
+		set_country_flag = masc_ringhole_inited
+		save_event_target_as = theventarget
+		
+		create_fleet = {
+			set_take_point = yes
+			effect = {
+				set_owner = prev
+				create_ship_design = {
+					design = "NAME_Colox_colonizer"
+				}
+				create_ship = {
+					name = random
+					design = last_created_design
+					colonizer_species = prev.species
+				}
+
+				set_fleet_stance = evasive
+				set_location = prev.capital_star
+			}
+		}
+		if = {
+			limit = {
+				always = no
+				NOT = { has_civic = civic_masc_the_masc }
+			}
+			create_fleet = {
+				set_take_point = yes
+				effect = {
+					set_owner = prev
+					while = {
+						count = 1
+						create_ship = {
+							name = random
+							design = "NAME_Vodex"
+						}
+					}
+					set_location = prev.capital_star
+				}
+			}
+			every_owned_fleet = {
+				limit = {
+					NOT = {
+						any_owned_ship = {
+							NOT = { is_ship_size = corvette }
+						}
+					}
+				}
+				if = { limit = { exists = leader } leader = { unassign_leader = this } }
+				destroy_fleet = this
+			}
+		}
+		
+		capital_scope.solar_system = {
+			if = {
+				limit = { exists = starbase }
+				starbase = {
+					fleet = {
+						destroy_fleet = this
+					}
+				}
+			}
+			create_starbase = {
+				size = "starbase_starhold"
+				owner = event_target:theventarget
+				module = "shipyard"
+				module = "trading_hub"
+				module = "shipyard"
+				module = "trading_hub"
+				building = "black_hole_observatory_masc_sov"
+				building = "crew_quarters"
+				
+			}
+		}
+		capital_scope.solar_system = {
+			every_system_planet = {
+				limit = {
+					has_planet_flag = masc_ringhole_5050
+					is_star = yes
+				}
+				set_deposit = d_masc_ringhole
+			}
+		}
+	}
+}
+
+country_event = {
+	id = masc.2002
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_civic = civic_masc_the_masc
+	}
+	
+	immediate = {
+		give_technology = { tech = tech_arc_emitter_zero message = no }
+		give_technology = { tech = tech_masc_bomber_weapon_1 message = no }
+		give_technology = { tech = tech_regenerative_hull_tissue message = no }
+		give_technology = { tech = tech_automated_exploration message = no }
+		
+		give_technology = { tech = tech_strike_craft_1 message = no }
+		give_technology = { tech = tech_torpedoes_1 message = no }
+		give_technology = { tech = tech_swarmer_missiles_1 message = no }
+		
+		give_technology = { tech = tech_destroyers message = no }
+		give_technology = { tech = tech_cruisers message = no }
+		give_technology = { tech = tech_space_defense_station_starfortress message = no }
+		give_technology = { tech = tech_battleships message = no }
+		give_technology = { tech = tech_titans message = no }
+		
+		give_technology = { tech = tech_corvette_hull_1 message = no }
+		give_technology = { tech = tech_corvette_hull_2 message = no }
+		give_technology = { tech = tech_corvette_build_speed message = no }
+		give_technology = { tech = tech_destroyer_hull_1 message = no }
+		give_technology = { tech = tech_destroyer_hull_2 message = no }
+		give_technology = { tech = tech_destroyer_build_speed message = no }
+		give_technology = { tech = tech_cruiser_hull_1 message = no }
+		give_technology = { tech = tech_cruiser_hull_2 message = no }
+		give_technology = { tech = tech_cruiser_build_speed message = no }
+		give_technology = { tech = tech_battleship_hull_1 message = no }
+		give_technology = { tech = tech_battleship_hull_2 message = no }
+		give_technology = { tech = tech_battleship_build_speed message = no }
+		give_technology = { tech = tech_titan_hull_1 message = no }
+		give_technology = { tech = tech_titan_hull_2 message = no }
+		#give_technology = { tech = tech_titan_build_speed message = no }
+		
+		add_resource = { alloys = 100	}
+		
+		
+		every_owned_fleet = {
+			limit = {
+				NOT = {
+					any_owned_ship = {
+						NOT = { is_ship_size = corvette }
+					}
+				}
+			}
+			if = { limit = { exists = leader } leader = { unassign_leader = this } }
+			destroy_fleet = this
+		}
+		every_owned_ship = {
+			limit = {
+				OR = {
+					is_ship_size = constructor
+				}
+			}
+			if = { limit = { exists = leader } leader = { unassign_leader = this } }
+			delete_ship = this
+		}
+		every_owned_ship = {
+			limit = {
+				is_ship_size = science
+			}
+			if = { limit = { exists = leader } leader = { 
+				save_event_target_as = unassigned_masc_scienceship_leader
+				unassign_leader = this
+			} }
+			delete_ship = this
+		}
+		
+		event_target:unassigned_masc_scienceship_leader = {
+			remove_trait = leader_trait_adaptable
+			remove_trait = leader_trait_stubborn
+			remove_trait = leader_trait_resilient
+			remove_trait = leader_trait_substance_abuser
+			remove_trait = leader_trait_eager
+			remove_trait = leader_trait_arrested_development
+			remove_trait = leader_trait_meticulous
+			remove_trait = leader_trait_spark_of_genius
+			remove_trait = leader_trait_carefree
+			remove_trait = leader_trait_roamer
+			remove_trait = leader_trait_archaeologist
+			remove_trait = leader_trait_archaeologist_ancrel
+			remove_trait = leader_trait_paranoid
+			remove_trait = leader_trait_maniacal
+			remove_trait = leader_trait_expertise_materials
+			remove_trait = leader_trait_expertise_propulsion
+			remove_trait = leader_trait_expertise_voidcraft
+			remove_trait = leader_trait_expertise_industry
+			remove_trait = leader_trait_expertise_field_manipulation
+			remove_trait = leader_trait_expertise_particles
+			remove_trait = leader_trait_expertise_psionics
+			remove_trait = leader_trait_expertise_computing
+			remove_trait = leader_trait_expertise_new_worlds
+			remove_trait = leader_trait_expertise_statecraft
+			remove_trait = leader_trait_expertise_biology
+			remove_trait = leader_trait_expertise_military_theory
+			add_trait = leader_trait_sbc_engineer
+			
+			#set_skill = 2
+			set_age = 20
+			set_is_female = yes
+		}
+		
+		create_fleet = {
+			set_take_point = yes
+			effect = {
+				set_owner = prev
+				
+				if = {
+					limit = { root = {  OR = {
+							species_portrait = sd_mam_robot
+							is_species_class = MAM 
+					} } }
+					create_ship_design = { design = "NAME_MASC_Dreadnought" }
+				}
+				else_if = {
+					limit = { root = {  OR = {
+							species_portrait = sd_hum_robot
+							is_species_class = HUM 
+					} } }
+					create_ship_design = { design = "NAME_MASC_Ranger" }
+				}
+				else_if = {
+					limit = { root = { OR = {
+							species_portrait = sd_rep_robot
+							is_species_class = REP 
+					} } }
+					create_ship_design = { design = "NAME_MASC_Lucio" }
+				}
+				else_if = {
+					limit = { root = { OR = {
+							species_portrait = sd_avi_robot
+							is_species_class = AVI 
+					} } }
+					create_ship_design = { design = "NAME_MASC_Osprey" }
+				}
+				else_if = {
+					limit = { root = { OR = {
+							species_portrait = sd_art_robot
+							is_species_class = ART 
+					} } }
+					create_ship_design = { design = "NAME_MASC_IraKosh" }
+				}
+				else_if = {
+					limit = { root = { OR = {
+							species_portrait = sd_mol_robot
+							is_species_class = MOL 
+					} } }
+					create_ship_design = { design = "NAME_MASC_Angaridae" }
+				}
+				else_if = {
+					limit = { root = { OR = {
+							species_portrait = sd_fun_robot
+							is_species_class = FUN 
+					} } }
+					create_ship_design = { design = "NAME_MASC_Zerus" }
+				}
+				else_if = {
+					limit = { root = { OR = {
+							species_portrait = sd_pla_robot
+							is_species_class = PLANT 
+					} } }
+					create_ship_design = { design = "NAME_MASC_Giga" }
+				}
+				else_if = {
+					limit = { root = { OR = {
+							species_portrait = lith_machine
+							is_species_class = LITHOID 
+					} } }
+					create_ship_design = { design = "NAME_MASC_Rheshlaan" }
+				}
+				else_if = {
+					limit = { root = { OR = {
+							species_portrait = nec_machine
+							is_species_class = NECROID 
+					} } }
+					create_ship_design = { design = "NAME_MASC_Crescent" }
+				}
+				else = {
+					create_ship_design = { design = "NAME_MASC_Dreadnought" }
+				}
+				
+				create_ship = {
+					name = random
+					design = last_created_design
+					#random_existing_design = magnus__advanced_strategic_cruiser
+				}
+				set_location = prev.capital_star
+				assign_leader = event_target:unassigned_masc_scienceship_leader
+				#assign_leader = {
+				#	random_owned_leader = {
+				#		limit = {
+				#			limit = { leader_class = scientist }
+				#			NOT = { is_researching_area = physics }
+				#			NOT = { is_researching_area = society }
+				#			NOT = { is_researching_area = engineering }
+				#		}
+				#	}
+				#}
+			}
+			settings = {
+				can_upgrade = yes
+				can_change_composition = yes
+				can_change_leader = yes
+				uses_naval_capacity = yes
+				spawn_debris = yes
+			}
+		}
+		last_created_fleet = {
+			random_owned_ship = {
+				limit = {
+					is_ship_size = magnus__advanced_strategic_cruiser
+				}
+				ship_event = { id = masc.8 }
+			}
+		}
+		capital_scope.solar_system = {
+			if = {
+				limit = { exists = starbase }
+				starbase = { set_starbase_size = starbase_citadel }
+			}
+		}
+		#add_modifier = { modifier = everfirst_sbc_speedup }
+	}
+}
+
+country_event = {
+	id = masc.2003
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_civic = civic_masc_the_masc
+	}
+	
+	immediate = {
+		hidden_effect = {
+		#	give_technology = { tech = tech_arc_emitter_zero message = no }
+		}
+	}
+}
+
+country_event = {
+	id = masc.2100
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		OR = {
+			has_valid_civic = civic_masc_the_one
+			has_civic = civic_masc_the_masc_one
+		}
+		FROM = {
+			NOT = { has_leader_flag = masc_the_one_init_ruler }
+			NOT = { has_trait = leader_trait_ruler_masc_the_one }
+			leader_class = ruler
+		#	NOT = { leader_age > 400 }
+		}
+	#	NOT = { years_passed > 2 }
+		OR = {
+			NOT = { has_country_flag = masc_the_one_init_ruler_generated }
+			has_authority = auth_imperial
+		}
+		NOT = { has_country_flag = masc_the_one_lost }
+	}
+
+	immediate = {
+		set_country_flag = masc_the_one_init_ruler_generated
+		#if = {
+		#	limit = { NOT = { has_authority = auth_imperial }} 	
+		#}
+		
+		add_modifier = { modifier = masc_the_one_init_ruler_20level days = 0.1  }
+		from = {
+			set_leader_flag = masc_the_one_init_ruler
+			
+			remove_trait = trait_ruler_corvette_focus
+			remove_trait = trait_ruler_destroyer_focus
+			remove_trait = trait_ruler_cruiser_focus
+			remove_trait = trait_ruler_battleship_focus
+			remove_trait = trait_ruler_recruiter
+			remove_trait = trait_ruler_from_the_ranks
+			remove_trait = trait_ruler_fortifier
+			remove_trait = trait_ruler_logistic_understanding
+			remove_trait = trait_ruler_military_pioneer
+			remove_trait = trait_ruler_warlike
+			remove_trait = trait_ruler_architectural_sense
+			remove_trait = trait_ruler_frontier_spirit
+			remove_trait = trait_ruler_world_shaper
+			remove_trait = trait_ruler_home_in_the_sky
+			remove_trait = trait_ruler_industrialist
+			remove_trait = trait_ruler_eye_for_talent
+			remove_trait = trait_ruler_deep_connections
+			remove_trait = trait_ruler_charismatic
+			remove_trait = trait_ruler_champion_of_the_people
+			remove_trait = trait_ruler_expansionist
+			remove_trait = trait_ruler_fertility_preacher
+			remove_trait = trait_ruler_investor
+			remove_trait = trait_ruler_space_miner
+			remove_trait = trait_ruler_explorer
+			remove_trait = leader_trait_fleet_organizer
+			remove_trait = leader_trait_reformer
+
+			#set_name = root.ruler.GetName
+			add_trait = leader_trait_ruler_masc_the_one
+			set_skill = 10
+			set_age = 419
+			set_is_female = yes
+			#if = {
+			#	limit = { 
+			#		exists = ruler
+			#		ruler = { NOT = { is_same_value = from }}
+			#		ruler = { gender = female }
+			#	}
+			#	set_is_female = yes
+			#}
+			save_event_target_as = masc_the_one_init_ruler
+
+		}
+		#remove_modifier = masc_the_one_init_ruler_20level
+		
+		#clone_leader = {
+		#	target = event_target:masc_the_one_init_ruler
+		#	class = ruler
+		#	skill = 10
+		#	set_age = 419
+		#	traits = {
+		#		trait = leader_trait_ruler_masc_the_one
+		#	}
+		#	effect = {
+		#		set_leader_flag = masc_the_one_init_ruler
+		#		save_event_target_as = masc_the_one_init_ruler
+		#	}
+		#}
+		#set_heir = last_created_leader
+		#if = {
+		#	limit = {
+		#		has_authority = auth_imperial
+		#		NOT = { exists = heir }
+		#	}
+		#	if = {
+		#		limit = { exists = heir }
+		#		kill_leader = {
+		#			type = ruler
+		#			heir = yes
+		#			show_notification = no
+		#		}
+		#	}
+		#	create_leader = {
+		#		class = ruler
+		#		species = root.owner_species
+		#		name = from.GetName
+		#		skill = 50
+		#		set_age = 419
+		#		traits = {
+		#			trait = leader_trait_ruler_masc_the_one
+		#		}
+		#	}
+		#	#assign_leader = last_created_leader
+		#	set_heir = last_created_leader
+		#}
+		
+	}
+}
+
+country_event = {
+	id = masc.2101
+	is_triggered_only = yes
+	hide_window = no
+	title = masc.2101.name
+	desc = masc.2101.desc
+	picture = GFX_evt_space_funeral
+	show_sound = event_red_alert
+
+	trigger = {
+		FROM = {
+			has_leader_flag = masc_the_one_init_ruler
+		}
+		NOT = { has_authority = auth_imperial }
+	}
+
+	immediate = {
+		force_remove_civic = civic_masc_the_one
+		#force_add_civic = civic_barbaric_despoilers
+		hidden_effect = {
+			set_country_flag = masc_the_one_lost
+		}
+	}
+
+	option = {
+		name = UNFORTUNATE
+		force_remove_civic = civic_masc_the_one
+	}
+}
+
+	
+# this: capital planet
+# from: founder species
+planet_event = {
+	id = masc.2004
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		owner = { has_origin = origin_evolution_heaven }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					NOR = {
+						is_species_class = MAM
+						OR = {
+							species_portrait = mam1
+							species_portrait = mam2
+							species_portrait = mam3
+							species_portrait = mam4
+							species_portrait = mam5
+							species_portrait = mam6
+							species_portrait = mam7
+							species_portrait = mam8
+							species_portrait = mam9
+							species_portrait = mam10
+							species_portrait = mam11
+							species_portrait = mam12
+							species_portrait = mam13
+							species_portrait = mam14
+							species_portrait = mam15
+							species_portrait = mam16
+							species_portrait = mam17
+						}
+					}
+				}
+			}
+			owner = {
+				set_origin = origin_default
+				capital_scope = {
+					add_modifier = { modifier = prosp_uni_mod }
+				}
+			}
+			break = yes
+		}
+		
+		
+		save_event_target_as = the_masc_hw
+		
+		remove_deposit = d_decrepit_dwellings
+		add_district = district_city
+		add_district = district_generator
+		add_district = district_mining
+		add_district = district_farming
+		
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						has_valid_civic = civic_death_cult
+						has_valid_civic = civic_death_cult_corporate
+					}
+				}
+			}
+			add_building = building_sacrificial_temple_1
+		}
+		else_if = {
+			limit = {
+				owner = {
+					OR = {
+						has_valid_civic = civic_memorialist
+						has_valid_civic = civic_hive_memorialist
+						has_valid_civic = civic_machine_memorialist
+					}
+				}
+			}
+			add_building = building_galactic_memorial_1
+		}
+		else_if = {
+			limit = {
+				owner = {
+					is_spiritualist = yes
+				}
+			}
+			add_building = building_temple
+		}
+		else_if = {
+			limit = {
+				owner = {
+					is_megacorp = yes
+				}
+			}
+			add_building = building_corporate_monument
+		}
+		else = {
+			add_building = building_autochthon_monument
+		}
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						has_valid_civic = civic_death_cult
+						has_valid_civic = civic_death_cult_corporate
+					}
+					OR = {
+						has_valid_civic = civic_memorialist
+						has_valid_civic = civic_hive_memorialist
+						has_valid_civic = civic_machine_memorialist
+					}
+				}
+			}
+			add_building = building_galactic_memorial_1
+		}
+		else = {
+			add_building = building_holo_theatres
+		}
+		
+		while = {
+			count = 12
+			create_pop = { species = last_created_species }
+		}
+		every_owned_pop = { 
+			set_pop_flag = event_int_wipe_out_purge
+		}
+		while = {
+			count = 2
+			random_owned_pop = {
+				limit = {
+					has_pop_flag = event_int_wipe_out_purge
+					is_same_species = owner.species
+					is_pop_category = ruler
+				}
+				remove_pop_flag = event_int_wipe_out_purge
+			}
+		}
+		
+		#random_owned_pop = {
+		#	limit = { has_pop_flag = event_int_wipe_out_purge }
+		#	modify_species = {
+		#		species = last_created_species
+		#	}
+		#	remove_pop_flag = event_int_wipe_out_purge
+		#}
+		
+		#if = { limit = { NOT = { owner = { species_portrait = mam_rat } } }
+		#	create_species = { #name = owner plural = owner
+		#		class = "MAM"
+		#		portrait = mam_rat
+		#		namelist = owner traits = random allow_negative_traits = yes homeworld = event_target:the_masc_hw effect = { save_global_event_target_as = last_created_species } } create_pop = { species = last_created_species } create_pop = { species = last_created_species } }
+		if = { limit = { NOT = { owner = { species_portrait = mam1 } } }
+			create_species = { #name = owner plural = owner
+				class = "MAM"
+				portrait = mam1
+				namelist = owner traits = random allow_negative_traits = yes homeworld = event_target:the_masc_hw effect = { save_global_event_target_as = last_created_species } } create_pop = { species = last_created_species } create_pop = { species = last_created_species } }
+		if = { limit = { NOT = { owner = { species_portrait = mam2 } } }
+			create_species = { #name = owner plural = owner
+				class = "MAM"
+				portrait = mam2
+				namelist = owner traits = random allow_negative_traits = yes homeworld = event_target:the_masc_hw effect = { save_global_event_target_as = last_created_species } } create_pop = { species = last_created_species } create_pop = { species = last_created_species } }
+		if = { limit = { NOT = { owner = { species_portrait = mam3 } } }
+			create_species = { #name = owner plural = owner
+				class = "MAM"
+				portrait = mam3
+				namelist = owner traits = random allow_negative_traits = yes homeworld = event_target:the_masc_hw effect = { save_global_event_target_as = last_created_species } } create_pop = { species = last_created_species } create_pop = { species = last_created_species } }
+		if = { limit = { NOT = { owner = { species_portrait = mam4 } } }
+			create_species = { #name = owner plural = owner
+				class = "MAM"
+				portrait = mam4
+				namelist = owner traits = random allow_negative_traits = yes homeworld = event_target:the_masc_hw effect = { save_global_event_target_as = last_created_species } } create_pop = { species = last_created_species } create_pop = { species = last_created_species } }
+		if = { limit = { NOT = { owner = { species_portrait = mam5 } } }
+			create_species = { #name = owner plural = owner
+				class = "MAM"
+				portrait = mam5
+				namelist = owner traits = random allow_negative_traits = yes homeworld = event_target:the_masc_hw effect = { save_global_event_target_as = last_created_species } } create_pop = { species = last_created_species } create_pop = { species = last_created_species } }
+		if = { limit = { NOT = { owner = { species_portrait = mam6 } } }
+			create_species = { #name = owner plural = owner
+				name = "PRESCRIPTED_species_name_scyldari"
+				plural = "PRESCRIPTED_species_plural_scyldari"
+				adjective = "PRESCRIPTED_species_adjective_scyldari"
+				class = "MAM"
+				portrait = mam6
+				namelist = owner 
+				traits = {
+					trait = trait_charismatic
+					trait = trait_natural_sociologists
+					trait = trait_weak
+				}
+				homeworld = event_target:the_masc_hw effect = { save_global_event_target_as = last_created_species } } create_pop = { species = last_created_species } create_pop = { species = last_created_species } }
+		if = { limit = { NOT = { owner = { species_portrait = mam7 } } }
+			create_species = { #name = owner plural = owner
+				class = "MAM"
+				portrait = mam7
+				namelist = owner traits = random allow_negative_traits = yes homeworld = event_target:the_masc_hw effect = { save_global_event_target_as = last_created_species } } create_pop = { species = last_created_species } create_pop = { species = last_created_species } }
+		if = { limit = { NOT = { owner = { species_portrait = mam8 } } }
+			create_species = { #name = owner plural = owner
+				class = "MAM"
+				portrait = mam8
+				namelist = owner traits = random allow_negative_traits = yes homeworld = event_target:the_masc_hw effect = { save_global_event_target_as = last_created_species } } create_pop = { species = last_created_species } create_pop = { species = last_created_species } }
+		if = { limit = { NOT = { owner = { species_portrait = mam9 } } }
+			create_species = { #name = owner plural = owner
+				class = "MAM"
+				portrait = mam9
+				namelist = owner traits = random allow_negative_traits = yes homeworld = event_target:the_masc_hw effect = { save_global_event_target_as = last_created_species } } create_pop = { species = last_created_species } create_pop = { species = last_created_species } }
+		if = { limit = { NOT = { owner = { species_portrait = mam10 } } }
+			create_species = { #name = owner plural = owner
+				class = "MAM"
+				portrait = mam10
+				namelist = owner traits = random allow_negative_traits = yes homeworld = event_target:the_masc_hw effect = { save_global_event_target_as = last_created_species } } create_pop = { species = last_created_species } create_pop = { species = last_created_species } }
+		if = { limit = { NOT = { owner = { species_portrait = mam11 } } }
+			create_species = { #name = owner plural = owner
+				class = "MAM"
+				portrait = mam11
+				namelist = owner traits = random allow_negative_traits = yes homeworld = event_target:the_masc_hw effect = { save_global_event_target_as = last_created_species } } create_pop = { species = last_created_species } create_pop = { species = last_created_species } }
+		if = { limit = { NOT = { owner = { species_portrait = mam12 } } }
+			create_species = { #name = owner plural = owner
+				class = "MAM"
+				portrait = mam12
+				namelist = owner traits = random allow_negative_traits = yes homeworld = event_target:the_masc_hw effect = { save_global_event_target_as = last_created_species } } create_pop = { species = last_created_species } create_pop = { species = last_created_species } }
+		if = { limit = { NOT = { owner = { species_portrait = mam13 } } }
+			create_species = { #name = owner plural = owner
+				class = "MAM"
+				portrait = mam13
+				namelist = owner traits = random allow_negative_traits = yes homeworld = event_target:the_masc_hw effect = { save_global_event_target_as = last_created_species } } create_pop = { species = last_created_species } create_pop = { species = last_created_species } }
+		if = { limit = { NOT = { owner = { species_portrait = mam14 } } }
+			create_species = { #name = owner plural = owner
+				class = "MAM"
+				portrait = mam14
+				namelist = owner traits = random allow_negative_traits = yes homeworld = event_target:the_masc_hw effect = { save_global_event_target_as = last_created_species } } create_pop = { species = last_created_species } create_pop = { species = last_created_species } }
+		if = { limit = { NOT = { owner = { species_portrait = mam15 } } }
+			create_species = { #name = owner plural = owner
+				class = "MAM"
+				portrait = mam15
+				namelist = owner traits = random allow_negative_traits = yes homeworld = event_target:the_masc_hw effect = { save_global_event_target_as = last_created_species } } create_pop = { species = last_created_species } create_pop = { species = last_created_species } }
+		if = { limit = { NOT = { owner = { species_portrait = mam16 } } }
+			create_species = { #name = owner plural = owner
+				class = "MAM"
+				portrait = mam16
+				namelist = owner traits = random allow_negative_traits = yes homeworld = event_target:the_masc_hw effect = { save_global_event_target_as = last_created_species } } create_pop = { species = last_created_species } create_pop = { species = last_created_species } }
+		if = { limit = { NOT = { owner = { species_portrait = mam17 } } }
+			create_species = { #name = owner plural = owner
+				class = "MAM"
+				portrait = mam17
+				namelist = owner traits = random allow_negative_traits = yes homeworld = event_target:the_masc_hw effect = { save_global_event_target_as = last_created_species } } create_pop = { species = last_created_species } create_pop = { species = last_created_species } }
+		
+		every_owned_pop = { 
+			limit = {
+				has_pop_flag = event_int_wipe_out_purge
+			}
+			kill_pop = yes 
+		}
+	}
+}

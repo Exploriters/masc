@@ -1,0 +1,380 @@
+
+masc_spawn_titans = {
+	hidden_effect = {
+		create_fleet = {
+			name = "NAME_Grand_Herald"
+			settings = {
+				can_upgrade = no
+				can_change_composition = yes
+				can_change_leader = yes
+				uses_naval_capacity = no
+				spawn_debris = no
+				can_disband = yes
+			}
+			effect = {
+				set_owner = prev
+				create_ship_design = {
+					design = "NAME_Herald"
+				}
+				create_ship = {
+					name = "NAME_Grand_Herald"
+					design = last_created_design
+					graphical_culture = "humanoid_01"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = "NAME_Grand_Herald"
+					design = last_created_design
+					graphical_culture = "plantoid_01"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = "NAME_Grand_Herald"
+					design = last_created_design
+					graphical_culture = "mammalian_01"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = "NAME_Grand_Herald"
+					design = last_created_design
+					graphical_culture = "reptilian_01"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = "NAME_Grand_Herald"
+					design = last_created_design
+					graphical_culture = "avian_01"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = "NAME_Grand_Herald"
+					design = last_created_design
+					graphical_culture = "molluscoid_01"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = "NAME_Grand_Herald"
+					design = last_created_design
+					graphical_culture = "fungoid_01"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = "NAME_Grand_Herald"
+					design = last_created_design
+					graphical_culture = "arthropoid_01"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = "NAME_Grand_Herald"
+					design = last_created_design
+					graphical_culture = "lithoid_01"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = "NAME_Grand_Herald"
+					design = last_created_design
+					graphical_culture = "necroid_01"
+					prefix = no
+					upgradable = no
+				}
+				set_location = fromfrom.planet
+				set_herald_damage = yes
+			}
+		}
+	}
+}
+add_extra_extra_extra_hyperlane_to_spawned_system_effect = {
+	hidden_effect = {
+		last_created_system = {
+			if = {
+				limit = {
+					any_system = {
+						distance = {
+							source = prev
+							type = euclidean
+							min_distance >= 1
+							max_distance <= 10
+						}
+						NOT = { has_hyperlane_to = prev }
+					}
+				}
+				random_system = {
+					limit = {
+						distance = {
+							source = prev
+							type = euclidean
+							min_distance >= 1
+							max_distance <= 10
+						}
+						NOT = { has_hyperlane_to = prev }
+					}
+					add_hyperlane = {
+						from = this
+						to = prev
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_system = {
+						distance = {
+							source = prev
+							type = euclidean
+							min_distance >= 1
+							max_distance <= 15
+						}
+						NOT = { has_hyperlane_to = prev }
+					}
+				}
+				random_system = {
+					limit = {
+						distance = {
+							source = prev
+							type = euclidean
+							min_distance >= 1
+							max_distance <= 15
+						}
+						NOT = { has_hyperlane_to = prev }
+					}
+					add_hyperlane = {
+						from = this
+						to = prev
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_system = {
+						distance = {
+							source = prev
+							type = euclidean
+							min_distance >= 1
+							max_distance <= 25
+						}
+						NOT = { has_hyperlane_to = prev }
+					}
+				}
+				random_system = {
+					limit = {
+						distance = {
+							source = prev
+							type = euclidean
+							min_distance >= 1
+							max_distance <= 25
+						}
+						NOT = { has_hyperlane_to = prev }
+					}
+					add_hyperlane = {
+						from = this
+						to = prev
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_system = {
+						distance = {
+							source = prev
+							type = euclidean
+							min_distance >= 1
+							max_distance <= 40
+						}
+						NOT = { has_hyperlane_to = prev }
+					}
+				}
+				random_system = {
+					limit = {
+						distance = {
+							source = prev
+							type = euclidean
+							min_distance >= 1
+							max_distance <= 40
+						}
+						NOT = { has_hyperlane_to = prev }
+					}
+					add_hyperlane = {
+						from = this
+						to = prev
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_system = {
+						distance = {
+							source = prev
+							type = euclidean
+							min_distance >= 1
+							max_distance <= 50
+						}
+						NOT = { has_hyperlane_to = prev }
+					}
+				}
+				random_system = {
+					limit = {
+						distance = {
+							source = prev
+							type = euclidean
+							min_distance >= 1
+							max_distance <= 50
+						}
+						NOT = { has_hyperlane_to = prev }
+					}
+					add_hyperlane = {
+						from = this
+						to = prev
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_system = {
+						distance = {
+							source = prev
+							type = euclidean
+							min_distance >= 1
+							max_distance <= 60
+						}
+						NOT = { has_hyperlane_to = prev }
+					}
+				}
+				random_system = {
+					limit = {
+						distance = {
+							source = prev
+							type = euclidean
+							min_distance >= 1
+							max_distance <= 60
+						}
+						NOT = { has_hyperlane_to = prev }
+					}
+					add_hyperlane = {
+						from = this
+						to = prev
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_system = {
+						distance = {
+							source = prev
+							type = euclidean
+							min_distance >= 1
+							max_distance <= 70
+						}
+						NOT = { has_hyperlane_to = prev }
+					}
+				}
+				random_system = {
+					limit = {
+						distance = {
+							source = prev
+							type = euclidean
+							min_distance >= 1
+							max_distance <= 70
+						}
+						NOT = { has_hyperlane_to = prev }
+					}
+					add_hyperlane = {
+						from = this
+						to = prev
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_system = {
+						distance = {
+							source = prev
+							type = euclidean
+							min_distance >= 1
+							max_distance <= 80
+						}
+						NOT = { has_hyperlane_to = prev }
+					}
+				}
+				random_system = {
+					limit = {
+						distance = {
+							source = prev
+							type = euclidean
+							min_distance >= 1
+							max_distance <= 80
+						}
+						NOT = { has_hyperlane_to = prev }
+					}
+					add_hyperlane = {
+						from = this
+						to = prev
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_system = {
+						distance = {
+							source = prev
+							type = euclidean
+							min_distance >= 1
+							max_distance <= 90
+						}
+						NOT = { has_hyperlane_to = prev }
+					}
+				}
+				random_system = {
+					limit = {
+						distance = {
+							source = prev
+							type = euclidean
+							min_distance >= 1
+							max_distance <= 90
+						}
+						NOT = { has_hyperlane_to = prev }
+					}
+					add_hyperlane = {
+						from = this
+						to = prev
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_system = {
+						distance = {
+							source = prev
+							type = euclidean
+							min_distance >= 1
+							max_distance <= 120
+						}
+						NOT = { has_hyperlane_to = prev }
+					}
+				}
+				random_system = {
+					limit = {
+						distance = {
+							source = prev
+							type = euclidean
+							min_distance >= 1
+							max_distance <= 120
+						}
+						NOT = { has_hyperlane_to = prev }
+					}
+					add_hyperlane = {
+						from = this
+						to = prev
+					}
+				}
+			}
+		}
+	}
+}

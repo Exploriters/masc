@@ -1,0 +1,7 @@
+
+#alerts = {
+#	alert_sbc_readytobuilt = {
+#		category = LOW
+#		sound  = "tradition_available"
+#	}
+#}

@@ -1,0 +1,29 @@
+# Icons set here are the ones shown in component editor list.
+
+component_set = {
+	key = "MASC_BRIGHT_RIFLE"
+	
+	icon = "GFX_ship_part_torpedo_3"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "ARC_EMITTER_ZERO"
+	
+	icon = "GFX_ship_part_space_cloud_weapon_1"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "ARC_EMITTER_TITAN"
+	
+	icon = "GFX_ship_part_space_cloud_weapon_1"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "MASC_SINGLE_PHASER"
+	
+	icon = "GFX_ship_part_mining_drone_laser_1"
+	icon_frame = 1	
+}

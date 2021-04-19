@@ -1,0 +1,173 @@
+
+### Origins
+
+shattered_ring_system_void_dweller_home_planet_setup = {
+	change_pc = pc_habitat
+	owner = {
+		save_event_target_as = void_dweller_owner
+		give_technology = {
+			tech = tech_habitat_1
+			message = no
+		}
+		give_technology = {
+			tech = tech_planetary_shield_generator
+			message = no
+		}
+		give_technology = {
+			tech = tech_regenerative_hull_tissue
+			message = no
+		}
+		#give_technology = {
+		#	tech = tech_destroyers
+		#	message = no
+		#}
+		#give_technology = {
+		#	tech = tech_cruisers
+		#	message = no
+		#}
+		add_research_option = tech_habitat_2
+		
+		#every_owned_ship = {
+		#	limit = {
+		#		OR = {
+		#			is_ship_size = corvette
+		#		}
+		#	}
+		#	destroy_ship = this
+		#}
+		
+		create_fleet = {
+			set_take_point = yes
+			effect = {
+				set_owner = prev
+
+				while = {
+					count = 0
+					create_ship = {
+						name = random
+						random_existing_design = cruiser
+					}
+				}
+
+				set_location = prev.capital_star
+			}
+		}
+
+		if = {
+			limit = {
+				is_lithoid_empire = no
+			}
+			give_technology = {
+				tech = tech_eco_simulation
+				message = no
+			}
+			give_technology = {
+				tech = tech_hydroponics
+				message = no
+			}
+		}
+		else = {
+			give_technology = {
+				tech = tech_powered_exoskeletons
+				message = no
+			}
+			give_technology = {
+				tech = tech_space_mining_1
+				message = no
+			}
+		}
+	}
+	#solar_system = {
+	#	create_starbase = {
+	#		size = "starbase_starhold"
+	#		owner = root.owner
+	#		module = "shipyard"
+	#		module = "shipyard"
+	#		module = "shipyard"
+	#		module = "trading_hub"
+	#		building = "black_hole_observatory_masc_sov"
+	#		building = "crew_quarters"
+	#		
+	#	}
+	#	starbase = {
+	#		set_starbase_size = starbase_starhold
+	#	}
+	#}
+	while = {
+		count = 28
+		create_pop = {
+			species = owner_main_species
+		}
+	}
+	if = {
+		limit = { owner = { is_lithoid_empire = no } }
+		create_pop = { species = owner_main_species }
+		create_pop = { species = owner_main_species }
+	}
+	set_planet_entity = {
+		entity = "habitat_phase_03_entity"
+		graphical_culture = owner
+	}
+	
+	set_planet_size = 12
+	set_planet_flag = advanced_habitat
+	set_planet_flag = advanced_habitat_2
+	set_owner = event_target:void_dweller_owner
+	
+	add_deposit = d_masc_arcane_core
+	add_building = building_hab_system_capital_masc_srvd_origin
+	add_building = building_planetary_shield_generator
+	add_deposit = d_masc_decrepit_tunnels_1
+	add_deposit = d_masc_decrepit_tunnels_2
+	add_deposit = d_masc_decrepit_tunnels_3
+
+	add_district = district_hab_science
+	add_district = district_hab_science
+	
+	if = {
+		limit = { owner = { is_gestalt = no } }
+		add_district = district_hab_commercial
+		add_district = district_hab_cultural
+		add_building = building_bureaucratic_1
+		add_building = building_factory_1
+		add_building = building_foundry_1
+	}
+	else = {
+		add_district = district_hab_energy
+		add_district = district_hab_energy
+		add_building = building_spawning_pool
+		add_building = building_hive_node
+		add_building = building_foundry_1
+	}
+	
+	if = {
+		limit = { owner = { is_lithoid_empire = no } }
+		add_building = building_hydroponics_farm
+	}
+	else_if = {
+		limit = { owner = { is_gestalt = no } }
+		add_building = building_holo_theatres
+	}
+	#every_system_planet = {
+	#	limit = { has_planet_flag = mining_planet }
+	#	create_mining_station = { owner = event_target:void_dweller_owner }
+	#}
+	#every_system_planet = {
+	#	limit = {
+	#		always = never
+	#		OR = {
+	#			is_planet_class = pc_black_hole
+	#			is_star = yes
+	#		}
+	#	}
+	#	init_effect = {
+	#		set_deposit = d_dark_matter_deposit_1
+	#	}
+	#}
+	#every_system_planet = {
+	#	limit = { has_planet_flag = masc_planet_restyle }
+	#	set_planet_entity = {
+	#		graphical_culture = owner
+	#	}
+	#}
+}

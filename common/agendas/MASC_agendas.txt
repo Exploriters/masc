@@ -1,0 +1,53 @@
+### AGENDAS ####
+#
+# Agendas are given to leader-candidates in Oligarchic government-forms
+#
+# weight_modifier - scope = leader, from = country
+# modifier
+
+
+agenda_ruler_train = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 1000000000
+			OR = {
+				has_trait = leader_trait_ruler_masc_the_one
+				AND = {
+					FROM = {
+						OR = {
+							has_authority = auth_imperial
+							NOT = { has_country_flag = masc_the_one_init_ruler_generated }
+						}
+						OR = {
+							has_valid_civic = civic_masc_the_one
+							has_civic = civic_masc_the_masc_one
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			FROM = {
+				NOR = {
+					has_civic = civic_masc_the_one
+					has_civic = civic_masc_the_masc_one
+				}
+			}
+			NOT = { has_trait = leader_trait_ruler_masc_the_one }
+		}
+		modifier = {
+			factor = 0
+			FROM = {
+				has_country_flag = masc_the_one_init_ruler_generated_once
+				NOT = { has_authority = auth_imperial }
+			}
+			NOT = { has_trait = leader_trait_ruler_masc_the_one }
+		}
+	}
+	
+	modifier = {
+		planet_jobs_ruler_produces_mult = 0.10
+	}
+}

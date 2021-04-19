@@ -1,0 +1,12 @@
+
+
+pm_masc_unity_of_lucky = {
+	spawn_chance = {
+		modifier = {
+			factor = 0
+			always = yes
+		}
+	}
+	
+	modifier = "masc_unity_of_lucky"
+}

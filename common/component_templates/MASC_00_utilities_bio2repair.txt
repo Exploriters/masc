@@ -1,0 +1,309 @@
+
+@MASC_regen_S7_LITE = 0.12
+@MASC_regen_M7_LITE = 0.3
+@MASC_regen_L7_LITE = 0.75
+
+###################
+# Armor Recharger #
+###################
+
+utility_component_template = {
+	key = "BIO_ARMOR_BOOSTER"
+	size = aux
+	icon = "GFX_ship_part_masc_bio_booster"
+	icon_frame = 1
+	power = -20
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 20
+			food = 20
+		}
+	}
+	
+	prerequisites = { "tech_ship_biology_structure" }
+	component_set = "BIO_ARMOR_BOOSTER"
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2.0
+			is_preferred_weapons = weapon_type_energy
+			is_country_type = default
+			has_monthly_income = { resource = food value > 0 }
+		}
+
+		modifier = {
+			factor = 0
+			is_country_type = default
+			has_monthly_income = { resource = food value <= 0 }
+		}
+	}
+	
+	modifier = {
+		ship_hull_regen_add_perc = 0.05
+		ship_armor_regen_add_perc = 0.05
+		ship_hull_regen_add_static = 20
+		ship_armor_regen_add_static = 0
+		ship_hull_mult = 0
+		ship_armor_mult = 0
+	}
+	
+	
+	
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_SHIELD count > 0 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_SHIELD count > 1 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_SHIELD count > 2 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_SHIELD count > 3 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_SHIELD count > 4 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_SHIELD count > 5 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_SHIELD count > 6 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_SHIELD count > 7 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_SHIELD count > 8 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_SHIELD count > 9 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_SHIELD count > 10 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_SHIELD count > 11 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_SHIELD count > 12 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_SHIELD count > 13 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_SHIELD count > 14 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_SHIELD count > 15 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_SHIELD count > 16 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_SHIELD count > 17 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_SHIELD count > 18 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_SHIELD count > 19 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	
+#	
+#	
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_ARMOR count > 0 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_ARMOR count > 1 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_ARMOR count > 2 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_ARMOR count > 3 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_ARMOR count > 4 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_ARMOR count > 5 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_ARMOR count > 6 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_ARMOR count > 7 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_ARMOR count > 8 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_ARMOR count > 9 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_ARMOR count > 10 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_ARMOR count > 11 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_ARMOR count > 12 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_ARMOR count > 13 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_ARMOR count > 14 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_ARMOR count > 15 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_ARMOR count > 16 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_ARMOR count > 17 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_ARMOR count > 18 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	triggered_modifier = { potential = { has_component = SMALL_BIO_ARMOR count > 19 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_S7_LITE ship_armor_regen_add_static = @MASC_regen_S7_LITE } }
+#	
+#	
+#	
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_SHIELD count > 0 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_SHIELD count > 1 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_SHIELD count > 2 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_SHIELD count > 3 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_SHIELD count > 4 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_SHIELD count > 5 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_SHIELD count > 6 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_SHIELD count > 7 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_SHIELD count > 8 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_SHIELD count > 9 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_SHIELD count > 10 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_SHIELD count > 11 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_SHIELD count > 12 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_SHIELD count > 13 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_SHIELD count > 14 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_SHIELD count > 15 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_SHIELD count > 16 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_SHIELD count > 17 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_SHIELD count > 18 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_SHIELD count > 19 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	
+#	
+#	
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_ARMOR count > 0 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_ARMOR count > 1 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_ARMOR count > 2 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_ARMOR count > 3 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_ARMOR count > 4 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_ARMOR count > 5 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_ARMOR count > 6 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_ARMOR count > 7 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_ARMOR count > 8 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_ARMOR count > 9 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_ARMOR count > 10 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_ARMOR count > 11 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_ARMOR count > 12 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_ARMOR count > 13 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_ARMOR count > 14 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_ARMOR count > 15 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_ARMOR count > 16 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_ARMOR count > 17 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_ARMOR count > 18 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	triggered_modifier = { potential = { has_component = MEDIUM_BIO_ARMOR count > 19 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_M7_LITE ship_armor_regen_add_static = @MASC_regen_M7_LITE } }
+#	
+#	
+#	
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_SHIELD count > 0 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_SHIELD count > 1 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_SHIELD count > 2 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_SHIELD count > 3 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_SHIELD count > 4 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_SHIELD count > 5 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_SHIELD count > 6 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_SHIELD count > 7 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_SHIELD count > 8 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_SHIELD count > 9 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_SHIELD count > 10 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_SHIELD count > 11 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_SHIELD count > 12 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_SHIELD count > 13 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_SHIELD count > 14 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_SHIELD count > 15 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_SHIELD count > 16 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_SHIELD count > 17 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_SHIELD count > 18 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_SHIELD count > 19 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	
+#	
+#	
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_ARMOR count > 0 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_ARMOR count > 1 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_ARMOR count > 2 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_ARMOR count > 3 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_ARMOR count > 4 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_ARMOR count > 5 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_ARMOR count > 6 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_ARMOR count > 7 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_ARMOR count > 8 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_ARMOR count > 9 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_ARMOR count > 10 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_ARMOR count > 11 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_ARMOR count > 12 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_ARMOR count > 13 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_ARMOR count > 14 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_ARMOR count > 15 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_ARMOR count > 16 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_ARMOR count > 17 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_ARMOR count > 18 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+#	triggered_modifier = { potential = { has_component = LARGE_BIO_ARMOR count > 19 }
+#		modifier = { ship_hull_regen_add_static = @MASC_regen_L7_LITE ship_armor_regen_add_static = @MASC_regen_L7_LITE } }
+}

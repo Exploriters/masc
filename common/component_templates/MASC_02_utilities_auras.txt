@@ -1,0 +1,72 @@
+
+utility_component_template = {
+	key = "MASC_SHIP_AURA_SUBSPACE_SNARE"
+	size = medium
+	#icon = "GFX_ship_part_aura_snare"
+	icon = "GFX_ship_part_aura_targeting_grid_blue"
+	icon_frame = 1
+	power = 0
+	
+	size_restriction = { magnus__advanced_strategic_cruiser }
+	component_set = "ship_aura_components_blanknonallow"
+	
+	hostile_aura = {
+		name = "aura_ship_subspace_snare_sbc"
+		radius = 80
+		apply_on = fleets
+		
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = hostile_snare_aura
+			priority = 2
+		}
+		
+		modifier = {
+			ship_emergency_ftl_min_days_mult = 1
+			ship_disengage_chance_mult = -0.2
+			ship_windup_mult = 0.5
+		}
+		
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"   
+				dynamic_scale = no
+			}
+		}
+	}
+	
+	friendly_aura = {
+		name = "aura_friendly_sbc"
+		system_wide = yes
+		apply_on = ships
+		
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = friendly_sbc
+			priority = 20
+		}
+		
+		modifier = {
+			ship_hull_regen_add_perc = 1
+			ship_ftl_jumpdrive_range_mult = 0.5
+			ship_jumpdrive_cooldown_mult = -0.5
+		}
+		
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_positive_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 10
+	}
+}

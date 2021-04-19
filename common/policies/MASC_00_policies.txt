@@ -1,0 +1,72 @@
+##########################################################################
+# Empire Policies
+#
+# #####
+#
+# AI:
+# Base AI-weight is 100, if unchanged
+# AI will grab whatever policy-option has the highest weight
+#
+# #####
+#
+##########################################################################
+
+station_resist_type = {
+	potential = {
+		OR = {
+			is_country_type = default
+			is_country_type = fallen_empire
+			is_country_type = awakened_fallen_empire
+			is_country_type = primitive
+			is_country_type = awakened_marauders
+		}
+	}
+
+	allow = {
+		is_at_war = no # Not allowed to change policies in this group while at war
+	}
+
+	option = {
+		name = "station_policy_armor"
+
+		modifier = { }
+
+		policy_flags = {
+			station_policy_armor
+		}
+		
+		AI_weight = {
+			factor = 2
+		}
+	}
+
+	option = {
+		name = "station_policy_shield"
+
+		#modifier = {
+		#	ship_armor_add = -1000
+		#	ship_shield_add = 1000
+		#	ship_shield_regen_add_static = 10
+		#}
+
+		policy_flags = {
+			station_policy_shield
+		}
+
+		AI_weight = {
+			factor = 1
+			modifier = {
+				factor = 3
+				
+				is_ai = yes
+				has_valid_ai_personality = yes
+				OR = {
+					has_ai_personality = servitors
+					has_ai_personality = xenophobic_isolationists
+					has_ai_personality = federation_builders
+					has_ai_personality = erudite_explorers
+				}
+			}
+		}
+	}
+}

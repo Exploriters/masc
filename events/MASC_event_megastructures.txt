@@ -1,0 +1,304 @@
+
+namespace = masc
+
+#country_event = {
+#	id = masc.700
+#	title = "测试标题"
+#	desc = "测试内容1测试内容2测试内容2"
+#	#picture = GFX_evt_genetic_modification_testpng
+#	picture = "genetic_modification_testpng"
+#	show_sound = event_engineered_evolution
+#
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = EXCELLENT
+#	}
+#}
+#
+#country_event = {
+#	id = masc.701
+#	title = "masc.701.name"
+#	desc = "masc.701.name"
+#	picture = GFX_evt_genetic_modification
+#	show_sound = event_evolution_mastery
+#
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = EXCELLENT
+#	}
+#}
+#
+
+# Gene Manager Notification Events
+
+# Gene Manager Site Built
+
+country_event = {
+	id = masc.1000
+	title = masc.1000.name
+	desc = masc.1000.desc
+	picture = GFX_evt_genetic_modification
+	show_sound = event_engineered_evolution
+	location = FROMFROM
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { is_megastructure_type = masc_gene_manager_0 }
+	}
+	
+	option = {
+		name = masc.1000.a
+	}
+}
+
+# Gene Manager Site Built Notification (HIDDEN)
+country_event = {
+	id = masc.1001
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { is_megastructure_type = masc_gene_manager_1 }
+	}
+	
+	immediate = {
+		FROMFROM = { save_event_target_as = masc_gene_manager_system }
+		every_relation = {
+			limit = {
+				is_ai = no
+				has_communications = root
+			}
+			country_event = { id = masc.1002 }
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = started_first_masc_gene_manager }
+			}
+			set_country_flag = started_first_masc_gene_manager
+		}
+		else_if = {
+			limit = {
+				has_country_flag = started_first_masc_gene_manager
+			}
+			set_country_flag = started_first_masc_gene_manager_2
+		}
+	}
+}
+
+
+# Neighbor begins building Gene Manager
+country_event = {
+	id = masc.1002
+	title = masc.1002.name
+	desc = {
+		text = masc.1002.desc.a
+		trigger = {
+			FROM = { 
+				has_country_flag = started_first_masc_gene_manager
+				NOT = { has_country_flag = started_first_masc_gene_manager_2 }
+			}
+		}
+	}
+	desc = {
+		text = masc.1002.desc.b
+		trigger = {
+			FROM = { 
+				has_country_flag = started_first_masc_gene_manager_2
+			}
+		}
+	}
+	picture = GFX_evt_genetic_modification
+	show_sound = event_mega_structure_other_empire_build_start
+	location = event_target:masc_gene_manager_system
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = OK
+	}
+}
+
+# Gene Manager built
+country_event = {
+	id = masc.1003
+	title = masc.1003.name
+	desc = masc.1003.desc
+	picture = GFX_evt_genetic_modification
+	show_sound = event_engineered_evolution
+	location = FROMFROM
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { is_megastructure_type = masc_gene_manager_1 }
+	}
+	
+	option = {
+		name = masc.1003.a
+	}
+}
+
+ # Gene Manager First Stage Completed
+country_event = {
+	id = masc.1004
+	title = masc.1004.name
+	desc = masc.1004.desc
+	picture = GFX_evt_genetic_modification
+	show_sound = event_engineered_evolution
+	location = FROMFROM
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { is_megastructure_type = masc_gene_manager_2 }
+	}
+	
+	option = {
+		name = masc.1004.a
+	}
+}
+
+# Gene Manager completed
+country_event = {
+	id = masc.1005
+	title = masc.1005.name
+	desc = {
+		text = masc.1005.desc.a
+		trigger = {
+			NOT = { has_country_flag = finished_masc_gene_manager }
+		}
+	}
+	desc = {
+		text = masc.1005.desc.b
+		trigger = {
+			has_country_flag = finished_masc_gene_manager
+		}
+	}
+	picture = GFX_evt_genetic_modification
+	show_sound = event_evolution_mastery
+	location = FROMFROM
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { is_megastructure_type = masc_gene_manager_3 }
+	}
+
+	immediate = {
+		every_relation = {
+			limit = {
+				is_ai = no
+				has_communications = root
+			}
+			country_event = { id = masc.1007 }
+		}
+	}
+
+	after = {
+		hidden_effect = { country_event = { id = masc.1006 days = 5 } }
+	}
+	
+	option = {
+		name = masc.1005.a
+	}
+}
+
+# Gene Manager Flag Event (HIDDEN)
+country_event = {
+	id = masc.1006
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = finished_masc_gene_manager
+	}
+}
+
+# Neighbor notification
+country_event = {
+	id = masc.1007
+	title = masc.1007.name
+	desc = masc.1007.desc
+	picture = GFX_evt_genetic_modification
+	show_sound = event_mega_structure_other_empire_build_complete
+	location = FROMFROMFROM
+
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+	}
+}
+
+# Ruined Gene Manager
+ship_event = {
+	id = masc.1008
+	title = "masc.1008.name"
+	desc = "masc.1008.desc"
+	picture = GFX_evt_space_debris
+	show_sound = event_radio_chatter
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = {
+			has_star_flag = ruined_masc_gene_manager
+			any_system_megastructure = { is_megastructure_type = masc_gene_manager_ruined }
+		}
+	}
+	
+	immediate = {
+		FROM = { save_event_target_as = masc_gene_manager_system }
+	}		
+	
+	option = {
+		name = "masc.1008.a"
+		trigger = {
+			owner = {
+				OR = {
+					has_megastructure = masc_gene_manager_1
+					has_megastructure = masc_gene_manager_2
+					has_megastructure = masc_gene_manager_3
+					has_megastructure = masc_gene_manager_restored
+				}
+			}
+		}
+	}
+	option = {
+		name = FASCINATING
+		trigger = {
+			NOT = {
+				owner = { 
+					OR = {
+						has_megastructure = masc_gene_manager_1
+						has_megastructure = masc_gene_manager_2
+						has_megastructure = masc_gene_manager_3
+						has_megastructure = masc_gene_manager_restored
+					}
+				}
+			}
+		}
+	}
+}
+
+# Ruined Gene Manager Restored
+country_event = {
+	id = masc.1009
+	title = "masc.1009.name"
+	desc = "masc.1009.desc"
+	picture = GFX_evt_genetic_modification
+	show_sound = event_evolution_mastery
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EXCELLENT
+	}
+}

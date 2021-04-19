@@ -1,0 +1,26 @@
+
+component_set = {
+	key = "BIO_SHIELD"
+	
+	icon = "GFX_ship_part_masc_bio_shield"
+	icon_frame = 1	
+}
+component_set = {
+	key = "BIO_ARMOR"
+	
+	icon = "GFX_ship_part_masc_bio_armor"
+	icon_frame = 1	
+}
+component_set = {
+	key = "BIO_ARMOR_BOOSTER"
+	
+	icon = "GFX_ship_part_masc_bio_booster"
+	icon_frame = 1	
+}
+
+#component_set = {
+#	key = "BIO_CHARGER"
+#	
+#	icon = "GFX_ship_part_masc_bio_booster"
+#	icon_frame = 1	
+#}

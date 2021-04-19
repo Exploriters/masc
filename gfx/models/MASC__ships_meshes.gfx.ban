@@ -1,0 +1,58 @@
+objectTypes = {
+	
+	pdxmesh = {
+		name = "mammalian_01_masc_military_station_large_mesh"
+		file = "gfx/models/ships/mammalian_01/mammalian_01_military_station_large.mesh"
+		scale = 1.0
+		meshsettings = {
+			shader = "PdxMeshShip"
+		}
+	}	
+	
+	pdxmesh = {
+		name = "humanoid_01_masc_military_station_large_mesh"
+		file = "gfx/models/ships/humanoid_01/humanoid_01_military_station_large.mesh"
+	}
+
+	pdxmesh = {
+		name = "avian_01_masc_military_station_large_mesh"
+		file = "gfx/models/ships/avian_01/avian_01_military_station_large.mesh"
+		scale = 1.0
+	}	
+	
+	pdxmesh = {
+		name = "fungoid_01_masc_military_station_large_mesh"
+		file = "gfx/models/ships/fungoid_01/fungoid_01_military_station_large.mesh"
+		scale = 1.0
+	}
+	
+	pdxmesh = {
+		name = "molluscoid_01_masc_military_station_large_mesh"
+		file = "gfx/models/ships/molluscoid_01/molluscoid_01_military_station_large.mesh"
+		scale = 1.0
+	}	
+	
+	pdxmesh = {
+		name = "arthropoid_01_masc_military_station_large_mesh"
+		file = "gfx/models/ships/arthropoid_01/arthropoid_01_military_station_large.mesh"
+		scale = 1.0
+		meshsettings = {
+			shader = "PdxMeshShip"
+		}
+	}	
+	
+	pdxmesh = {
+		name = "plantoid_01_masc_military_station_large_mesh"
+		file = "gfx/models/ships/plantoid_01/plantoid_01_military_station_large.mesh"
+		scale = 1.0
+		#meshsettings = {
+		#	shader = "PdxMeshShip"
+		#}
+	}	
+	
+	pdxmesh = {
+		name = "lithoid_01_masc_military_station_large_mesh"
+		file = "gfx/models/ships/lithoid_01/lithoid_01_military_station_small.mesh"
+		scale = 1.0
+	}	
+}

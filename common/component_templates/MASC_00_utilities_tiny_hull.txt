@@ -1,0 +1,528 @@
+
+@s_t1_cost = 0.5
+@s_t2_cost = 0.65
+@s_t3_cost = 0.85
+@s_t4_cost = 1.1
+@s_t5_cost = 1.45
+@s_t6_cost = 1.9
+@s_t7_cost = 2.45
+
+#@s_t1_upkeep_energy = 0.05
+#@s_t1_upkeep_alloys = 0.01
+#@s_t2_upkeep_energy = 0.065
+#@s_t2_upkeep_alloys = 0.013
+#@s_t3_upkeep_energy = 0.085
+#@s_t3_upkeep_alloys = 0.017
+#@s_t4_upkeep_energy = 0.11
+#@s_t4_upkeep_alloys = 0.022
+#@s_t5_upkeep_energy = 0.145
+#@s_t5_upkeep_alloys = 0.029
+#@s_t6_upkeep_energy = 0.19
+#@s_t6_upkeep_alloys = 0.038
+@s_t1_upkeep_energy = 0.05
+@s_t1_upkeep_alloys = 0.010
+@s_t2_upkeep_energy = 0.07
+@s_t2_upkeep_alloys = 0.014
+@s_t3_upkeep_energy = 0.09
+@s_t3_upkeep_alloys = 0.018
+@s_t4_upkeep_energy = 0.09
+@s_t4_upkeep_alloys = 0.018
+@s_t5_upkeep_energy = 0.12
+@s_t5_upkeep_alloys = 0.024
+@s_t6_upkeep_energy = 0.16
+@s_t6_upkeep_alloys = 0.032
+@s_t7_upkeep_energy = 0.21
+@s_t7_upkeep_alloys = 0.042
+
+@tiny_1 = 2
+@tiny_2 = 3
+@tiny_3 = 4
+@tiny_4 = 5
+@tiny_5 = 7
+@tiny_6 = 9
+@tiny_7 = 12
+
+@regen_S1 = 0.02
+@regen_S2 = 0.03
+@regen_S3 = 0.04
+@regen_S4 = 0.05
+@regen_S5 = 0.07
+@regen_S6 = 0.09
+@regen_S7 = 0.12
+
+@power_S1 = -1
+@power_S2 = -1
+@power_S3 = -2
+@power_S4 = -2
+@power_S5 = -3
+@power_S6 = -3
+@power_S7 = -4
+
+@tiny_t1_cost = 0.25
+@tiny_t2_cost = 0.325
+@tiny_t3_cost = 0.425
+@tiny_t4_cost = 0.425 #not 0.6, uses rare goods instead
+@tiny_t5_cost = 0.6 #0.8
+@tiny_t6_cost = 0.8 #1.05
+@tiny_t7_cost = 1.05 #1.35
+
+#@tiny_t1_upkeep_energy = 0.0025
+#@tiny_t1_upkeep_alloys = 0.0005
+#@tiny_t2_upkeep_energy = 0.07
+#@tiny_t2_upkeep_alloys = 0.014
+#@tiny_t3_upkeep_energy = 0.09
+#@tiny_t3_upkeep_alloys = 0.018
+#@tiny_t4_upkeep_energy = 0.09
+#@tiny_t4_upkeep_alloys = 0.018
+#@tiny_t5_upkeep_energy = 0.12
+#@tiny_t5_upkeep_alloys = 0.024
+#@tiny_t6_upkeep_energy = 0.16
+#@tiny_t6_upkeep_alloys = 0.032
+#@tiny_t7_upkeep_energy = 0.21
+#@tiny_t7_upkeep_alloys = 0.042
+
+@tiny_t1_upkeep_energy = 0.0025
+@tiny_t1_upkeep_alloys = 0.0005
+@tiny_t2_upkeep_energy = 0.00325
+@tiny_t2_upkeep_alloys = 0.00065
+@tiny_t3_upkeep_energy = 0.00425
+@tiny_t3_upkeep_alloys = 0.00085
+@tiny_t4_upkeep_energy = 0.00425
+@tiny_t4_upkeep_alloys = 0.00085
+@tiny_t5_upkeep_energy = 0.0055
+@tiny_t5_upkeep_alloys = 0.0011
+@tiny_t6_upkeep_energy = 0.00725
+@tiny_t6_upkeep_alloys = 0.00145
+@tiny_t7_upkeep_energy = 0.0095
+@tiny_t7_upkeep_alloys = 0.0019
+
+utility_component_template = {
+	key = "TINY_ARMOR_EMPTY"
+	size = small
+	icon = "GFX_ship_part_empty_ftl_drive"
+	icon_frame = 1
+	power = 0
+	
+	component_set = "tiny_armor_components"
+	ai_weight = { weight = 0.05 }
+}
+utility_component_template = {
+	key = "TINY_SHIELD_EMPTY"
+	size = small
+	icon = "GFX_ship_part_empty_ftl_drive"
+	icon_frame = 1
+	power = 0
+	
+	component_set = "tiny_shield_components"
+	ai_weight = { weight = 0.05 }
+}
+utility_component_template = {
+	key = "TINY_HULL_EMPTY"
+	size = small
+	icon = "GFX_ship_part_empty_ftl_drive"
+	icon_frame = 1
+	power = 0
+	
+	component_set = "tiny_hull_components"
+	ai_weight = { weight = 0.05 }
+}
+
+# Plasteel Armor
+utility_component_template = {
+	key = "TINY_ARMOR_1"
+	size = small
+	icon = "GFX_ship_part_armor_1"
+	icon_frame = 1
+	power = 0
+	modifier = {
+		ship_armor_add = @tiny_1
+	}
+	
+	#ARCHIVE___ prerequisites = { "tech_ship_armor_1" }
+	component_set = "tiny_armor_components"
+	upgrades_to = "TINY_ARMOR_2"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @s_t1_cost
+		}		
+		upkeep = {
+			energy = @s_t1_upkeep_energy
+			alloys = @s_t1_upkeep_alloys
+		}
+	}
+}
+
+# Durasteel Armor
+utility_component_template = {
+	key = "TINY_ARMOR_2"
+	size = small
+	icon = "GFX_ship_part_armor_2"
+	icon_frame = 1
+	power = 0
+	modifier = {
+		ship_armor_add = @tiny_2
+	}
+	
+	#ARCHIVE___ prerequisites = { "tech_ship_armor_2" }
+	component_set = "tiny_armor_components"
+	upgrades_to = "TINY_ARMOR_3"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @s_t2_cost
+		}		
+		upkeep = {
+			energy = @s_t2_upkeep_energy
+			alloys = @s_t2_upkeep_alloys
+		}
+	}
+}
+
+# Ceramo-Metal Armor
+utility_component_template = {
+	key = "TINY_ARMOR_3"
+	size = small
+	icon = "GFX_ship_part_armor_3"
+	icon_frame = 1
+	power = 0
+	modifier = {
+		ship_armor_add = @tiny_3
+	}
+	
+	#ARCHIVE___ prerequisites = { "tech_ship_armor_3" }
+	component_set = "tiny_armor_components"
+	upgrades_to = "TINY_ARMOR_4"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @s_t3_cost
+		}		
+		upkeep = {
+			energy = @s_t3_upkeep_energy
+			alloys = @s_t3_upkeep_alloys
+		}
+	}
+}
+
+# Nanocomposite Armor
+utility_component_template = {
+	key = "TINY_ARMOR_4"
+	size = small
+	icon = "GFX_ship_part_armor_4"
+	icon_frame = 1
+	power = 0
+	modifier = {
+		ship_armor_add = @tiny_4
+	}
+	
+	#ARCHIVE___ prerequisites = { "tech_ship_armor_4" }
+	component_set = "tiny_armor_components"
+	upgrades_to = "TINY_ARMOR_5"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @s_t4_cost
+		}		
+		upkeep = {
+			energy = @s_t4_upkeep_energy
+			alloys = @s_t4_upkeep_alloys
+		}
+	}
+}
+
+# Neutronium Armor
+utility_component_template = {
+	key = "TINY_ARMOR_5"
+	size = small
+	icon = "GFX_ship_part_armor_5"
+	icon_frame = 1
+	power = 0
+	modifier = {
+		ship_armor_add = @tiny_5
+	}
+	
+	#ARCHIVE___ prerequisites = { "tech_ship_armor_5" }
+	component_set = "tiny_armor_components"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @s_t5_cost
+		}		
+		upkeep = {
+			energy = @s_t5_upkeep_energy
+			alloys = @s_t5_upkeep_alloys
+		}
+	}
+}
+
+# Dragonscale Armor
+utility_component_template = {
+	key = "TINY_DRAGON_ARMOR"
+	size = small
+	icon = "GFX_ship_part_dragon_armor"
+	icon_frame = 1
+	power = 0
+	modifier = {
+		ship_armor_add = @tiny_6
+	}
+	
+	#ARCHIVE___ prerequisites = { "tech_dragon_armor" }
+	component_set = "tiny_armor_components"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @s_t6_cost
+		}		
+		upkeep = {
+			energy = @s_t6_upkeep_energy
+			alloys = @s_t6_upkeep_alloys
+		}
+	}
+}
+
+# Deflectors
+utility_component_template = {
+	key = "TINY_SHIELD_1"
+	size = small
+	icon = "GFX_ship_part_shield_1"
+	icon_frame = 1
+	power = @power_S1
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @tiny_t1_cost
+		}	
+		upkeep = {
+			energy = @tiny_t1_upkeep_energy
+			alloys = @tiny_t1_upkeep_alloys
+		}
+	}
+	modifier = {
+		ship_shield_add = @tiny_1
+		ship_shield_regen_add_static = @regen_S1 #Regeneration per day
+	}
+	#ARCHIVE___ prerequisites = { "tech_shields_1" }
+	component_set = "tiny_shield_components"
+	upgrades_to = "TINY_SHIELD_2"
+}
+
+# Advanced Deflectors
+utility_component_template = {
+	key = "TINY_SHIELD_2"
+	size = small
+	icon = "GFX_ship_part_shield_2"
+	icon_frame = 1
+	power = @power_S2
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @tiny_t2_cost
+		}
+		upkeep = {
+			energy = @tiny_t2_upkeep_energy
+			alloys = @tiny_t2_upkeep_alloys
+		}
+	}
+	modifier = {
+		ship_shield_add = @tiny_2
+		ship_shield_regen_add_static = @regen_S2 #Regeneration per day
+	}
+	#ARCHIVE___ prerequisites = { "tech_shields_2" }
+	component_set = "tiny_shield_components"
+	upgrades_to = "TINY_SHIELD_3"
+}
+
+# Shields
+utility_component_template = {
+	key = "TINY_SHIELD_3"
+	size = small
+	icon = "GFX_ship_part_shield_3"
+	icon_frame = 1
+	power = @power_S3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @tiny_t3_cost
+		}
+		upkeep = {
+			energy = @tiny_t3_upkeep_energy
+			alloys = @tiny_t3_upkeep_alloys
+		}
+	}
+	modifier = {
+		ship_shield_add = @tiny_3
+		ship_shield_regen_add_static = @regen_S3 #Regeneration per day
+	}
+	#ARCHIVE___ prerequisites = { "tech_shields_3" }
+	component_set = "tiny_shield_components"
+	upgrades_to = "TINY_SHIELD_4"
+}
+
+# Advanced Shields
+utility_component_template = {
+	key = "TINY_SHIELD_4"
+	size = small
+	icon = "GFX_ship_part_shield_4"
+	icon_frame = 1
+	power = @power_S4
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @tiny_t4_cost
+			exotic_gases = 0.0125
+		}
+		upkeep = {
+			energy = @tiny_t4_upkeep_energy
+			alloys = @tiny_t4_upkeep_alloys
+		}
+	}
+	modifier = {
+		ship_shield_add = @tiny_4
+		ship_shield_regen_add_static = @regen_S4 #Regeneration per day
+	}
+	#ARCHIVE___ prerequisites = { "tech_shields_4" }
+	component_set = "tiny_shield_components"
+	upgrades_to = "TINY_SHIELD_5"
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			is_country_type = default
+			has_monthly_income = { resource = exotic_gases value <= 0 }
+		}
+	}
+}
+
+# Hyper Shields
+utility_component_template = {
+	key = "TINY_SHIELD_5"
+	size = small
+	icon = "GFX_ship_part_shield_5"
+	icon_frame = 1
+	power = @power_S5
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @tiny_t5_cost
+			exotic_gases = 0.01666
+		}
+		upkeep = {
+			energy = @tiny_t5_upkeep_energy
+			alloys = @tiny_t5_upkeep_alloys
+		}
+	}
+	modifier = {
+		ship_shield_add = @tiny_5
+		ship_shield_regen_add_static = @regen_S5 #Regeneration per day
+	}
+	#ARCHIVE___ prerequisites = { "tech_shields_5" }
+	upgrades_to = "TINY_DARK_MATTER_DEFLECTOR"
+	component_set = "tiny_shield_components"
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			is_country_type = default
+			has_monthly_income = { resource = exotic_gases value <= 0 }
+		}
+	}
+}
+
+# Enigmatic Deflectors
+utility_component_template = {
+	key = "TINY_DARK_MATTER_DEFLECTOR"
+	size = small
+	icon = "GFX_ship_part_dark_matter_shield"
+	icon_frame = 1
+	power = @power_S6
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @tiny_t6_cost
+			sr_dark_matter = 0.0125
+		}
+		upkeep = {
+			energy = @tiny_t6_upkeep_energy
+			alloys = @tiny_t6_upkeep_alloys
+		}
+	}
+	modifier = {
+		ship_shield_add = @tiny_6
+		ship_shield_regen_add_static = @regen_S6 #Regeneration per day
+	}
+	#ARCHIVE___ prerequisites = { "tech_dark_matter_deflector" }
+	component_set = "tiny_shield_components"
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0
+			is_country_type = default
+			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+		}
+	}
+}
+
+utility_component_template = {
+	key = "TINY_PSI_SHIELD"
+	size = small
+	icon = "GFX_ship_part_psi_shield"
+	icon_frame = 1
+	power = @power_S7
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @tiny_t7_cost
+			sr_zro = 0.00555
+		}
+		upkeep = {
+			energy = @tiny_t7_upkeep_energy
+			alloys = @tiny_t7_upkeep_alloys
+		}
+	}
+	modifier = {
+		ship_shield_add = @tiny_7
+		ship_shield_regen_add_static = @regen_S7 #Regeneration per day
+	}
+	#ARCHIVE___ prerequisites = { "tech_psionic_shield" }
+	component_set = "tiny_shield_components"
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			is_country_type = default
+			has_monthly_income = { resource = sr_zro value <= 0 }
+		}
+	}
+}
+
+utility_component_template = { #Low power requirements, lower str. Maybe good regen.
+	key = "TINY_PSI_BARRIER"
+	size = small
+	icon = "GFX_ship_part_psi_shield"
+	icon_frame = 1
+	power = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @tiny_t2_cost
+		}
+		upkeep = {
+			alloys = @tiny_t2_upkeep_alloys
+		}
+	}
+	modifier = {
+		ship_shield_add = @tiny_2
+		ship_shield_regen_add_static = @regen_S5 #Regeneration per day
+	}
+	#ARCHIVE___ prerequisites = { "tech_psionic_barrier" }
+	component_set = "tiny_shield_components"
+
+	ai_weight = {
+		weight = 1
+	}
+}

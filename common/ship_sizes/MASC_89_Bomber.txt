@@ -1,0 +1,78 @@
+
+@bomber_frigate_collision_radius = 0.1
+@bomber_frigate_formation_priority = 15
+
+@bomber_frigate_hp = 50
+@bomber_frigate_evasion = 95
+@bomber_frigate_build_time = 3
+
+@bomber_frigate_upkeep_energy = 0.015
+@bomber_frigate_upkeep_alloys = 0.005
+
+##################
+# Bomber
+##################
+
+magnus__advanced_bomber_frigate = {
+	formation_priority = @bomber_frigate_formation_priority
+	max_speed = 200
+	acceleration = 0.4
+	rotation_speed = 0.1
+	collision_radius = @bomber_frigate_collision_radius
+	max_hitpoints = @bomber_frigate_hp
+	modifier = {
+		ship_evasion_add = @bomber_frigate_evasion
+		ship_piracy_suppression_add = 0.5
+	}
+	size_multiplier = 0.05
+	fleet_slot_size = 0.05
+	section_slots = { "mid" = { locator = "part1" } }
+	num_target_locators = 2
+	is_space_station = no
+	icon_frame = 2
+	base_buildtime = @bomber_frigate_build_time
+	can_have_federation_design = no
+	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
+
+	default_behavior = swarm
+
+	prerequisites = { "tech_corvettes" }
+
+	combat_disengage_chance = 1.00
+
+	class = shipclass_military
+	construction_type = starbase_shipyard
+	required_component_set = "power_core"
+	required_component_set = "tiny_ftl_components"
+	required_component_set = "thruster_components"
+	required_component_set = "tiny_sensor_components"
+	required_component_set = "combat_computers"
+	required_component_set = "tiny_hull_components"
+	required_component_set = "tiny_armor_components"
+	required_component_set = "tiny_shield_components"
+
+	resources = {
+		category = ships
+		upkeep = {
+			energy = @bomber_frigate_upkeep_energy
+			alloys = @bomber_frigate_upkeep_alloys
+		}
+	}
+
+	min_upgrade_cost = {
+		alloys = 0
+	}
+
+	#empire_limit = {
+	#	base = 20
+	#	#max = 20
+	#	naval_cap_div = 0.33333333333333333333333333333333
+	#}
+	
+	potential_construction = {
+	}
+	potential_country = {
+		always = no
+		has_civic = civic_masc_the_masc
+	}
+}

@@ -1,0 +1,63 @@
+
+#####################
+#  Bomb Launcher
+#####################
+
+### Bomb Launcher
+weapon_component_template = {
+	key = "SWARMER_TORPEDO_MASC"
+	#size = torpedo
+	size = large
+	
+	icon = "GFX_ship_part_masc_dsb"
+	icon_frame = 1
+	type = missile
+	#entity = "turret_missile_large_entity"
+	
+	power = -117
+	hull_damage = 1.00
+	shield_damage = 1.00
+	shield_penetration = 0.50
+	armor_damage = 1.00
+	armor_penetration = 0.00
+	
+	damage = { min = 106 max = 187 }
+	windup = { min = 51 max = 63 }
+	range = 150
+	accuracy = 1.00
+	tracking = 3.00
+	
+	missile_speed = 36.750
+	missile_evasion = 0.85
+	missile_health = 56
+	missile_armor = 0
+	missile_shield = 0
+	missile_retarget_range = 150
+	
+	#prerequisites = { "tech_masc_bomber_weapon_1" }
+	component_set = "SWARMER_TORPEDO_MASC"
+	projectile_gfx = "small_missile"
+	tags = { weapon_type_explosive }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	#upgrades_to = ""
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 192
+		}		
+		upkeep = {
+			energy = 1.92
+			alloys = 0.384
+		}
+	}
+	
+	ai_weight = {
+		weight = 1000
+		modifier = {
+			factor = 1111
+		#	has_civic = civic_masc_the_masc
+		}
+	}
+	size_restriction = { magnus__advanced_bomber_frigate } # titan
+}

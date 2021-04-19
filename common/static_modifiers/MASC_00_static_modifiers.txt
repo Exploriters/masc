@@ -1,0 +1,70 @@
+
+station_shield_replace_armor = {
+	ship_armor_add = -1000
+	ship_shield_add = 1000
+	ship_shield_regen_add_static = 10
+}
+
+jump_drive_cooldown_revert = {
+	ship_weapon_damage = 0.5
+	ship_speed_mult = 0.5
+}
+
+everfirst_sbc_speedup = {
+	#shipsize_magnus__advanced_strategic_cruiser_build_speed_mult = 20
+	country_ship_upgrade_cost_mult = -3
+}
+
+sbc_con_cooldown1 = {
+	icon = "gfx/interface/icons/modifiers/mod_starbase_shipyard_build_time_mult.dds"
+	custom_tooltip = sbc_con_cooldown_tooltip
+}
+sbc_con_cooldown2 = {
+	icon = "gfx/interface/icons/modifiers/mod_starbase_shipyard_build_time_mult.dds"
+	custom_tooltip = sbc_con_cooldown_tooltip
+}
+sbc_con_cooldown3 = {
+	icon = "gfx/interface/icons/modifiers/mod_starbase_shipyard_build_time_mult.dds"
+	custom_tooltip = sbc_con_cooldown_tooltip
+}
+
+masc_rogue_drone_mod = {
+	ship_engagement_range_mult = 20
+	ship_weapon_damage = -0.5
+	ship_speed_mult = -0.5
+}
+
+station_armor_replace_shield_decoy_1 = { ship_armor_add = 50 ship_shield_add = -50 ship_shield_regen_add_static = -0.5}
+station_armor_replace_shield_decoy_2 = { ship_armor_add = 50 ship_shield_add = -50 ship_shield_regen_add_static = -0.5}
+station_armor_replace_shield_decoy_3 = { ship_armor_add = 50 ship_shield_add = -50 ship_shield_regen_add_static = -0.5}
+station_armor_replace_shield_decoy_4 = { ship_armor_add = 50 ship_shield_add = -50 ship_shield_regen_add_static = -0.5}
+station_armor_replace_shield_decoy_5 = { ship_armor_add = 50 ship_shield_add = -50 ship_shield_regen_add_static = -0.5}
+station_armor_replace_shield_decoy_6 = { ship_armor_add = 50 ship_shield_add = -50 ship_shield_regen_add_static = -0.5}
+station_armor_replace_shield_decoy_7 = { ship_armor_add = 50 ship_shield_add = -50 ship_shield_regen_add_static = -0.5}
+station_armor_replace_shield_decoy_8 = { ship_armor_add = 50 ship_shield_add = -50 ship_shield_regen_add_static = -0.5}
+station_armor_replace_shield_decoy_9 = { ship_armor_add = 50 ship_shield_add = -50 ship_shield_regen_add_static = -0.5}
+station_armor_replace_shield_decoy_10 = { ship_armor_add = 50 ship_shield_add = -50 ship_shield_regen_add_static = -0.5}
+station_armor_replace_shield_decoy_11 = { ship_armor_add = 50 ship_shield_add = -50 ship_shield_regen_add_static = -0.5}
+station_armor_replace_shield_decoy_12 = { ship_armor_add = 50 ship_shield_add = -50 ship_shield_regen_add_static = -0.5}
+station_armor_replace_shield_decoy_13 = { ship_armor_add = 50 ship_shield_add = -50 ship_shield_regen_add_static = -0.5}
+station_armor_replace_shield_decoy_14 = { ship_armor_add = 50 ship_shield_add = -50 ship_shield_regen_add_static = -0.5}
+station_armor_replace_shield_decoy_15 = { ship_armor_add = 50 ship_shield_add = -50 ship_shield_regen_add_static = -0.5}
+station_armor_replace_shield_decoy_16 = { ship_armor_add = 50 ship_shield_add = -50 ship_shield_regen_add_static = -0.5}
+station_armor_replace_shield_decoy_17 = { ship_armor_add = 50 ship_shield_add = -50 ship_shield_regen_add_static = -0.5}
+station_armor_replace_shield_decoy_18 = { ship_armor_add = 50 ship_shield_add = -50 ship_shield_regen_add_static = -0.5}
+station_armor_replace_shield_decoy_19 = { ship_armor_add = 50 ship_shield_add = -50 ship_shield_regen_add_static = -0.5}
+station_armor_replace_shield_decoy_20 = { ship_armor_add = 50 ship_shield_add = -50 ship_shield_regen_add_static = -0.5}
+
+masc_unity_of_lucky = {
+	planet_culture_workers_produces_mult = 0
+	icon = "gfx/interface/icons/planet_modifiers/pm_asteroid_belt.dds"
+	icon_frame = 1
+	#country_unity_produces_add = 20
+	show_only_custom_tooltip = yes
+	custom_tooltip = masc_unity_of_lucky_tooltip
+}
+
+masc_the_one_init_ruler_20level = {
+	ruler_skill_levels = 20
+	show_only_custom_tooltip = yes
+}

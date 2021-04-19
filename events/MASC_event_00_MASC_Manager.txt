@@ -1,0 +1,827 @@
+
+namespace = masc
+
+country_event = {
+	id = masc.19
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			last_increased_tech = tech_combat_computers_3
+			last_increased_tech = tech_combat_computers_autonomous
+			last_increased_tech = tech_precognition_interface
+			last_increased_tech = tech_combat_computers_neuron
+		}
+		has_civic = civic_masc_the_masc
+	}
+
+	immediate = {
+		give_technology = { tech = tech_combat_computers_sbc message = no }
+	}
+}
+
+ship_event = {
+	id = masc.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			is_ship_size = magnus__advanced_strategic_cruiser
+			is_ship_size = magnus__advanced_escort_monitor
+		}
+	}
+
+	immediate = {
+		add_modifier = { modifier = "jump_drive_cooldown_revert" days = 200 }
+	}
+}
+
+ship_event = {
+	id = masc.20
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		is_ship_size = magnus__advanced_strategic_cruiser
+		owner = {
+			NOT = { has_country_flag = masc_everfirst_sbc_constructed }
+		}
+	}
+
+	immediate = {
+		owner = {
+			set_country_flag = masc_everfirst_sbc_constructed
+			remove_modifier = everfirst_sbc_speedup
+		}
+	}
+}
+
+ship_event = {
+	id = masc.21
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		is_ship_size = magnus__advanced_strategic_cruiser
+	}
+
+	immediate = {
+		owner = {
+			if = {
+				limit = {
+					any_system_within_border = {
+						OR = {
+							has_megastructure = mega_shipyard_3
+							has_megastructure = mega_shipyard_restored
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_modifier = sbc_con_cooldown1 }
+					}
+					add_modifier = { modifier = "sbc_con_cooldown1" days = 299 }
+				}
+				else_if = {
+					limit = {
+						NOT = { has_modifier = sbc_con_cooldown2 }
+					}
+					add_modifier = { modifier = "sbc_con_cooldown2" days = 299 }
+				}
+				else_if = {
+					limit = {
+						NOT = { has_modifier = sbc_con_cooldown3 }
+					}
+					add_modifier = { modifier = "sbc_con_cooldown3" days = 299 }
+				}
+			}
+			else_if = {
+				limit = {
+					any_system_within_border = {
+						has_megastructure = mega_shipyard_2
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_modifier = sbc_con_cooldown1 }
+					}
+					add_modifier = { modifier = "sbc_con_cooldown1" days = 359 }
+				}
+				else_if = {
+					limit = {
+						NOT = { has_modifier = sbc_con_cooldown2 }
+					}
+					add_modifier = { modifier = "sbc_con_cooldown2" days = 359 }
+				}
+				else_if = {
+					limit = {
+						NOT = { has_modifier = sbc_con_cooldown3 }
+					}
+					add_modifier = { modifier = "sbc_con_cooldown3" days = 359 }
+				}
+			}
+			else_if = {
+				limit = {
+					any_system_within_border = {
+						has_megastructure = mega_shipyard_1
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_modifier = sbc_con_cooldown1 }
+					}
+					add_modifier = { modifier = "sbc_con_cooldown1" days = 449 }
+				}
+				else_if = {
+					limit = {
+						NOT = { has_modifier = sbc_con_cooldown2 }
+					}
+					add_modifier = { modifier = "sbc_con_cooldown2" days = 449 }
+				}
+				else_if = {
+					limit = {
+						NOT = { has_modifier = sbc_con_cooldown3 }
+					}
+					add_modifier = { modifier = "sbc_con_cooldown3" days = 449 }
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						NOT = { has_modifier = sbc_con_cooldown1 }
+					}
+					add_modifier = { modifier = "sbc_con_cooldown1" days = 599 }
+				}
+				else_if = {
+					limit = {
+						NOT = { has_modifier = sbc_con_cooldown2 }
+					}
+					add_modifier = { modifier = "sbc_con_cooldown2" days = 599 }
+				}
+				else_if = {
+					limit = {
+						NOT = { has_modifier = sbc_con_cooldown3 }
+					}
+					add_modifier = { modifier = "sbc_con_cooldown3" days = 599 }
+				}
+			}
+		}
+	}
+}
+
+
+ship_event = {
+	id = masc.22
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		exists = this
+		is_ship_size = magnus__mobile_depot
+	}
+
+	immediate = {
+		delete_ship = this
+	}
+}
+
+fleet_event = {
+	id = masc.4
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		#owner = {
+		#	has_civic = civic_masc_the_masc
+		#}
+		any_owned_ship = {
+			OR = {
+				is_ship_size = magnus__advanced_strategic_cruiser
+			}
+		}
+	}
+
+	immediate = {
+		random_owned_ship = {
+			limit = {
+				is_ship_size = magnus__advanced_strategic_cruiser
+			}
+			save_event_target_as = theventarget_masc_ship
+		}
+		owner = {
+			#save_event_target_as = theventarget_masc
+			every_owned_ship = {
+				limit = {
+					is_ship_size = constructor_masc_drone
+					solar_system = {
+						NOR = {
+							any_ship_in_system = {
+								is_ship_size = magnus__advanced_strategic_cruiser
+								exists = owner
+								owner = { is_same_value = root.owner }
+							}
+							#AND = {
+							#	exists = starbase
+							#	starbase = {
+							#		exists = owner
+							#		owner = { is_same_value = root.owner }
+							#	}
+							#}
+						}
+					}
+				}
+				delete_ship = this
+			}
+		}
+		if = {
+			limit = {
+				solar_system = {
+					NOT = {
+						any_ship_in_system = {
+							is_ship_size = constructor_masc_drone
+							exists = owner
+							owner = { is_same_value = root.owner }
+						}
+					}
+				}
+			}
+			create_fleet = {
+				set_take_point = yes
+				effect = {
+					set_owner = event_target:theventarget_masc_ship.owner
+					create_ship = {
+						name = "NAME_Indrone"
+						design = "NAME_Indrone"
+						prefix = no
+					}
+					#set_fleet_stance = evasive
+					set_location = event_target:theventarget_masc_ship
+				}
+				settings = {
+					can_upgrade = no
+					can_change_composition = no
+					can_change_leader = no
+					uses_naval_capacity = no
+					spawn_debris = no
+					can_disband = no
+				}
+			}
+			last_created_fleet = {
+				auto_follow_fleet = {
+					target = event_target:theventarget_masc_ship.fleet
+					attack_fleet = no
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = masc.5
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		fromfrom = {
+			OR = {
+				is_ship_size = magnus__advanced_strategic_cruiser
+			}
+		}
+	}
+
+	immediate = {
+		every_owned_ship = {
+			limit = {
+				is_ship_size = constructor_masc_drone
+				solar_system = {
+					NOR = {
+						any_ship_in_system = {
+							is_ship_size = magnus__advanced_strategic_cruiser
+							exists = owner
+							owner = { is_same_value = root }
+						}
+						#AND = {
+						#	exists = starbase
+						#	starbase = {
+						#		exists = owner
+						#		owner = { is_same_value = root }
+						#	}
+						#}
+					}
+				}
+			}
+			delete_ship = this
+		}
+	}
+}
+
+country_event = {
+	id = masc.6
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		from = {
+			OR = {
+				is_ship_size = magnus__advanced_strategic_cruiser
+			}
+		}
+	}
+
+	immediate = {
+		every_owned_ship = {
+			limit = {
+				is_ship_size = constructor_masc_drone
+				solar_system = {
+					NOR = {
+						any_ship_in_system = {
+							is_ship_size = magnus__advanced_strategic_cruiser
+							exists = owner
+							owner = { is_same_value = root }
+						}
+						#AND = {
+						#	exists = starbase
+						#	starbase = {
+						#		exists = owner
+						#		owner = { is_same_value = root }
+						#	}
+						#}
+					}
+				}
+			}
+			delete_ship = this
+		}
+	}
+}
+
+country_event = {
+	id = masc.7
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		fromfrom = {
+			any_owned_ship = {
+				OR = {
+					is_ship_size = magnus__advanced_strategic_cruiser
+				}
+			}
+		}
+	}
+
+	immediate = {
+		fromfrom = {
+			random_owned_ship = {
+				limit = {
+					is_ship_size = magnus__advanced_strategic_cruiser
+				}
+				save_event_target_as = theventarget_masc_ship
+			}
+			if = {
+				limit = {
+					solar_system = {
+						NOT = {
+							any_ship_in_system = {
+								is_ship_size = constructor_masc_drone
+								exists = owner
+								owner = { is_same_value = root }
+							}
+						}
+					}
+				}
+				create_fleet = {
+					set_take_point = yes
+					effect = {
+						set_owner = event_target:theventarget_masc_ship.owner
+						create_ship = {
+							name = "NAME_Indrone"
+							design = "NAME_Indrone"
+							prefix = no
+						}
+						#set_fleet_stance = evasive
+						set_location = event_target:theventarget_masc_ship
+					}
+					settings = {
+						can_upgrade = no
+						can_change_composition = no
+						can_change_leader = no
+						uses_naval_capacity = no
+						spawn_debris = no
+						can_disband = no
+					}
+				}
+				last_created_fleet = {
+					auto_follow_fleet = {
+						target = event_target:theventarget_masc_ship.fleet
+						attack_fleet = no
+					}
+				}
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = masc.8
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			is_ship_size = magnus__advanced_strategic_cruiser
+		}
+	}
+
+	immediate = {
+		fleet = {
+			if = {
+				limit = {
+					solar_system = {
+						NOT = {
+							any_ship_in_system = {
+								is_ship_size = constructor_masc_drone
+								exists = owner
+								owner = { is_same_value = root.owner }
+							}
+						}
+					}
+				}
+				create_fleet = {
+					set_take_point = yes
+					effect = {
+						set_owner = root.owner
+						create_ship = {
+							name = "NAME_Indrone"
+							design = "NAME_Indrone"
+							prefix = no
+						}
+						#set_fleet_stance = evasive
+						set_location = root
+					}
+					settings = {
+						can_upgrade = no
+						can_change_composition = no
+						can_change_leader = no
+						uses_naval_capacity = no
+						spawn_debris = no
+						can_disband = no
+					}
+				}
+				last_created_fleet = {
+					auto_follow_fleet = {
+						target = root.fleet
+						attack_fleet = no
+					}
+				}
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id = masc.3
+	hide_window = no
+	
+	is_advisor_event = yes
+	is_triggered_only = yes
+
+	title = masc.3.name
+	auto_select = yes
+
+	desc = {
+		text = masc.3.desc
+		#show_sound = no
+	}
+	
+	trigger = {
+		always = no
+		owner = {
+			has_civic = civic_masc_the_masc
+		}
+		#NOT = { exist = leader }
+		any_owned_ship = {
+			OR = {
+				is_ship_size = magnus__advanced_strategic_cruiser
+			}
+		}
+	}
+
+	immediate = {	
+		#	save_event_target_as = theventarget_masc
+	}
+	
+	option = {
+		name = masc.3.a
+		#custom_tooltip = full_tutorial
+	}
+	option = {
+		name = masc.3.b
+		trigger = {
+			any_owned_ship = {
+				NOT = {
+					is_ship_size = magnus__advanced_strategic_cruiser
+				}
+			}
+		}
+		every_owned_ship = {
+		}
+	}
+	option = {
+		name = masc.3.c
+		trigger = {
+			any_owned_ship = {
+				NOT = {
+				}
+			}
+		}
+		every_owned_ship = {
+		}
+	}
+	option = {
+		name = masc.3.d
+	}
+	option = {
+		name = masc.3.e
+	}
+	option = {
+		name = masc.3.f
+	}
+	option = {
+		name = masc.3.g
+	}
+}
+
+country_event = {
+	id = masc.15
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_civic = civic_masc_the_masc
+		fromfrom = {
+			OR = {
+				is_ship_size = masc_military_station_large
+			}
+		}
+	}
+
+	immediate = {
+		every_owned_ship = {
+			limit = {
+				is_ship_size = constructor_masc_drone_starbase
+				solar_system = {
+					NOR = {
+						any_ship_in_system = {
+							is_ship_size = masc_military_station_large
+							exists = owner
+							owner = { is_same_value = root }
+						}
+					}
+				}
+			}
+			delete_ship = this
+		}
+	}
+}
+
+country_event = {
+	id = masc.16
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_civic = civic_masc_the_masc
+		from = {
+			OR = {
+				is_ship_size = masc_military_station_large
+			}
+		}
+	}
+
+	immediate = {
+		every_owned_ship = {
+			limit = {
+				is_ship_size = constructor_masc_drone_starbase
+				solar_system = {
+					NOR = {
+						any_ship_in_system = {
+							is_ship_size = masc_military_station_large
+							exists = owner
+							owner = { is_same_value = root }
+						}
+					}
+				}
+			}
+			delete_ship = this
+		}
+	}
+}
+
+country_event = {
+	id = masc.17
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_civic = civic_masc_the_masc
+		fromfrom = {
+			any_owned_ship = {
+				OR = {
+					is_ship_size = masc_military_station_large
+				}
+			}
+		}
+	}
+
+	immediate = {
+		fromfrom = {
+			solar_system = {
+				starbase = {
+					save_event_target_as = theventarget_masc_ship
+				}
+			}
+			if = {
+				limit = {
+					solar_system = {
+						NOT = {
+							any_ship_in_system = {
+								is_ship_size = constructor_masc_drone_starbase
+								exists = owner
+								owner = { is_same_value = root }
+							}
+						}
+					}
+				}
+				create_fleet = {
+					set_take_point = yes
+					effect = {
+						set_owner = event_target:theventarget_masc_ship.owner
+						create_ship = {
+							name = "NAME_Indrone_starbase"
+							design = "NAME_Indrone_starbase"
+							prefix = no
+						}
+						#set_fleet_stance = evasive
+						set_location = event_target:theventarget_masc_ship
+					}
+					settings = {
+						can_upgrade = no
+						can_change_composition = no
+						can_change_leader = no
+						uses_naval_capacity = no
+						spawn_debris = no
+						can_disband = no
+					}
+				}
+				last_created_fleet = {
+					auto_follow_fleet = {
+						target = event_target:theventarget_masc_ship.fleet
+						attack_fleet = no
+					}
+				}
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = masc.18
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = {
+			has_civic = civic_masc_the_masc
+		}
+		OR = {
+			is_ship_size = masc_military_station_large
+		}
+	}
+
+	immediate = {
+		solar_system = {
+			starbase = {
+				save_event_target_as = theventarget_masc_ship
+			}
+		}
+		fleet = {
+			if = {
+				limit = {
+					solar_system = {
+						NOT = {
+							any_ship_in_system = {
+								is_ship_size = constructor_masc_drone_starbase
+								exists = owner
+								owner = { is_same_value = root.owner }
+							}
+						}
+					}
+				}
+				create_fleet = {
+					set_take_point = yes
+					effect = {
+						set_owner = root.owner
+						create_ship = {
+							name = "NAME_Indrone_starbase"
+							design = "NAME_Indrone_starbase"
+							prefix = no
+						}
+						#set_fleet_stance = evasive
+						set_location = event_target:theventarget_masc_ship
+					}
+					settings = {
+						can_upgrade = no
+						can_change_composition = no
+						can_change_leader = no
+						uses_naval_capacity = no
+						spawn_debris = no
+						can_disband = no
+					}
+				}
+				last_created_fleet = {
+					auto_follow_fleet = {
+						target = event_target:theventarget_masc_ship.fleet
+						attack_fleet = no
+					}
+				}
+			}
+		}
+	}
+}
+
+#country_event = {
+#	id = masc.19
+#	hide_window = yes
+#	is_triggered_only = yes
+#	
+#	trigger = {
+#		OR = {
+#			AND = {
+#				has_civic = civic_masc_the_masc
+#				any_owned_ship = {
+#					is_ship_size = masc_military_station_large
+#				}
+#			}
+#			any_owned_ship = {
+#				OR = {
+#					is_ship_size = magnus__advanced_strategic_cruiser
+#					is_ship_size = constructor_masc_drone
+#					is_ship_size = constructor_masc_drone_starbase
+#				}
+#			}
+#		}
+#	}
+#
+#	immediate = {
+#		fleet = {
+#			random_owned_ship = {
+#				limit = {
+#					is_ship_size = masc_military_station_large
+#				}
+#				save_event_target_as = theventarget_masc_ship
+#			}
+#			if = {
+#				limit = {
+#					solar_system = {
+#						NOT = {
+#							any_ship_in_system = {
+#								is_ship_size = constructor_masc_drone_starbase
+#								exists = owner
+#								owner = { is_same_value = root }
+#							}
+#						}
+#					}
+#				}
+#				create_fleet = {
+#					set_take_point = yes
+#					effect = {
+#						set_owner = event_target:theventarget_masc_ship.owner
+#						create_ship = {
+#							name = "NAME_Indrone_starbase"
+#							design = "NAME_Indrone"
+#							prefix = no
+#						}
+#						#set_fleet_stance = evasive
+#						set_location = event_target:theventarget_masc_ship
+#					}
+#					settings = {
+#						can_upgrade = no
+#						can_change_composition = no
+#						can_change_leader = no
+#						uses_naval_capacity = no
+#						spawn_debris = no
+#						can_disband = no
+#					}
+#				}
+#				last_created_fleet = {
+#					auto_follow_fleet = {
+#						target = event_target:theventarget_masc_ship.fleet
+#						attack_fleet = no
+#					}
+#				}
+#			}
+#		}
+#	}
+#}

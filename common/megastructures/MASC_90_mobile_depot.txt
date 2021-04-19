@@ -1,0 +1,94 @@
+# see README.txt for example
+
+megastructure_mobile_depot = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_outside_gravity_well = yes 						# indicates this will use "free" placement between the system's inner and outer ring
+															# if this option is active, the placement_rules will be completely ignored
+	show_galactic_map_icon = no
+	build_time = 1
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 0
+			influence = 0
+		}
+	}
+	construction_blocks_others = no
+	construction_blocked_by_others = no
+
+	potential = {
+		has_civic = civic_masc_the_masc
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_no_existing_mobile_depot"
+			NOR = {
+				any_ship_in_system = {
+					is_ship_size = magnus__mobile_depot
+					exists = owner
+					owner = { is_same_value = from }
+				}
+				has_megastructure = megastructure_mobile_depot
+			}
+		}
+	}
+
+	placement_rules = {			# those would be ignored since the gateway is being "free-placed" between the inner and outer radius of the system
+	}
+	
+	# root = system
+	# from = country
+	ai_weight = {
+		factor = 0
+		
+		modifier = {
+			factor = 0
+		}
+	}
+
+	station_modifier = {
+		starbase_shipyard_capacity_add = 1
+		starbase_shipyard_build_speed_mult = -20
+	}
+	
+	on_build_start = {}
+	on_build_cancel = {}	
+	on_build_complete = {
+		create_fleet = {
+			set_take_point = yes
+			effect = {
+				set_owner = from
+				while = {
+					count = 1
+					create_ship = {
+						name = "NAME_Mobile_Depot"
+						design = "NAME_Mobile_Depot"
+						prefix = no
+					}
+				}
+				set_location = fromfrom
+			}
+			settings = {
+				can_upgrade = no
+				can_change_composition = no
+				can_change_leader = no
+				uses_naval_capacity = no
+				spawn_debris = no
+				can_disband = no
+			}
+		}
+		last_created_fleet = {
+			every_owned_ship = {
+				limit = {
+					is_ship_size = magnus__mobile_depot
+				}
+				ship_event = { id = masc.22 days = 30 }
+			}
+		}
+		remove_megastructure = fromfrom
+	}
+}

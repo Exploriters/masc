@@ -1,0 +1,47 @@
+component_set = {
+	key = "tiny_ftl_components"
+	
+	required_component_set = yes
+	icon = "GFX_ship_part_hyperdrive"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "tiny_sensor_components"
+	
+	required_component_set = yes
+	icon = "GFX_ship_part_sensor"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "tiny_hull_components"
+	
+	required_component_set = yes
+	icon = "GFX_ship_part_sensor"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "tiny_armor_components"
+	
+	required_component_set = yes
+	icon = "GFX_ship_part_sensor"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "tiny_shield_components"
+	
+	required_component_set = yes
+	icon = "GFX_ship_part_sensor"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "ship_aura_components_blanknonallow"
+	
+	required_component_set = yes
+	icon = "GFX_ship_part_sensor"
+	icon_frame = 1	
+}

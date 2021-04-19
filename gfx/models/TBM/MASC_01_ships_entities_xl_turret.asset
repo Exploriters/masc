@@ -1,0 +1,131 @@
+
+entity = {
+	name = "mammalian_01_turret_escort_entity"	
+	pdxmesh = "mammalian_01_turret_xl_mesh"
+	locator = { name = "corecore" 	position = { 0	0	0} rotation ={ 0 0 0} }
+	attach = { corecore = "mammalian_01_turret_missile_large_entity" }
+	scale = 1.0
+}
+entity = {
+	name = "mammalian_01_turret_missile_small_large_entity"
+	pdxmesh = "mammalian_01_turret_missile_small_mesh"
+	state = { name = "idle"	} state = { name = "attack" looping = no next_state = "idle"}
+	scale = 2.0
+}
+entity = {
+	name = "arthropoid_01_turret_escort_entity"	
+	pdxmesh = "arthropoid_01_turret_xl_mesh"
+	locator = { name = "corecore" 	position = { 0	0	0} rotation ={ 0 0 0} }
+	attach = { corecore = "arthropoid_01_turret_missile_large_entity" }
+	scale = 1.0
+}
+entity = {
+	name = "arthropoid_01_turret_missile_small_large_entity"
+	pdxmesh = "arthropoid_01_turret_missile_small_mesh"
+	state = { name = "idle"	} state = { name = "attack" looping = no next_state = "idle"}
+	scale = 2.0
+}
+entity = {
+	name = "avian_01_turret_escort_entity"	
+	pdxmesh = "avian_01_turret_xl_mesh"
+	locator = { name = "corecore" 	position = { 0	0	0} rotation ={ 0 0 0} }
+	attach = { corecore = "avian_01_turret_missile_large_entity" }
+	scale = 1.0
+}
+entity = {
+	name = "avian_01_turret_missile_small_large_entity"
+	pdxmesh = "avian_01_turret_missile_small_mesh"
+	state = { name = "idle"	} state = { name = "attack" looping = no next_state = "idle"}
+	scale = 2.0
+}
+entity = {
+	name = "fungoid_01_turret_escort_entity"	
+	pdxmesh = "fungoid_01_turret_xl_mesh"
+	locator = { name = "corecore" 	position = { 0	0	0} rotation ={ 0 0 0} }
+	attach = { corecore = "fungoid_01_turret_missile_large_entity" }
+	scale = 1.0
+}
+entity = {
+	name = "fungoid_01_turret_missile_small_large_entity"
+	pdxmesh = "fungoid_01_turret_missile_small_mesh"
+	state = { name = "idle"	} state = { name = "attack" looping = no next_state = "idle"}
+	scale = 2.4
+}
+entity = {
+	name = "humanoid_01_turret_escort_entity"	
+	pdxmesh = "humanoid_01_turret_xl_mesh"
+	locator = { name = "corecore" 	position = { 0	0	0} rotation ={ 0 0 0} }
+	attach = { corecore = "humanoid_01_turret_missile_large_entity" }
+	scale = 1.0
+}
+entity = {
+	name = "humanoid_01_turret_missile_small_large_entity"
+	pdxmesh = "humanoid_01_turret_missile_small_mesh"
+	state = { name = "idle"	} state = { name = "attack" looping = no next_state = "idle"}
+	scale = 2.0
+}
+entity = {
+	name = "lithoid_01_turret_escort_entity"	
+	pdxmesh = "lithoid_01_turret_xl_mesh"
+	locator = { name = "corecore" 	position = { 0	0	0} rotation ={ 0 0 0} }
+	attach = { corecore = "lithoid_01_turret_missile_large_entity" }
+	scale = 1.0
+}
+entity = {
+	name = "lithoid_01_turret_missile_small_large_entity"
+	pdxmesh = "lithoid_01_turret_missile_small_mesh"
+	state = { name = "idle"	} state = { name = "attack" looping = no next_state = "idle"}
+	scale = 2.0
+}
+entity = {
+	name = "molluscoid_01_turret_escort_entity"	
+	pdxmesh = "molluscoid_01_turret_xl_mesh"
+	locator = { name = "corecore" 	position = { 0	0	0} rotation ={ 0 0 0} }
+	attach = { corecore = "molluscoid_01_turret_missile_large_entity" }
+	scale = 1.0
+}
+entity = {
+	name = "molluscoid_01_turret_missile_small_large_entity"
+	pdxmesh = "molluscoid_01_turret_missile_small_mesh"
+	state = { name = "idle"	} state = { name = "attack" looping = no next_state = "idle"}
+	scale = 2.0
+}
+entity = {
+	name = "necroid_01_turret_escort_entity"	
+	pdxmesh = "necroid_01_turret_xl_mesh"
+	locator = { name = "corecore" 	position = { 0	0	0} rotation ={ 0 0 0} }
+	attach = { corecore = "necroid_01_turret_missile_large_entity" }
+	scale = 1.0
+}
+entity = {
+	name = "necroid_01_turret_missile_small_large_entity"
+	pdxmesh = "necroid_01_turret_missile_small_mesh"
+	state = { name = "idle"	} state = { name = "attack" looping = no next_state = "idle"}
+	scale = 2.0
+}
+entity = {
+	name = "plantoid_01_turret_escort_entity"	
+	pdxmesh = "plantoid_01_turret_xl_mesh"
+	locator = { name = "corecore" 	position = { 0	0	0} rotation ={ 0 0 0} }
+	attach = { corecore = "plantoid_01_turret_missile_large_entity" }
+	scale = 1.0
+}
+entity = {
+	name = "plantoid_01_turret_missile_small_large_entity"
+	pdxmesh = "plantoid_01_turret_missile_small_mesh"
+	state = { name = "idle"	} state = { name = "attack" looping = no next_state = "idle"}
+	scale = 2.0
+}
+entity = {
+	name = "reptilian_01_turret_escort_entity"	
+	pdxmesh = "reptilian_01_turret_xl_mesh"
+	locator = { name = "corecore" 	position = { 0	0	0} rotation ={ 0 0 0} }
+	attach = { corecore = "reptilian_01_turret_missile_large_entity" }
+	scale = 1.0
+}
+entity = {
+	name = "reptilian_01_turret_missile_small_large_entity"
+	pdxmesh = "reptilian_01_turret_missile_small_mesh"
+	state = { name = "idle"	} state = { name = "attack" looping = no next_state = "idle"}
+	scale = 2.0
+}

@@ -1,0 +1,131 @@
+
+trait_masc_ringworld_habitat = {
+	cost = 0
+	icon = "gfx/interface/icons/traits/trait_pc_ring_preference.dds"
+	initial = no
+	randomized = no
+	modification = no
+	potential_crossbreeding_chance = 0
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+	custom_tooltip = trait_masc_ringworld_habitat_tooltip
+	sorting_priority = 29
+	modifier = {
+		leader_age = 0
+		pc_ringworld_habitable_habitability = 19.0
+		pc_habitat_habitability = 19.0
+		army_morale = 0.15
+		pop_housing_usage_mult = 0.05
+	}
+
+	#leader_age_min = 20
+	#leader_age_max = 60
+	
+	slave_cost = {
+		energy = 600
+	}
+}
+
+trait_extremely_nonadaptive = {
+	cost = -5
+#	icon = "gfx/interface/icons/traits/trait_nonadaptive.dds"
+#	icon = "gfx/interface/icons/traits/trait_robot_high_bandwidth.dds"
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_nervous.dds"
+	initial = no
+	randomized = no
+	modification = yes
+	potential_crossbreeding_chance = 0
+	opposites = { "trait_nonadaptive" "trait_adaptive" "trait_extremely_adaptive" "trait_adaptive_lithoid" "trait_communal" 
+		"trait_delicious" "trait_nerve_stapled" "trait_fertile" "trait_robust" "trait_erudite" "trait_anabolic_exploit"
+	}
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	custom_tooltip = trait_extremely_nonadaptive_tooltip
+	
+	species_potential_add = {
+		always = no
+	}
+	
+	modifier = {
+		pc_arctic_habitability = -0.20	
+		pc_tundra_habitability = -0.20
+		pc_alpine_habitability = -0.20
+		pc_ocean_habitability = -0.20
+		pc_desert_habitability = -0.20
+		pc_tropical_habitability = -0.20
+		pc_continental_habitability = -0.20
+		pc_arid_habitability = -0.20
+		pc_savannah_habitability = -0.20
+		#pop_environment_tolerance = -0.20
+		pop_housing_usage_mult = 0.1
+	}
+	slave_cost = {
+		energy = -100
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+trait_anabolic_exploit = {
+	cost = 6
+	icon = "gfx/interface/icons/traits/trait_robot_enhanced_memory.dds"
+	potential_crossbreeding_chance = 0.5
+	custom_tooltip = trait_anabolic_exploit_tooltip
+	
+	initial = no
+	randomized = no
+	advanced_trait = yes
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	opposites = { 
+		"trait_nomadic" "trait_sedentary" "trait_talented" "trait_erudite" "trait_strong" "trait_very_strong" "trait_quick_learners" "trait_slow_learners" 
+		"trait_venerable" "trait_fleeting" "trait_enduring" "trait_resilient"
+	}
+	
+	species_potential_add = {
+		exists = from
+		OR = {
+			NOT = { is_same_species = from }
+			from = { has_civic = civic_slaver_guilds }
+			from = { has_civic = civic_indentured_assets }
+		}
+		from = {
+			NOR = {
+				is_hive_empire = yes
+				is_machine_empire = yes
+			}
+			OR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+				has_policy_flag = slavery_allowed
+			}
+		}
+	}
+	
+	modifier = {
+		pop_resettlement_cost_mult = -0.85
+		planet_jobs_worker_produces_mult = 0.05
+		pop_housing_usage_add = -0.2
+		species_empire_size_mult = -0.2
+		planet_pops_organics_food_upkeep_mult = -0.35
+		planet_pops_organics_minerals_upkeep_mult = -0.35
+		
+		pop_growth_from_immigration = -10
+		pop_growth_speed = -0.1
+		
+		planet_jobs_ruler_produces_mult = -0.6
+		planet_jobs_specialist_produces_mult = -0.6
+		
+		pop_government_ethic_attraction = -1
+		army_morale = -5
+		pop_happiness = -3
+		leader_age = -50
+		species_leader_exp_gain = 0
+		army_experience_gain_mult = -2
+		leader_skill_levels = -20
+	}
+	slave_cost = {
+		energy = 300
+	}
+	ai_weight = {
+		factor = 0
+	}
+}

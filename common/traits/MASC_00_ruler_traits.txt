@@ -1,0 +1,30 @@
+
+leader_trait_ruler_masc_the_one = {
+	cost = 0
+	initial = no
+	randomized = no
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_psionic_chosen_one.dds"
+#	icon = "gfx/interface/icons/traits/leader_traits/trait_robot_enhanced_memory.dds"
+	immortal_leaders = yes
+	hide_age = yes
+	modifier = {
+		pop_government_ethic_attraction = 1
+		country_base_influence_produces_add = 1
+		pop_factions_produces_mult = 0.5
+	#	planet_jobs_ruler_produces_mult = 0.10
+		category_biology_research_speed_mult = 0.15
+	#	ruler_skill_levels = 20
+	}
+	self_modifier = {
+	#	species_leader_exp_gain = 0
+	#	leader_skill_levels = 20
+	#	ruler_skill_levels = 20
+	}
+
+	#leader_age_min = 20
+	#leader_age_max = 60
+	
+	leader_trait = { ruler }
+	leader_class = { ruler }
+}

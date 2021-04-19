@@ -1,0 +1,231 @@
+
+#####################
+#  Bomb Launcher
+#####################
+
+### Bomb Launcher
+weapon_component_template = {
+	key = "MASC_BOMB_LAUNCHER"
+	#size = torpedo
+	size = titanic
+	
+	icon = "GFX_ship_part_strike_craft_scout_1"
+	icon_frame = 1
+	type = missile
+	#entity = "turret_missile_large_entity"
+	
+	#power = -60
+	hull_damage = 1.00
+	shield_damage = 1.00
+	shield_penetration = 0.00
+	armor_damage = 1.00
+	armor_penetration = 0.00
+	
+	#damage = { min = 1000 max = 1000 }
+	damage = { min = 100 max = 100 }
+	windup = { min = 150 max = 150 }
+	range = 150.00
+	accuracy = 1.00
+	tracking = 3.00
+	
+	missile_speed = 10
+	missile_evasion = 0
+	missile_health = 10
+	missile_armor = 0
+	missile_shield = 0
+	missile_retarget_range = 150
+	
+	#ship_modifier = {
+	#	ship_armor_damage_mult = 0.75
+	#}
+	
+	prerequisites = { "tech_masc_bomber_weapon_1" }
+	component_set = "MASC_BOMB_LAUNCHER"
+	projectile_gfx = "large_torpedo_03"
+	tags = { weapon_type_explosive }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	#upgrades_to = ""
+	resources = {
+		category = ship_components
+		cost = {
+		#	alloys = 98
+		}		
+		upkeep = {
+		#	energy = 0.98
+		#	alloys = 0.196
+		}
+	}
+	
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 111
+		#	has_civic = civic_masc_the_masc
+		}
+	}
+	size_restriction = { magnus__advanced_bomber_frigate }
+}
+
+#####################
+#  PD Missile Battery
+#####################
+
+### PD Missile Battery 1
+weapon_component_template = {
+	type = missile
+	#entity = "turret_missile_small_entity"
+	
+	key = "PD_MISSILE_BATTERY_1"
+	size = point_defence
+	
+	icon = "GFX_ship_part_strike_craft_bomber_1"
+	icon_frame = 1
+	
+	power = -5
+	hull_damage = 1.00
+	shield_damage = 1.00
+	shield_penetration = 1.00
+	armor_damage = 1.00
+	armor_penetration = 1.00
+	
+	damage = { min = 3 max = 7 }
+	windup = { min = 10 max = 10 }
+	range = 30.00
+	accuracy = 1.00
+	tracking = 1.00
+	
+	missile_speed = 700
+	missile_evasion = 0
+	missile_health = 20
+	missile_armor = 0
+	missile_shield = 0
+	missile_retarget_range = 80
+	
+	prerequisites = { "tech_masc_bomber_weapon_1" }
+	component_set = "PD_MISSILE_BATTERY_1"
+	projectile_gfx = "small_missile"
+	tags = { weapon_type_point_defense weapon_type_explosive }
+	ai_tags = { weapon_role_point_defense }
+	upgrades_to = "PD_MISSILE_BATTERY_2"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 8
+		}
+		upkeep = {
+			energy = 0.08
+			alloys = 0.008
+		}
+	}
+	
+	ai_weight = {
+		weight = 1000001
+	}
+}
+
+### PD Missile Battery 2
+weapon_component_template = {
+	type = missile
+	#entity = "turret_missile_small_entity"
+	
+	key = "PD_MISSILE_BATTERY_2"
+	size = point_defence
+	
+	icon = "GFX_ship_part_strike_craft_bomber_2"
+	icon_frame = 1
+	
+	power = -7
+	hull_damage = 1.00
+	shield_damage = 1.00
+	shield_penetration = 1.00
+	armor_damage = 1.00
+	armor_penetration = 1.00
+	
+	damage = { min = 3 max = 7 }
+	windup = { min = 5 max = 10 }
+	range = 30.00
+	accuracy = 1.00
+	tracking = 1.00
+	
+	missile_speed = 700
+	missile_evasion = 0
+	missile_health = 20
+	missile_armor = 0
+	missile_shield = 0
+	missile_retarget_range = 80
+	
+	prerequisites = { "tech_masc_bomber_weapon_2" }
+	component_set = "PD_MISSILE_BATTERY_2"
+	projectile_gfx = "small_missile"
+	tags = { weapon_type_point_defense weapon_type_explosive }
+	ai_tags = { weapon_role_point_defense }
+	upgrades_to = "PD_MISSILE_BATTERY_3"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 10
+		}
+		upkeep = {
+			energy = 0.10
+			alloys = 0.010
+		}
+	}
+	
+	ai_weight = {
+		weight = 1000002
+	}
+}
+
+
+### PD Missile Battery 3
+weapon_component_template = {
+	type = missile
+	#entity = "turret_missile_small_entity"
+	
+	key = "PD_MISSILE_BATTERY_3"
+	size = point_defence
+	
+	icon = "GFX_ship_part_strike_craft_bomber_3"
+	icon_frame = 1
+	
+	power = -10
+	hull_damage = 1.00
+	shield_damage = 1.00
+	shield_penetration = 1.00
+	armor_damage = 1.00
+	armor_penetration = 1.00
+	
+	damage = { min = 3 max = 7 }
+	windup = { min = 5 max = 5 }
+	range = 30.00
+	accuracy = 1.00
+	tracking = 1.00
+	
+	missile_speed = 700
+	missile_evasion = 0
+	missile_health = 20
+	missile_armor = 0
+	missile_shield = 0
+	missile_retarget_range = 80
+	
+	prerequisites = { "tech_masc_bomber_weapon_3" }
+	component_set = "PD_MISSILE_BATTERY_3"
+	projectile_gfx = "small_missile"
+	tags = { weapon_type_point_defense weapon_type_explosive }
+	ai_tags = { weapon_role_point_defense }
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 13
+		}
+		upkeep = {
+			energy = 0.13
+			alloys = 0.013
+		}
+	}
+	
+	ai_weight = {
+		weight = 1000003
+	}
+}

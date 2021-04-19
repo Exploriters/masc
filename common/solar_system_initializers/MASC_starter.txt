@@ -1,0 +1,169 @@
+
+shattered_ring_system_void_dweller_start = {
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 90
+	}
+	flags = { empire_home_system ring_world_built masc_shattered_ring_void_dweller_system }
+	usage = origin
+
+	init_effect = {
+		create_starbase = {
+			size = "starbase_starhold"
+		#	owner = root.owner
+			module = "shipyard"
+			module = "shipyard"
+			module = "shipyard"
+			module = "trading_hub"
+			building = "black_hole_observatory_masc_sov"
+			building = "crew_quarters"
+			
+		}
+	
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		#spawn_megastructure = {
+		#	type = "ring_world_mascirreparable"
+		#	orbit_angle = 0
+		#	orbit_distance = 45
+		#	location = planet
+		#}
+		spawn_megastructure = {
+			type = "ring_world_ruined"
+		#	orbit_angle = 90
+			orbit_angle = 225
+			orbit_distance = 45
+			location = planet
+		}
+		spawn_megastructure = {
+			type = "ring_world_ruined"
+		#	orbit_angle = 180
+			orbit_angle = 315
+			orbit_distance = 45
+			location = planet
+		}
+		generate_home_system_resources = yes
+		spawn_megastructure = {
+			type = "ring_world_ruined"
+		#	orbit_angle = 270
+			orbit_angle = 45
+			orbit_distance = 45
+			location = planet
+		}
+	}
+
+	class = "sc_black_hole"
+
+	planet = {
+		class = star
+		size = 15
+		orbit_distance = 0
+		orbit_angle = 0
+		flags = { ignore_startup_effect masc_ringhole_5050 }
+		
+		#init_effect = { 
+		#	clear_deposits = yes
+		#	set_deposit = d_nothingnothingnothing
+		#}
+	}
+
+	change_orbit = 45
+
+	#planet = {
+	#	class = "pc_ringworld_tech_damaged"
+	#	name = "NAME_Ring_Section"
+	#	orbit_distance = 0
+	#	orbit_angle = 30
+	#}
+	#
+	#planet = {
+	#	class = "pc_ringworld_tech_damaged"
+	##	class = "pc_ringworld_habitable_damaged"
+	#	name = "NAME_Ring_Section"
+	#	orbit_distance = 0
+	#	orbit_angle = 300
+	#}
+
+	planet = {
+	#	class = "pc_ringworld_seam_damaged"
+		class = "pc_ringworld_masc_irreparable_damaged"
+	#	name = "Irreparable Damage"
+		name = "Rein"
+		orbit_distance = 0
+	#	orbit_angle = 30
+		orbit_angle = 135
+		flags = { ignore_startup_effect has_megastructure preventremoval_large_debris_object_target_planet }
+		init_effect = {
+			set_deposit = d_irreparable_exploited
+		}
+
+		init_effect = {
+			create_ambient_object = {
+				type = "large_debris_object"
+				entity_offset_height = -15
+				location = this
+			}
+			last_created_ambient_object = {
+				set_ambient_object_flag = ambient_preventremoval_flag
+				set_location = {
+					target = prev
+					distance = 0
+					angle = 0
+				}
+			}
+		}
+
+		moon = {
+			class = pc_habitat
+			orbit_angle = 0
+			orbit_distance = 0
+			size = 12
+			starting_planet = yes
+			flags = {
+				void_dweller_habitat_4
+				megastructure habitat
+				research_habitat
+			#	mining_habitat
+				special_start_planet
+			#	energy_habitat
+			}
+		}
+	}
+
+	change_orbit = 45
+
+	planet = {
+		name = "Exploite"
+		count = 1
+		class = pc_ice_asteroid
+		orbit_distance = 0
+		orbit_angle = 0
+		flags = { ignore_startup_effect starting_research_target starting_deposit }
+		init_effect = {
+			set_deposit = d_unity_deposit_20_mascsrvd
+			add_modifier = { modifier = masc_unity_of_lucky }
+		#	set_planet_flag = starting_mining_target
+		#	set_planet_flag = starting_deposit
+		}
+	}
+	
+#	neighbor_system = {
+#		trigger = { num_guaranteed_colonies >= 2 }
+#		hyperlane_jumps = { min = 1 max = @jumps }
+#		initializer = "neighbor_t1"
+#	}
+#	neighbor_system = {
+#		trigger = { num_guaranteed_colonies >= 1 }
+#		hyperlane_jumps = { min = 1 max = @jumps }
+#		initializer = "neighbor_t1_first_colony"
+#	}
+	neighbor_system = {
+		trigger = { always = yes }
+		hyperlane_jumps = { min = 1 max = 1 }
+		initializer = "masc_superlargevoid"
+	}
+}

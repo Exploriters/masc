@@ -1,0 +1,6 @@
+starbase_magnus__mobile_depot = {
+	ship_size = magnus__mobile_depot
+	potential_home_base = no
+	show_in_outliner = no
+	display_map_icon = no
+}

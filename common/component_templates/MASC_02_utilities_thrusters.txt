@@ -1,0 +1,456 @@
+
+@strategic_battlecruiser_power_1 = -160
+@strategic_battlecruiser_power_2 = -240
+@strategic_battlecruiser_power_3 = -320
+@strategic_battlecruiser_power_4 = -400
+@strategic_battlecruiser_power_5 = -480
+
+@strategic_battlecruiser_cost1 = 48
+@strategic_battlecruiser_cost2 = 96
+@strategic_battlecruiser_cost3 = 144
+@strategic_battlecruiser_cost4 = 192
+@strategic_battlecruiser_cost5 = 240
+
+utility_component_template = {
+	key = "STRATEGIC_BATTLECRUISER_SHIP_THRUSTER_1"
+	size = small
+	icon = "GFX_ship_part_thruster_1"
+	icon_frame = 1
+	power = @strategic_battlecruiser_power_1
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @strategic_battlecruiser_cost1
+		}
+	}
+	
+	modifier = {
+	}
+		
+	prerequisites = { "tech_thrusters_1" }
+	component_set = "thruster_components"
+	size_restriction = { magnus__advanced_strategic_cruiser }
+	upgrades_to = "STRATEGIC_BATTLECRUISER_SHIP_THRUSTER_2"
+	
+	ai_weight = {
+		weight = 1
+	}
+}
+
+utility_component_template = {
+	key = "STRATEGIC_BATTLECRUISER_SHIP_THRUSTER_2"
+	size = small
+	icon = "GFX_ship_part_thruster_2"
+	icon_frame = 1
+	power = @strategic_battlecruiser_power_2
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @strategic_battlecruiser_cost2
+		}
+	}
+	
+	modifier = {
+		ship_base_speed_mult = 0.25
+		ship_evasion_add = 2.5
+	}
+		
+	prerequisites = { "tech_thrusters_2" }
+	component_set = "thruster_components"
+	size_restriction = { magnus__advanced_strategic_cruiser }
+	upgrades_to = "STRATEGIC_BATTLECRUISER_SHIP_THRUSTER_3"
+	
+	ai_weight = {
+		weight = 2
+	}
+}
+
+utility_component_template = {
+	key = "STRATEGIC_BATTLECRUISER_SHIP_THRUSTER_3"
+	size = small
+	icon = "GFX_ship_part_thruster_3"
+	icon_frame = 1
+	power = @strategic_battlecruiser_power_3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @strategic_battlecruiser_cost3
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 0.50
+		ship_evasion_add = 5
+	}
+
+	prerequisites = { "tech_thrusters_3" }
+	component_set = "thruster_components"
+	size_restriction = { magnus__advanced_strategic_cruiser }
+	upgrades_to = "STRATEGIC_BATTLECRUISER_SHIP_THRUSTER_4"
+	
+	ai_weight = {
+		weight = 3
+	}
+}
+
+utility_component_template = {
+	key = "STRATEGIC_BATTLECRUISER_SHIP_THRUSTER_4"
+	size = small
+	icon = "GFX_ship_part_thruster_4"
+	icon_frame = 1
+	power = @strategic_battlecruiser_power_4
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @strategic_battlecruiser_cost4
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 0.75
+		ship_evasion_add = 7.5
+	}
+
+	prerequisites = { "tech_thrusters_4" }
+	component_set = "thruster_components"
+	size_restriction = { magnus__advanced_strategic_cruiser }
+	upgrades_to = "STRATEGIC_BATTLECRUISER_SHIP_THRUSTER_5"
+	
+	ai_weight = {
+		weight = 4
+	}
+}
+
+utility_component_template = {
+	key = "STRATEGIC_BATTLECRUISER_SHIP_THRUSTER_5"
+	size = small
+	icon = "GFX_ship_part_thruster_5"
+	icon_frame = 1
+	power = @strategic_battlecruiser_power_5
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @strategic_battlecruiser_cost4
+			sr_dark_matter = 16
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 1.25
+		ship_evasion_add = 10
+	}
+
+	prerequisites = { "tech_dark_matter_propulsion" }
+	component_set = "thruster_components"
+	size_restriction = { magnus__advanced_strategic_cruiser }
+	
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 1
+			is_country_type = default
+			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+		}
+	}
+}
+
+@escort_monitor_power_1 = -30
+@escort_monitor_power_2 = -45
+@escort_monitor_power_3 = -60
+@escort_monitor_power_4 = -75
+@escort_monitor_power_5 = -90
+
+@escort_monitor_cost1 = 9
+@escort_monitor_cost2 = 18
+@escort_monitor_cost3 = 27
+@escort_monitor_cost4 = 36
+@escort_monitor_cost5 = 45
+
+utility_component_template = {
+	key = "TACTICAL_DESTROYER_SHIP_THRUSTER_1"
+	size = small
+	icon = "GFX_ship_part_thruster_1"
+	icon_frame = 1
+	power = @escort_monitor_power_1
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @escort_monitor_cost1
+		}
+	}
+	
+	modifier = {
+	}
+		
+	prerequisites = { "tech_thrusters_1" }
+	component_set = "thruster_components"
+	size_restriction = { magnus__advanced_escort_monitor }
+	upgrades_to = "TACTICAL_DESTROYER_SHIP_THRUSTER_2"
+	
+	ai_weight = {
+		weight = 1
+	}
+}
+
+utility_component_template = {
+	key = "TACTICAL_DESTROYER_SHIP_THRUSTER_2"
+	size = small
+	icon = "GFX_ship_part_thruster_2"
+	icon_frame = 1
+	power = @escort_monitor_power_2
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @escort_monitor_cost2
+		}
+	}
+	
+	modifier = {
+		ship_base_speed_mult = 0.25
+		ship_evasion_add = 3.75
+	}
+		
+	prerequisites = { "tech_thrusters_2" }
+	component_set = "thruster_components"
+	size_restriction = { magnus__advanced_escort_monitor }
+	upgrades_to = "TACTICAL_DESTROYER_SHIP_THRUSTER_3"
+	
+	ai_weight = {
+		weight = 2
+	}
+}
+
+utility_component_template = {
+	key = "TACTICAL_DESTROYER_SHIP_THRUSTER_3"
+	size = small
+	icon = "GFX_ship_part_thruster_3"
+	icon_frame = 1
+	power = @escort_monitor_power_3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @escort_monitor_cost3
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 0.50
+		ship_evasion_add = 7.5
+	}
+
+	prerequisites = { "tech_thrusters_3" }
+	component_set = "thruster_components"
+	size_restriction = { magnus__advanced_escort_monitor }
+	upgrades_to = "TACTICAL_DESTROYER_SHIP_THRUSTER_4"
+	
+	ai_weight = {
+		weight = 3
+	}
+}
+
+utility_component_template = {
+	key = "TACTICAL_DESTROYER_SHIP_THRUSTER_4"
+	size = small
+	icon = "GFX_ship_part_thruster_4"
+	icon_frame = 1
+	power = @escort_monitor_power_4
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @escort_monitor_cost4
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 0.75
+		ship_evasion_add = 11.25
+	}
+
+	prerequisites = { "tech_thrusters_4" }
+	component_set = "thruster_components"
+	size_restriction = { magnus__advanced_escort_monitor }
+	upgrades_to = "TACTICAL_DESTROYER_SHIP_THRUSTER_5"
+	
+	ai_weight = {
+		weight = 4
+	}
+}
+
+utility_component_template = {
+	key = "TACTICAL_DESTROYER_SHIP_THRUSTER_5"
+	size = small
+	icon = "GFX_ship_part_thruster_5"
+	icon_frame = 1
+	power = @escort_monitor_power_5
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @escort_monitor_cost4
+			sr_dark_matter = 3
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 1.25
+		ship_evasion_add = 15
+	}
+
+	prerequisites = { "tech_dark_matter_propulsion" }
+	component_set = "thruster_components"
+	size_restriction = { magnus__advanced_escort_monitor }
+	
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 0.0
+			is_country_type = default
+			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+		}
+	}
+}
+
+@bomber_frigate_power_1 = -1 #-10
+@bomber_frigate_power_2 = -2 #-15
+@bomber_frigate_power_3 = -2 #-20
+@bomber_frigate_power_4 = -3 #-25
+@bomber_frigate_power_5 = -3 #-30
+
+@bomber_frigate_cost1 = 0.15 #3
+@bomber_frigate_cost2 = 0.30 #6
+@bomber_frigate_cost3 = 0.45 #9
+@bomber_frigate_cost4 = 0.60 #12
+@bomber_frigate_cost5 = 0.75 #15
+
+utility_component_template = {
+	key = "BOMBER_FRIGATE_SHIP_THRUSTER_1"
+	size = small
+	icon = "GFX_ship_part_thruster_1"
+	icon_frame = 1
+	power = @bomber_frigate_power_1
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @bomber_frigate_cost1
+		}
+	}
+	
+	modifier = {
+	}
+		
+	prerequisites = { "tech_thrusters_1" }
+	component_set = "thruster_components"
+	size_restriction = { magnus__advanced_bomber_frigate }
+	upgrades_to = "BOMBER_FRIGATE_SHIP_THRUSTER_2"
+	
+	ai_weight = {
+		weight = 1
+	}
+}
+
+utility_component_template = {
+	key = "BOMBER_FRIGATE_SHIP_THRUSTER_2"
+	size = small
+	icon = "GFX_ship_part_thruster_2"
+	icon_frame = 1
+	power = @bomber_frigate_power_2
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @bomber_frigate_cost2
+		}
+	}
+	
+	modifier = {
+		ship_base_speed_mult = 0.25
+		ship_evasion_add = 6
+	}
+		
+	prerequisites = { "tech_thrusters_2" }
+	component_set = "thruster_components"
+	size_restriction = { magnus__advanced_bomber_frigate }
+	upgrades_to = "BOMBER_FRIGATE_SHIP_THRUSTER_3"
+	
+	ai_weight = {
+		weight = 2
+	}
+}
+
+utility_component_template = {
+	key = "BOMBER_FRIGATE_SHIP_THRUSTER_3"
+	size = small
+	icon = "GFX_ship_part_thruster_3"
+	icon_frame = 1
+	power = @bomber_frigate_power_3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @bomber_frigate_cost3
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 0.50
+		ship_evasion_add = 12
+	}
+
+	prerequisites = { "tech_thrusters_3" }
+	component_set = "thruster_components"
+	size_restriction = { magnus__advanced_bomber_frigate }
+	upgrades_to = "BOMBER_FRIGATE_SHIP_THRUSTER_4"
+	
+	ai_weight = {
+		weight = 3
+	}
+}
+
+utility_component_template = {
+	key = "BOMBER_FRIGATE_SHIP_THRUSTER_4"
+	size = small
+	icon = "GFX_ship_part_thruster_4"
+	icon_frame = 1
+	power = @bomber_frigate_power_4
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @bomber_frigate_cost4
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 0.75
+		ship_evasion_add = 18
+	}
+
+	prerequisites = { "tech_thrusters_4" }
+	component_set = "thruster_components"
+	size_restriction = { magnus__advanced_bomber_frigate }
+	upgrades_to = "BOMBER_FRIGATE_SHIP_THRUSTER_5"
+	
+	ai_weight = {
+		weight = 4
+	}
+}
+
+utility_component_template = {
+	key = "BOMBER_FRIGATE_SHIP_THRUSTER_5"
+	size = small
+	icon = "GFX_ship_part_thruster_5"
+	icon_frame = 1
+	power = @bomber_frigate_power_5
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @bomber_frigate_cost4
+			sr_dark_matter = 0.05
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 1.25
+		ship_evasion_add = 24
+	}
+
+	prerequisites = { "tech_dark_matter_propulsion" }
+	component_set = "thruster_components"
+	size_restriction = { magnus__advanced_bomber_frigate }
+	
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 0.0
+			is_country_type = default
+			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+		}
+	}
+}

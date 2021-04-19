@@ -1,0 +1,72 @@
+
+black_hole_observatory_masc_sov = {
+	icon = "GFX_spaceport_module_observatory"
+	construction_days = 180
+
+	potential = {
+		exists = owner
+	#	owner = { has_technology = tech_sensors_3 }
+		owner = { has_origin = masc_origin_ringworld_void_dwellers }
+		solar_system = { has_star_flag = masc_shattered_ring_void_dweller_system }
+	}
+
+	possible = {
+		#custom_tooltip = {
+		#	fail_text = "requires_starport"
+		#	has_starbase_size >= starbase_starport
+		#}
+		custom_tooltip = {
+			fail_text = "requires_masc_shattered_ring_void_dweller_system"
+			solar_system = { has_star_flag = masc_shattered_ring_void_dweller_system }
+		}
+	#	custom_tooltip = {
+	#		fail_text = "requires_black_hole"
+	#		star = { is_star_class = sc_black_hole }
+	#	}
+	}
+
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 200
+		}
+
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_origin = masc_origin_ringworld_void_dwellers
+				}
+			}
+			society_research = 20
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_galactic_community_member = yes
+					has_origin = masc_origin_ringworld_void_dwellers
+				}
+				OR = {
+					is_active_resolution = "resolution_galacticstudies_astral_studies_network"
+					is_active_resolution = "resolution_galacticstudies_advanced_xenostudies"
+					is_active_resolution = "resolution_galacticstudies_ethical_guideline_refactoring"
+					is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
+				}
+			}
+			society_research = 20
+		}
+
+		upkeep = {
+			energy = 4
+		}
+	}
+
+#	show_in_tech = "tech_sensors_3"
+
+#	ai_build_at_chokepoint = no
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 155
+	}
+}

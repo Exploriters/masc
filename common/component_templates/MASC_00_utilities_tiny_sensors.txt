@@ -1,0 +1,129 @@
+@hit2 = 5
+@hit3 = 10
+@hit4 = 15
+
+@cost1 = 0.01
+@cost2 = 0.02
+@cost3 = 0.03
+@cost4 = 0.04
+
+@power1 = -1
+@power2 = -1
+@power3 = -1
+@power4 = -1
+
+@sensor1 = 1
+@sensor2 = 1
+@sensor3 = 1
+@sensor4 = 1
+
+@hyperlane1 = 1
+@hyperlane2 = 2
+@hyperlane3 = 3
+@hyperlane4 = 4
+
+utility_component_template = {
+	key = "TINY_SENSOR_1"
+	size = medium
+	icon = "GFX_ship_part_sensor_1"
+	icon_frame = 1
+	power = @power1
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost1
+		}
+	}
+	sensor_range = @sensor1
+	hyperlane_range = @hyperlane1
+	
+	component_set = "tiny_sensor_components"
+	upgrades_to = "TINY_SENSOR_2"
+	
+	ai_weight = {
+		weight = 1
+	}	
+}
+
+utility_component_template = {
+	key = "TINY_SENSOR_2"
+	size = medium
+	icon = "GFX_ship_part_sensor_2"
+	icon_frame = 1
+	power = @power2
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost2
+		}
+	}
+	sensor_range = @sensor2
+	hyperlane_range = @hyperlane2
+	
+	#ARCHIVE___ prerequisites = { "tech_sensors_2" }
+	component_set = "tiny_sensor_components"
+	upgrades_to = "TINY_SENSOR_3"
+	
+	ship_modifier = {
+		ship_tracking_add = @hit2
+	}
+	
+	ai_weight = {
+		weight = 10
+	}	
+}
+
+utility_component_template = {
+	key = "TINY_SENSOR_3"
+	size = medium
+	icon = "GFX_ship_part_sensor_3"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	sensor_range = @sensor3
+	hyperlane_range = @hyperlane3
+	
+	#ARCHIVE___ prerequisites = { "tech_sensors_3" }
+	component_set = "tiny_sensor_components"
+	upgrades_to = "TINY_SENSOR_4"
+	
+	ship_modifier = {
+		ship_tracking_add = @hit3
+	}
+	
+	ai_weight = {
+		weight = 100
+	}	
+}
+
+utility_component_template = {
+	key = "TINY_SENSOR_4"
+	size = medium
+	icon = "GFX_ship_part_sensor_4"
+	icon_frame = 1
+	power = @power4
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost4
+		}
+	}
+	sensor_range = @sensor4
+	hyperlane_range = @hyperlane4
+	
+	ship_modifier = {
+		ship_tracking_add = @hit4
+	}
+	
+	#ARCHIVE___ prerequisites = { "tech_sensors_4" }
+	component_set = "tiny_sensor_components"
+	
+	ai_weight = {
+		weight = 1000
+	}	
+}

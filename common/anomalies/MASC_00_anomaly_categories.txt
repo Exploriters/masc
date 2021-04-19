@@ -1,0 +1,19 @@
+
+masc_massive_of_ice_hole = {
+	desc = "masc_massive_of_ice_hole_desc"
+#	picture = "GFX_evt_frozen"
+	picture = "GFX_evt_asteroid_field"
+	level = 3
+	
+	spawn_chance = {
+		modifier = {
+			add = 0
+			from = {
+				owner = {
+				}
+			}
+		}
+	}
+	
+	#on_success = 
+}

@@ -1,0 +1,62 @@
+﻿l_simp_chinese:
+ sr_explorite:0 "觅质"
+ sr_explorite_desc:0 "一种正常情况下不可能出现的大分子硅基有机材料，具有优秀的有机兼容性和强大的材料性能弹性，能够执行几乎任何尺度下的复杂操作。我们的科学家仍不明白这种几乎违背了物理学的材料究竟是如何形成的。"
+ 
+ ap_xeno_assimilability:0 "异族同化能力"
+ ap_xeno_assimilability_desc:0 "唯有最强壮的一族才能在这危机四伏的星海中生存。秉此之道，他们的事业将由我们继续践行。"
+ allow_purge_necrophage:0 "允许§Y$purge_necrophage$§!净化方式，受影响的人口会被逐渐同化为我们的主体物种，无论其自身的意志如何。"
+ 
+ bioaicounter:0 "最近在[infil_planet.GetName]上发现了一些忠于肃正协议的合成人渗透者，该单位通过在机械骨骼外覆盖一层薄薄的有机肌肉伪装成[Root.Owner.GetSpeciesName]，使得它们看上去和我们在肉眼上别无二致。\n\n然而，由于其劣质的生物特质，它们当场就被很快就被星球上的[infil_planet.GetName]识别出来，随即遭到了民众的围剿。在它们的残骸中，我们发现了大量的爆炸物。\n\n这些合成机械甚至还远不如我们当中任何一个人强壮，以至于在我们的星球上毫无优势可言。肃正协议应该不会继续这些徒劳的合成渗透者任务了。"
+ 
+ masc_gene_defender_army:0 "基因守卫部队"
+ masc_gene_defender_army_desc:0 "基因改造的超级士兵。 从传统的防御部队里招募精英作为新兵。然后进行基因改造使得他们比原来更大更强更快。"
+ 
+ trait_anabolic_exploit:0 "急速代谢"
+ trait_anabolic_exploit_desc:0 "§L对生物代谢速率的激进提升可显著提升物种的劳动工作能力，从而使其每一秒生命都得到充分使用。作为代价，代谢紊乱将会导致严重的身体机能损耗引发早衰，并且在这种状态下的人口也几乎无法有效地从事任何高级的脑力劳作。§!"
+ trait_anabolic_exploit_tooltip:0 "$MOD_POP_RESETTLEMENT_COST_MULT$: §G-85%§!\n$mod_planet_jobs_worker_produces_mult$: §G+5%§!\n$MOD_POP_HOUSING_USAGE_MULT$: §G-20%§!\n$MOD_EMPIRE_SIZE_POPS_MULT$: §G-20%§!\n人口维护费: §G-35%§!\n$MOD_POP_GROWTH_SPEED$: §R-10%§!\n非劳工人口资源产出: §R-60%§!\n$MOD_LEADER_AGE$: §R-50§! 年\n§R无迁入人口增长\n陆军不具有士气\n无法获取陆军经验\n无法获取领袖经验\n人口在没有被移除自由意志的情况下具有极大惩罚§!"
+ 
+ tech_ship_biology_structure:0 "生物再生装甲"
+ tech_ship_biology_structure_desc:0 "通过在装甲中注入高级基因工程的微生物，这种特殊的装甲能够以极高的速度自我修复。"
+ 
+ masc_critters_bioweapon:0 "自由无人机逆向科技"
+ masc_critters_bioweapon_desc:0 "分解我们打捞到的自由无人机残骸，我们可以获得一些生物武器方面前所未有的见解和认知。"
+ 
+ BIO_ARMOR_BOOSTER:0 "再生微生物容器组"
+ BIO_ARMOR_BOOSTER_DESC:0 "一些额外的容器可以储备更多的微生物，补充舰船维修的需求，从而加快装甲恢复速度，并且可以修复舰体。"
+ BIO_ARMOR:0 "生物硬化装甲"
+ BIO_ARMOR_DESC:0 "使用生物工程制造的极高强度装甲板，无法自我修复且后勤维护成本高昂，但不需要占用舰船能源储备。"
+ BIO_SHIELD:0 "生物再生装甲"
+ BIO_SHIELD_DESC:0 "通过在装甲中注入高级基因工程的微生物，这种特殊的装甲能够以极高的速度自我修复，但这也意味着高额的耗电。"
+ BIO_CHARGER:0 "生物增幅装甲"
+ BIO_CHARGER_DESC:0 "成组的额外容器可以储备更多微生物，尽管不提供额外的装甲层，但能够以可怕的速度修复舰船上的其他装甲。"
+ 
+ BIOMIND_STRIKE_CRAFT:0 "生物智能战斗机"
+ BIOMIND_STRIKE_CRAFT_DESC:0 "这些先进的战斗机内搭载了专门培养出来的生物进行操作，反应迅速且不会产生人员伤亡。"
+ MASC_SINGLE_PHASER:0 "相位光束爆破炮"
+ MASC_SINGLE_PHASER_DESC:0 "一种由大分子有机硅制成的能量投射器，可以发射出精准且致命的高能射线。"
+ 
+ SMALL_BIO_ARMOR:0 "小型生物硬化装甲"
+ MEDIUM_BIO_ARMOR:0 "中型生物硬化装甲"
+ LARGE_BIO_ARMOR:0 "大型生物硬化装甲"
+ SMALL_BIO_SHIELD:0 "小型生物再生装甲"
+ MEDIUM_BIO_SHIELD:0 "中型生物再生装甲"
+ LARGE_BIO_SHIELD:0 "大型生物再生装甲"
+ SMALL_BIO_CHARGER:0 "小型生物增幅装甲"
+ MEDIUM_BIO_CHARGER:0 "中型生物增幅装甲"
+ LARGE_BIO_CHARGER:0 "大型生物增幅装甲"
+ 
+ TECH_UNLOCK_COMBAT_COMPUTER_NEURON_TITLE:0 "§H解锁部件：§!神经元作战系统"
+ TECH_UNLOCK_COMBAT_COMPUTER_NEURON_DESC:0 "§H神经元作战系统§!\n"
+ COMBAT_COMPUTER_SWARM_NEURON:0 "神经元作战系统（蜂拥）"
+ COMBAT_COMPUTER_PICKET_NEURON:0 "神经元作战系统（哨戒）"
+ COMBAT_COMPUTER_LINE_NEURON:0 "神经元作战系统（线列）"
+ COMBAT_COMPUTER_ARTILLERY_NEURON:0 "神经元作战系统（炮击）"
+ COMBAT_COMPUTER_CARRIER_NEURON:0 "神经元作战系统（航母）"
+ COMBAT_COMPUTER_PLATFORM_NEURON:0 "神经元作战系统（平台）"
+ COMBAT_COMPUTER_KITE_NEURON:0 "神经元作战系统（风筝）"
+ 
+ tech_combat_computers_neuron:0 "神经元作战系统"
+ tech_combat_computers_neuron_desc:0 "。"
+ 
+ TECH_UNLOCK_COMBAT_COMPUTERS_NEURON_TITLE:0 "§H解锁部件：§!神经元作战系统"
+ TECH_UNLOCK_COMBAT_COMPUTERS_NEURON_DESC:0 "§H神经元作战系统§!\n。"

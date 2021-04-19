@@ -1,0 +1,46 @@
+
+ship_design={
+	name="NAME_RogueBioDrones"
+	ship_size="magnus__advanced_escort_monitor"
+	section={
+		template="TACTICAL_DESTROYER_CORE"
+		slot="bow"
+		component={
+			slot="EXTRA_LARGE_01"
+			template="MASC_SINGLE_PHASER"
+		}
+		component={
+			slot="STRIKE_CRAFT_01"
+			template="BIOMIND_STRIKE_CRAFT"
+		}
+		component={
+			slot="LARGE_UTILITY_1"
+			template="LARGE_SHIELD_3"
+		}
+		component={
+			slot="LARGE_UTILITY_2"
+			template="LARGE_SHIELD_3"
+		}
+		component={
+			slot="LARGE_UTILITY_3"
+			template="LARGE_ARMOR_3"
+		}
+		component={
+			slot="LARGE_UTILITY_4"
+			template="LARGE_ARMOR_3"
+		}
+		component={
+			slot="AUX_UTILITY_1"
+			template="AFTERBURNER_2"
+		}
+		component={
+			slot="AUX_UTILITY_2"
+			template="AFTERBURNER_2"
+		}
+	}
+	required_component="TACTICAL_DESTROYER_COLD_FUSION_REACTOR"
+	required_component="HYPER_DRIVE_1"
+	required_component="TACTICAL_DESTROYER_SHIP_THRUSTER_2"
+	required_component="SENSOR_2"
+	required_component="COMBAT_COMPUTER_KITE_NEURON"
+}

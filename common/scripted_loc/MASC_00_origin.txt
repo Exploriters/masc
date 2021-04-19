@@ -1,0 +1,32 @@
+
+defined_text = {
+	name = MASCGetSRVDicyastName
+	text = {
+		trigger = {
+			has_origin = masc_origin_ringworld_void_dwellers
+		}
+		localization_key = masc_unity_of_lucky_name_owner
+	}
+	text = {
+		trigger = {
+			NOT = { has_origin = masc_origin_ringworld_void_dwellers }
+		}
+		localization_key = masc_unity_of_lucky_name_non_owner
+	}
+}
+
+defined_text = {
+	name = MASCGetSRVDicyastDesc
+	text = {
+		trigger = {
+			has_origin = masc_origin_ringworld_void_dwellers
+		}
+		localization_key = masc_unity_of_lucky_desc_owner
+	}
+	text = {
+		trigger = {
+			NOT = { has_origin = masc_origin_ringworld_void_dwellers }
+		}
+		localization_key = masc_unity_of_lucky_desc_non_owner
+	}
+}

@@ -1,0 +1,89 @@
+
+tech_combat_computers_sbc = {
+	area = society
+	tier = 4
+	cost = @tier4cost2
+	category = { computing }
+	icon = tech_combat_computers_3
+	weight = 0
+	is_rare = yes
+	is_reverse_engineerable = no
+	ai_update_type = military
+	
+	prereqfor_desc = {
+		#hide_prereq_for_desc = component
+		#custom = {
+		#	title = "TECH_UNLOCK_COMBAT_COMPUTERS_SBC_TITLE"
+		#	desc = "TECH_UNLOCK_COMBAT_COMPUTERS_SBC_DESC"
+		#}
+	}
+
+	potential = {
+	}
+	
+	modifier = {
+	}
+
+	weight_modifier = {
+	}
+
+	ai_weight = {
+		base = 1.5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+	}
+}
+
+masc_critters_bioweapon = {
+	area = society
+	tier = 1
+	cost = 20000
+	category = { biology }
+	icon = tech_amoeba_strike_craft_1
+	weight = 0
+	is_rare = yes
+	is_reverse_engineerable = yes
+	ai_update_type = military
+
+
+	potential = {
+	}
+	
+	modifier = {
+	}
+
+	weight_modifier = {
+	}
+
+	ai_weight = {
+		base = 1.5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+	}
+}

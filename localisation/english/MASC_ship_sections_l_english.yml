@@ -1,0 +1,17 @@
+﻿l_english:
+ 
+ CORE_JUGGERNAUT_SECTION_M5:0 "Missile Juggernaut"
+ 
+ CORVETTE_MID_S2PD1:0 "Frigate"
+ 
+ DESTROYER_BOW_MS1PD2:0 "Missile Bow"
+ DESTROYER_STERN_MS1:0 "Missile Stern"
+ 
+ BATTLESHIP_MID_L2PD4:0 "Nova Core"
+ BATTLESHIP_MID_PD4LHB:0 "Picket Core"
+ BATTLESHIP_STERN_MS2:0 "Missile Stern"
+ 
+ # DEFAULT_MINING_STATION_SECTION_SHIELD:0 "Mining Station Shield Frame"
+ # DEFAULT_RESEARCH_STATION_SECTION_SHIELD:0 "Research Station Shield Frame"
+ # DEFAULT_OBSERVATION_STATION_SECTION:0 "Observation Station Frame"
+ # DEFAULT_OBSERVATION_STATION_SECTION_SHIELD:0 "Observation Station Shield Frame"

@@ -1,0 +1,28 @@
+
+## Ruined Ring World Segment
+ring_world_mascirreparable = {
+	entity = "ringworld_destroyed_mascirreparable_entity"
+	portrait = "GFX_megastructure_construction_background"
+	
+	show_galactic_map_icon = no
+
+	resources = {
+		category = megastructures
+		produces = {
+			trigger = {
+				solar_system = {
+				exists = owner
+					owner = {
+						has_origin = masc_origin_ringworld_void_dwellers
+					}
+				}
+			}
+			minerals = 45
+			alloys = 15
+		}
+	}
+	
+	potential = {
+		always = no
+	}
+}
