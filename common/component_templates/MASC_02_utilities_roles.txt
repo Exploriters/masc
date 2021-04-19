@@ -28,7 +28,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { }# } #shipclass_military 
-	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	size_restriction = { constructor_masc_drone }
 	component_set = "combat_computers"
 	ship_behavior = "swarm"
 	prerequisites = { } #"tech_combat_computers_2"
@@ -59,7 +59,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { }# } #shipclass_military 
-	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	size_restriction = { constructor_masc_drone }
 	component_set = "combat_computers"
 	ship_behavior = "swarm"
 	prerequisites = { "tech_combat_computers_3" }
@@ -99,7 +99,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { }# } #shipclass_military 
-	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	size_restriction = { constructor_masc_drone }
 	component_set = "combat_computers"
 	ship_behavior = "swarm"
 	prerequisites = { "tech_combat_computers_autonomous" }
@@ -129,7 +129,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { }# } #shipclass_military 
-	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	size_restriction = { constructor_masc_drone }
 	component_set = "combat_computers"
 	ship_behavior = "swarm"
 	prerequisites = { "tech_precognition_interface" }
@@ -164,7 +164,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { }# } #shipclass_military 
-	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	size_restriction = { constructor_masc_drone }
 	component_set = "combat_computers"
 	ship_behavior = "picket"
 	prerequisites = { } #"tech_combat_computers_2"
@@ -193,7 +193,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { }# } #shipclass_military 
-	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	size_restriction = { constructor_masc_drone }
 	component_set = "combat_computers"
 	ship_behavior = "picket"
 	prerequisites = { "tech_combat_computers_3" }
@@ -234,7 +234,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { }# } #shipclass_military 
-	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	size_restriction = { constructor_masc_drone }
 	component_set = "combat_computers"
 	ship_behavior = "picket"
 	prerequisites = { "tech_combat_computers_autonomous" }
@@ -265,7 +265,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { }# } #shipclass_military 
-	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	size_restriction = { constructor_masc_drone }
 	component_set = "combat_computers"
 	ship_behavior = "picket"
 	prerequisites = { "tech_precognition_interface" }
@@ -297,7 +297,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { }# } #shipclass_military 
-	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	size_restriction = { constructor_masc_drone }
 	component_set = "combat_computers"
 	ship_behavior = "line"
 	prerequisites = { } #"tech_combat_computers_2"
@@ -326,7 +326,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { }# } #shipclass_military 
-	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	size_restriction = { constructor_masc_drone }
 	component_set = "combat_computers"
 	ship_behavior = "line"
 	prerequisites = { "tech_combat_computers_3" }
@@ -364,7 +364,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { }# } #shipclass_military 
-	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	size_restriction = { constructor_masc_drone }
 	component_set = "combat_computers"
 	ship_behavior = "line"
 	prerequisites = { "tech_combat_computers_autonomous" }
@@ -392,7 +392,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { }# } #shipclass_military 
-	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	size_restriction = { constructor_masc_drone }
 	component_set = "combat_computers"
 	ship_behavior = "line"
 	prerequisites = { "tech_precognition_interface" }
@@ -425,7 +425,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { }# shipclass_military shipclass_starbase }
-	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	size_restriction = { constructor_masc_drone }
 	component_set = "combat_computers"
 	ship_behavior = "artillery"
 	prerequisites = { } #"tech_combat_computers_2"
@@ -454,7 +454,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { }# shipclass_military shipclass_starbase }
-	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	size_restriction = { constructor_masc_drone }
 	component_set = "combat_computers"
 	ship_behavior = "artillery"
 	prerequisites = { "tech_combat_computers_3" }
@@ -493,7 +493,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { }# shipclass_military shipclass_starbase }
-	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	size_restriction = { constructor_masc_drone }
 	component_set = "combat_computers"
 	ship_behavior = "artillery"
 	prerequisites = { "tech_combat_computers_autonomous" }
@@ -521,7 +521,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { }# shipclass_military shipclass_starbase }
-	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	size_restriction = { constructor_masc_drone }
 	component_set = "combat_computers"
 	ship_behavior = "artillery"
 	prerequisites = { "tech_precognition_interface" }
@@ -554,7 +554,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { }# shipclass_military shipclass_starbase }
-	size_restriction = { magnus__advanced_strategic_cruiser_combat magnus__galauthority }
+	size_restriction = { constructor_masc_drone magnus__galauthority }
 	component_set = "combat_computers"
 	ship_behavior = "carrier"
 	prerequisites = { } #"tech_combat_computers_2"
@@ -582,7 +582,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { }# shipclass_military shipclass_starbase }
-	size_restriction = { magnus__advanced_strategic_cruiser_combat magnus__galauthority }
+	size_restriction = { constructor_masc_drone magnus__galauthority }
 	component_set = "combat_computers"
 	ship_behavior = "carrier"
 	prerequisites = { "tech_combat_computers_3" }
@@ -620,7 +620,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { }# shipclass_military shipclass_starbase }
-	size_restriction = { magnus__advanced_strategic_cruiser_combat magnus__galauthority }
+	size_restriction = { constructor_masc_drone magnus__galauthority }
 	component_set = "combat_computers"
 	ship_behavior = "carrier"
 	prerequisites = { "tech_combat_computers_autonomous" }
@@ -647,7 +647,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { }# shipclass_military shipclass_starbase }
-	size_restriction = { magnus__advanced_strategic_cruiser_combat }
+	size_restriction = { constructor_masc_drone }
 	component_set = "combat_computers"
 	ship_behavior = "carrier"
 	prerequisites = { "tech_precognition_interface" }
@@ -864,7 +864,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { }# } #shipclass_military 
-	size_restriction = { magnus__advanced_strategic_cruiser_combat magnus__advanced_escort_monitor }
+	size_restriction = { constructor_masc_drone magnus__advanced_escort_monitor }
 	component_set = "combat_computers"
 	ship_behavior = "masc_kite"
 	prerequisites = { "tech_combat_computers_2" }
@@ -895,7 +895,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { }# } #shipclass_military 
-	size_restriction = { magnus__advanced_strategic_cruiser_combat magnus__advanced_escort_monitor }
+	size_restriction = { constructor_masc_drone magnus__advanced_escort_monitor }
 	component_set = "combat_computers"
 	ship_behavior = "masc_kite"
 	prerequisites = { "tech_combat_computers_3" }
@@ -936,7 +936,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { }# } #shipclass_military 
-	size_restriction = { magnus__advanced_strategic_cruiser_combat magnus__advanced_escort_monitor }
+	size_restriction = { constructor_masc_drone magnus__advanced_escort_monitor }
 	component_set = "combat_computers"
 	ship_behavior = "masc_kite"
 	prerequisites = { "tech_combat_computers_autonomous" }
@@ -967,7 +967,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { }# } #shipclass_military 
-	size_restriction = { magnus__advanced_strategic_cruiser_combat magnus__advanced_escort_monitor }
+	size_restriction = { constructor_masc_drone magnus__advanced_escort_monitor }
 	component_set = "combat_computers"
 	ship_behavior = "masc_kite"
 	prerequisites = { "tech_precognition_interface" }

@@ -46,6 +46,8 @@ magnus__advanced_escort_monitor = {
 	base_buildtime = @escort_monitor_build_time
 	can_have_federation_design = yes
 	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
+	text_icon = military_size_4
+	enable_3dview_in_ship_browser = yes #if yes, ship design will have a 3d view in the ship browser
 
 	default_behavior = masc_kite
 

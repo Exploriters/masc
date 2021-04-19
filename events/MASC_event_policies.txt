@@ -30,9 +30,9 @@ country_event = {
 						NOR = {
 							is_star_class = sc_pulsar
 							is_star_class = sc_binary_1
-							any_planet = { 
-								is_planet_class = pc_pulsar
-							}
+							#any_planet = { 
+							#	is_planet_class = pc_pulsar
+							#}
 						}
 					}
 				}
@@ -117,9 +117,9 @@ ship_event = {
 			NOR = {
 				is_star_class = sc_pulsar
 				is_star_class = sc_binary_1
-				any_planet = { 
-					is_planet_class = pc_pulsar
-				}
+				#any_planet = { 
+				#	is_planet_class = pc_pulsar
+				#}
 			}
 		}
 	}

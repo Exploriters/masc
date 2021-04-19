@@ -18,4 +18,4 @@ tags={
 	"Translation"
 }
 name="Magnus' Advanced Spacruise"
-supported_version="2.8.0"
+supported_version="3.0.1"

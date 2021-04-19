@@ -77,6 +77,8 @@ magnus__advanced_strategic_cruiser = {
 	valid_target_aggressive_stance = yes
 	is_civilian = yes
 	components_add_to_cost = no
+	text_icon = military_size_4
+	enable_3dview_in_ship_browser = yes #if yes, ship design will have a 3d view in the ship browser
 
 	default_behavior = masc_sbc
 

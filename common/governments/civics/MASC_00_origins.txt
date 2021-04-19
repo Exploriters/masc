@@ -44,12 +44,13 @@ origin_evolution_heaven = {
 	picture = GFX_origin_syncretic_evolution
 
 	playable = {
+		always = no
 	}
 
 	possible = {
-		species = {
-			value = MAM
-		}
+		#species = {
+		#	value = MAM
+		#}
 		ethics = { NOT = { 
 			value = ethic_gestalt_consciousness
 			value = ethic_xenophobe

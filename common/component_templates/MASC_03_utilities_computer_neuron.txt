@@ -24,7 +24,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { } #shipclass_military 
-	size_restriction = { corvette magnus__advanced_strategic_cruiser_combat }
+	size_restriction = { corvette constructor_masc_drone }
 	component_set = "combat_computers"
 	ship_behavior = "swarm"
 	prerequisites = { "tech_combat_computers_neuron" }
@@ -58,7 +58,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { } #shipclass_military 
-	size_restriction = { corvette destroyer cruiser magnus__advanced_strategic_cruiser_combat }
+	size_restriction = { corvette destroyer cruiser constructor_masc_drone }
 	component_set = "combat_computers"
 	ship_behavior = "picket"
 	prerequisites = { "tech_combat_computers_neuron" }
@@ -93,7 +93,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { } #shipclass_military 
-	size_restriction = { destroyer cruiser battleship magnus__advanced_strategic_cruiser_combat }
+	size_restriction = { destroyer cruiser battleship constructor_masc_drone }
 	component_set = "combat_computers"
 	ship_behavior = "line"
 	prerequisites = { "tech_combat_computers_neuron" }
@@ -127,7 +127,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { }#shipclass_military shipclass_starbase }
-	size_restriction = { destroyer cruiser battleship titan juggernaut magnus__advanced_strategic_cruiser_combat }
+	size_restriction = { destroyer cruiser battleship titan juggernaut constructor_masc_drone }
 	component_set = "combat_computers"
 	ship_behavior = "artillery"
 	prerequisites = { "tech_combat_computers_neuron" }
@@ -161,7 +161,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { }#shipclass_military shipclass_starbase }
-	size_restriction = { cruiser battleship juggernaut titan magnus__advanced_strategic_cruiser_combat magnus__galauthority }
+	size_restriction = { cruiser battleship juggernaut titan constructor_masc_drone magnus__galauthority }
 	component_set = "combat_computers"
 	ship_behavior = "carrier"
 	prerequisites = { "tech_combat_computers_neuron" }
@@ -226,7 +226,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { } #shipclass_military 
-	size_restriction = { corvette magnus__advanced_strategic_cruiser_combat magnus__advanced_escort_monitor }
+	size_restriction = { corvette constructor_masc_drone magnus__advanced_escort_monitor }
 	component_set = "combat_computers"
 	ship_behavior = "masc_kite"
 	prerequisites = { "tech_combat_computers_neuron" }

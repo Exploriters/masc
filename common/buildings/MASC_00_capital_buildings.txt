@@ -7,7 +7,8 @@ building_hab_system_capital_masc_srvd_origin = {
 	can_be_ruined = no
 	can_be_disabled = no
 	planetary_ftl_inhibitor = yes
-	add_to_first_building_slot = yes
+	#add_to_first_building_slot = yes
+	position_priority = 0
 	icon = building_system_capital
 
 	category = government
@@ -46,11 +47,16 @@ building_hab_system_capital_masc_srvd_origin = {
 	}
 
 	planet_modifier = {
+	}
+
+	planet_modifier = {
 		planet_housing_add = 20
 		planet_amenities_add = 12
 		planet_jobs_ruler_produces_mult = 0
 		#planet_orbital_bombardment_damage = -0.5
 		#building_planetary_shield_generator_max = -1
+		planet_max_buildings_add = 20
+		planet_max_branch_office_buildings_add = 1
 	}
 
 	triggered_planet_modifier = {

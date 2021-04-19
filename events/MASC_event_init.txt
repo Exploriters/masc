@@ -334,13 +334,13 @@ country_event = {
 				#	}
 				#}
 			}
-			settings = {
-				can_upgrade = yes
-				can_change_composition = yes
-				can_change_leader = yes
-				uses_naval_capacity = yes
-				spawn_debris = yes
-			}
+			#settings = {
+			#	can_upgrade = yes
+			#	can_change_composition = yes
+			#	can_change_leader = yes
+			#	uses_naval_capacity = yes
+			#	spawn_debris = yes
+			#}
 		}
 		last_created_fleet = {
 			random_owned_ship = {

@@ -128,16 +128,16 @@ shattered_ring_system_void_dweller_home_planet_setup = {
 		limit = { owner = { is_gestalt = no } }
 		add_district = district_hab_commercial
 		add_district = district_hab_cultural
-		add_building = building_bureaucratic_1
 		add_building = building_factory_1
 		add_building = building_foundry_1
+		add_building = building_bureaucratic_1
 	}
 	else = {
 		add_district = district_hab_energy
 		add_district = district_hab_energy
-		add_building = building_spawning_pool
 		add_building = building_hive_node
 		add_building = building_foundry_1
+		add_building = building_spawning_pool
 	}
 	
 	if = {

@@ -197,9 +197,10 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		FROM = {
-			is_country_type = the_mayinas
-		}
+		always = no
+		#FROM = {
+		#	is_country_type = the_mayinas
+		#}
 		NOT = { has_country_flag = mayinas_diplomacy_engaged }
 	}
 
