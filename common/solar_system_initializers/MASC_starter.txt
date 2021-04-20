@@ -124,6 +124,8 @@ shattered_ring_system_void_dweller_start = {
 			size = 12
 			starting_planet = yes
 			flags = {
+				advanced_habitat
+				advanced_habitat_2
 				void_dweller_habitat_4
 				megastructure habitat
 				research_habitat
@@ -161,9 +163,9 @@ shattered_ring_system_void_dweller_start = {
 #		hyperlane_jumps = { min = 1 max = @jumps }
 #		initializer = "neighbor_t1_first_colony"
 #	}
-	neighbor_system = {
-		trigger = { always = yes }
-		hyperlane_jumps = { min = 1 max = 1 }
-		initializer = "masc_superlargevoid"
-	}
+#	neighbor_system = {
+#		trigger = { always = yes }
+#		hyperlane_jumps = { min = 1 max = 1 }
+#		initializer = "masc_superlargevoid"
+#	}
 }

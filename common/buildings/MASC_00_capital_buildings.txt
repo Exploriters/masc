@@ -55,8 +55,8 @@ building_hab_system_capital_masc_srvd_origin = {
 		planet_jobs_ruler_produces_mult = 0
 		#planet_orbital_bombardment_damage = -0.5
 		#building_planetary_shield_generator_max = -1
-		planet_max_buildings_add = 20
-		planet_max_branch_office_buildings_add = 1
+		planet_max_buildings_add = 4
+		planet_max_branch_office_buildings_add = 3
 	}
 
 	triggered_planet_modifier = {

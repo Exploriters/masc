@@ -85,11 +85,14 @@ tech_ship_biology_structure = {
 	icon = tech_nanite_repair_system
 
 	potential = {
-		has_ascension_perk = ap_evolutionary_mastery
 	}
 	
 	weight_modifier = {
 		factor = 0.5
+		modifier = {
+			factor = 0.0
+			NOT = { has_ascension_perk = ap_evolutionary_mastery }
+		}
 		modifier = {
 			factor = 0.20
 			NOR = {
@@ -169,7 +172,6 @@ tech_combat_computers_neuron = {
 	# unlocks sapient combat computers
 
 	potential = {
-		has_ascension_perk = ap_evolutionary_mastery
 		OR = {
 			NOT = { has_authority = auth_machine_intelligence }
 			has_civic = civic_machine_assimilator
@@ -178,6 +180,10 @@ tech_combat_computers_neuron = {
 
 	weight_modifier = {
 		factor = 0.5
+		modifier = {
+			factor = 0.0
+			NOT = { has_ascension_perk = ap_evolutionary_mastery }
+		}
 		modifier = {
 			factor = 0.20
 			NOR = {

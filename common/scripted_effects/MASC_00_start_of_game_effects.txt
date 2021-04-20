@@ -93,25 +93,34 @@ shattered_ring_system_void_dweller_home_planet_setup = {
 	#		set_starbase_size = starbase_starhold
 	#	}
 	#}
+	
 	while = {
-		count = 28
+		count = 20
 		create_pop = {
 			species = owner_main_species
 		}
 	}
-	if = {
-		limit = { owner = { is_lithoid_empire = no } }
-		create_pop = { species = owner_main_species }
-		create_pop = { species = owner_main_species }
-	}
+	
+	#while = {
+	#	count = 28
+	#	create_pop = {
+	#		species = owner_main_species
+	#	}
+	#}
+	#if = {
+	#	limit = { owner = { is_lithoid_empire = no } }
+	#	create_pop = { species = owner_main_species }
+	#	create_pop = { species = owner_main_species }
+	#}
+	
 	set_planet_entity = {
 		entity = "habitat_phase_03_entity"
 		graphical_culture = owner
 	}
 	
-	set_planet_size = 12
-	set_planet_flag = advanced_habitat
-	set_planet_flag = advanced_habitat_2
+	#set_planet_size = 20
+	#set_planet_flag = advanced_habitat
+	#set_planet_flag = advanced_habitat_2
 	set_owner = event_target:void_dweller_owner
 	
 	add_deposit = d_masc_arcane_core
@@ -123,31 +132,34 @@ shattered_ring_system_void_dweller_home_planet_setup = {
 
 	add_district = district_hab_science
 	add_district = district_hab_science
+	add_district = district_hab_industrial
+	add_district = district_hab_industrial
 	
 	if = {
 		limit = { owner = { is_gestalt = no } }
-		add_district = district_hab_commercial
+		#add_district = district_hab_commercial
 		add_district = district_hab_cultural
-		add_building = building_factory_1
-		add_building = building_foundry_1
-		add_building = building_bureaucratic_1
+		#add_building = building_factory_1
+		#add_building = building_foundry_1
+		#add_building = building_bureaucratic_1
 	}
 	else = {
+		#add_district = district_hab_energy
 		add_district = district_hab_energy
-		add_district = district_hab_energy
-		add_building = building_hive_node
-		add_building = building_foundry_1
-		add_building = building_spawning_pool
+		#add_building = building_hive_node
+		#add_building = building_foundry_1
+		#add_building = building_spawning_pool
 	}
 	
-	if = {
-		limit = { owner = { is_lithoid_empire = no } }
-		add_building = building_hydroponics_farm
-	}
-	else_if = {
-		limit = { owner = { is_gestalt = no } }
-		add_building = building_holo_theatres
-	}
+	#if = {
+	#	limit = { owner = { is_lithoid_empire = no } }
+	#	add_building = building_hydroponics_farm
+	#}
+	#else_if = {
+	#	limit = { owner = { is_gestalt = no } }
+	#	add_building = building_holo_theatres
+	#}
+	
 	#every_system_planet = {
 	#	limit = { has_planet_flag = mining_planet }
 	#	create_mining_station = { owner = event_target:void_dweller_owner }

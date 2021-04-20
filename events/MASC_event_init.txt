@@ -50,19 +50,21 @@ country_event = {
 			set_take_point = yes
 			effect = {
 				set_owner = prev
-				create_ship_design = {
-					design = "NAME_Colox_colonizer"
-				}
+				#create_ship_design = {
+				#	design = "NAME_Colox_colonizer"
+				#}
 				create_ship = {
 					name = random
-					design = last_created_design
+				#	design = last_created_design
+					random_existing_design = colonizer
 					colonizer_species = prev.species
 				}
-
+		
 				set_fleet_stance = evasive
 				set_location = prev.capital_star
 			}
 		}
+		
 		if = {
 			limit = {
 				always = no
@@ -139,7 +141,7 @@ country_event = {
 	
 	immediate = {
 		give_technology = { tech = tech_arc_emitter_zero message = no }
-		give_technology = { tech = tech_masc_bomber_weapon_1 message = no }
+		#give_technology = { tech = tech_masc_bomber_weapon_1 message = no }
 		give_technology = { tech = tech_regenerative_hull_tissue message = no }
 		give_technology = { tech = tech_automated_exploration message = no }
 		
